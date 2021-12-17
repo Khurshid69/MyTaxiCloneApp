@@ -28,12 +28,10 @@ class HomeVController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+          
         checkLocationServices()
         configureSideMenuButton()
         customizeMyLocationButton()
-        
         
     }
     
