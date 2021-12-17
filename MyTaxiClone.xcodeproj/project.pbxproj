@@ -64,10 +64,10 @@
 		CEAEFB8F276CB261001D21BF /* TripHistoryList */ = {
 			isa = PBXGroup;
 			children = (
-				CEF75219276BBADE003276B8 /* TripHistoryTableView.swift */,
-				CEF7521A276BBADE003276B8 /* TripHistoryTableView.xib */,
 				CEAEFB90276CB29E001D21BF /* TripHistoryCell.swift */,
 				CEAEFB91276CB29E001D21BF /* TripHistoryCell.xib */,
+				CEF75219276BBADE003276B8 /* TripHistoryTableView.swift */,
+				CEF7521A276BBADE003276B8 /* TripHistoryTableView.xib */,
 			);
 			path = TripHistoryList;
 			sourceTree = "<group>";
@@ -117,7 +117,6 @@
 		CEF75205276B3B94003276B8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				CEAEFB8F276CB261001D21BF /* TripHistoryList */,
 				CEF75208276B3C27003276B8 /* ContainerController.swift */,
 				CEF75215276B71D5003276B8 /* HomeVController.swift */,
 				CEF75216276B71D5003276B8 /* HomeVController.xib */,
@@ -130,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				CEF75211276B4D30003276B8 /* MenuOptionCell.swift */,
+				CEAEFB8F276CB261001D21BF /* TripHistoryList */,
 			);
 			path = View;
 			sourceTree = "<group>";

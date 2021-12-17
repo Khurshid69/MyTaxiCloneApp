@@ -25,7 +25,7 @@ class TripHistoryTableView: UITableViewController {
     
     func addNc(){
         addStaticDatas()
-        let more = UIImage(systemName: "slider.horizontal.3")
+        let more = UIImage(systemName: "")
         more?.withTintColor(.black)
         navigationItem.leftBarButtonItems = [UIBarButtonItem(image: more, style: .plain, target: self, action: #selector(leftTapped))]
         
@@ -36,6 +36,9 @@ class TripHistoryTableView: UITableViewController {
     
     // MARK: - Add Static Datas
     func addStaticDatas(){
+        itemPost.append(Post(carImage: "Bitmap1"))
+        itemPost.append(Post(carImage: "Bitmap2"))
+        itemPost.append(Post(carImage: "Bitmap3"))
         itemPost.append(Post(carImage: "Bitmap1"))
         itemPost.append(Post(carImage: "Bitmap2"))
         itemPost.append(Post(carImage: "Bitmap3"))
@@ -51,7 +54,6 @@ class TripHistoryTableView: UITableViewController {
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return itemPost.count
     }
     
