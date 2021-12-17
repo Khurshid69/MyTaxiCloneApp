@@ -20,12 +20,11 @@ class TripHistoryTableView: UITableViewController {
         
     }
     
-    
     // MARK: - Navigatoin Bar
     
     func addNc(){
         addStaticDatas()
-        let more = UIImage(systemName: "")
+        let more = UIImage(systemName: "Group")
         more?.withTintColor(.black)
         navigationItem.leftBarButtonItems = [UIBarButtonItem(image: more, style: .plain, target: self, action: #selector(leftTapped))]
         
@@ -35,6 +34,7 @@ class TripHistoryTableView: UITableViewController {
     }
     
     // MARK: - Add Static Datas
+    
     func addStaticDatas(){
         itemPost.append(Post(carImage: "Bitmap1"))
         itemPost.append(Post(carImage: "Bitmap2"))
@@ -47,8 +47,6 @@ class TripHistoryTableView: UITableViewController {
     /// Actions
     
     @objc func leftTapped(){}
-    
-    
     
     
     // MARK: - Table view data source
