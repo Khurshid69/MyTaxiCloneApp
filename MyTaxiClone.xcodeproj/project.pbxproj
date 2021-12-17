@@ -9,23 +9,39 @@
 /* Begin PBXBuildFile section */
 		CEF751EE276B3B44003276B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF751ED276B3B44003276B8 /* AppDelegate.swift */; };
 		CEF751F0276B3B44003276B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF751EF276B3B44003276B8 /* SceneDelegate.swift */; };
-		CEF751F2276B3B44003276B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF751F1276B3B44003276B8 /* ViewController.swift */; };
 		CEF751F5276B3B44003276B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF751F3276B3B44003276B8 /* Main.storyboard */; };
 		CEF751F8276B3B44003276B8 /* MyTaxiClone.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEF751F6276B3B44003276B8 /* MyTaxiClone.xcdatamodeld */; };
 		CEF751FA276B3B48003276B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEF751F9276B3B48003276B8 /* Assets.xcassets */; };
 		CEF751FD276B3B48003276B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF751FB276B3B48003276B8 /* LaunchScreen.storyboard */; };
+		CEF75209276B3C27003276B8 /* ContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF75208276B3C27003276B8 /* ContainerController.swift */; };
+		CEF7520D276B3C39003276B8 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7520C276B3C39003276B8 /* MenuController.swift */; };
+		CEF75210276B47D4003276B8 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7520F276B47D4003276B8 /* Protocols.swift */; };
+		CEF75212276B4D30003276B8 /* MenuOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF75211276B4D30003276B8 /* MenuOptionCell.swift */; };
+		CEF75214276B552E003276B8 /* MenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF75213276B552E003276B8 /* MenuOption.swift */; };
+		CEF75217276B71D5003276B8 /* HomeVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF75215276B71D5003276B8 /* HomeVController.swift */; };
+		CEF75218276B71D5003276B8 /* HomeVController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF75216276B71D5003276B8 /* HomeVController.xib */; };
+		CEF7521B276BBADE003276B8 /* TripHistoryTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF75219276BBADE003276B8 /* TripHistoryTableView.swift */; };
+		CEF7521C276BBADE003276B8 /* TripHistoryTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF7521A276BBADE003276B8 /* TripHistoryTableView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CEF751EA276B3B44003276B8 /* MyTaxiClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTaxiClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF751ED276B3B44003276B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEF751EF276B3B44003276B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CEF751F1276B3B44003276B8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CEF751F4276B3B44003276B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CEF751F7276B3B44003276B8 /* MyTaxiClone.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyTaxiClone.xcdatamodel; sourceTree = "<group>"; };
 		CEF751F9276B3B48003276B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEF751FC276B3B48003276B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEF751FE276B3B48003276B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEF75208276B3C27003276B8 /* ContainerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerController.swift; sourceTree = "<group>"; };
+		CEF7520C276B3C39003276B8 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		CEF7520F276B47D4003276B8 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		CEF75211276B4D30003276B8 /* MenuOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOptionCell.swift; sourceTree = "<group>"; };
+		CEF75213276B552E003276B8 /* MenuOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOption.swift; sourceTree = "<group>"; };
+		CEF75215276B71D5003276B8 /* HomeVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVController.swift; sourceTree = "<group>"; };
+		CEF75216276B71D5003276B8 /* HomeVController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVController.xib; sourceTree = "<group>"; };
+		CEF75219276BBADE003276B8 /* TripHistoryTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripHistoryTableView.swift; sourceTree = "<group>"; };
+		CEF7521A276BBADE003276B8 /* TripHistoryTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TripHistoryTableView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +74,13 @@
 		CEF751EC276B3B44003276B8 /* MyTaxiClone */ = {
 			isa = PBXGroup;
 			children = (
+				CEF7520E276B47C7003276B8 /* Utils */,
+				CEF75207276B3BFE003276B8 /* Model */,
+				CEF75206276B3BA6003276B8 /* View */,
+				CEF75205276B3B94003276B8 /* Controllers */,
+				CEF75204276B3B8A003276B8 /* appUtils */,
 				CEF751ED276B3B44003276B8 /* AppDelegate.swift */,
 				CEF751EF276B3B44003276B8 /* SceneDelegate.swift */,
-				CEF751F1276B3B44003276B8 /* ViewController.swift */,
 				CEF751F3276B3B44003276B8 /* Main.storyboard */,
 				CEF751F9276B3B48003276B8 /* Assets.xcassets */,
 				CEF751FB276B3B48003276B8 /* LaunchScreen.storyboard */,
@@ -68,6 +88,50 @@
 				CEF751F6276B3B44003276B8 /* MyTaxiClone.xcdatamodeld */,
 			);
 			path = MyTaxiClone;
+			sourceTree = "<group>";
+		};
+		CEF75204276B3B8A003276B8 /* appUtils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = appUtils;
+			sourceTree = "<group>";
+		};
+		CEF75205276B3B94003276B8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CEF75208276B3C27003276B8 /* ContainerController.swift */,
+				CEF75219276BBADE003276B8 /* TripHistoryTableView.swift */,
+				CEF7521A276BBADE003276B8 /* TripHistoryTableView.xib */,
+				CEF75215276B71D5003276B8 /* HomeVController.swift */,
+				CEF75216276B71D5003276B8 /* HomeVController.xib */,
+				CEF7520C276B3C39003276B8 /* MenuController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CEF75206276B3BA6003276B8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CEF75211276B4D30003276B8 /* MenuOptionCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CEF75207276B3BFE003276B8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CEF75213276B552E003276B8 /* MenuOption.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CEF7520E276B47C7003276B8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CEF7520F276B47D4003276B8 /* Protocols.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,9 +192,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEF7521C276BBADE003276B8 /* TripHistoryTableView.xib in Resources */,
 				CEF751FD276B3B48003276B8 /* LaunchScreen.storyboard in Resources */,
 				CEF751FA276B3B48003276B8 /* Assets.xcassets in Resources */,
 				CEF751F5276B3B44003276B8 /* Main.storyboard in Resources */,
+				CEF75218276B71D5003276B8 /* HomeVController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,10 +207,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEF751F2276B3B44003276B8 /* ViewController.swift in Sources */,
+				CEF7520D276B3C39003276B8 /* MenuController.swift in Sources */,
+				CEF75217276B71D5003276B8 /* HomeVController.swift in Sources */,
+				CEF75209276B3C27003276B8 /* ContainerController.swift in Sources */,
+				CEF75210276B47D4003276B8 /* Protocols.swift in Sources */,
+				CEF75214276B552E003276B8 /* MenuOption.swift in Sources */,
 				CEF751F8276B3B44003276B8 /* MyTaxiClone.xcdatamodeld in Sources */,
+				CEF75212276B4D30003276B8 /* MenuOptionCell.swift in Sources */,
 				CEF751EE276B3B44003276B8 /* AppDelegate.swift in Sources */,
 				CEF751F0276B3B44003276B8 /* SceneDelegate.swift in Sources */,
+				CEF7521B276BBADE003276B8 /* TripHistoryTableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +365,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QV4M89666W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyTaxiClone/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -320,6 +393,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QV4M89666W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyTaxiClone/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

@@ -11,12 +11,27 @@ import CoreData
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+//        setNavBar()
         return true
+        
     }
+    
+//    func setNavBar(){
+//        let apperiance = UINavigationBarAppearance()
+//        apperiance.configureWithTransparentBackground()
+//
+//
+//
+//
+//        UINavigationBar.appearance().tintColor = UIColor.gray
+//
+//
+//
+//
+//    }
 
     // MARK: UISceneSession Lifecycle
 
