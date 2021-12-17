@@ -10,6 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeVController" customModule="MyTaxiClone" customModuleProvider="target">
             <connections>
+                <outlet property="addressLabel" destination="VQK-Rc-J5L" id="T2n-fe-lqZ"/>
+                <outlet property="mapScreen" destination="I17-Hw-3N1" id="5Uq-2H-fTg"/>
+                <outlet property="myLocationButton" destination="P7C-GJ-Xe0" id="BY3-Hn-Oz9"/>
                 <outlet property="sideMenuButton" destination="7qU-yO-fUk" id="eE1-A4-Zsl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -62,7 +65,7 @@
                                                 <constraint firstAttribute="width" constant="35" id="rh8-R3-FYe"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5a улица Асадуллы Ходжаева" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQK-Rc-J5L">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Somewhere..." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQK-Rc-J5L">
                                             <rect key="frame" x="45" y="0.0" width="322" height="37"/>
                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="13"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -118,16 +121,36 @@
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" image="Group 14"/>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P7C-GJ-Xe0">
+                    <rect key="frame" x="358" y="689" width="36" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="36" id="lqv-Gh-4tO"/>
+                        <constraint firstAttribute="height" constant="36" id="mer-DU-LmY"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="btn_my_location_normal"/>
+                </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 21403" translatesAutoresizingMaskIntoConstraints="NO" id="PLF-wg-uA1">
+                    <rect key="frame" x="188" y="367.5" width="38" height="57"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="57.119999999999997" id="BZc-qc-qFh"/>
+                        <constraint firstAttribute="width" constant="38.259999999999998" id="c5v-Se-p0F"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="I17-Hw-3N1" secondAttribute="trailing" id="33z-tI-exA"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="I17-Hw-3N1" secondAttribute="bottom" constant="70" id="BVN-su-BTS"/>
+                <constraint firstItem="gkj-ba-eob" firstAttribute="top" secondItem="P7C-GJ-Xe0" secondAttribute="bottom" constant="20" id="Ce3-bo-CeR"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="P7C-GJ-Xe0" secondAttribute="trailing" constant="20" id="Hjb-cr-mzt"/>
                 <constraint firstItem="I17-Hw-3N1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dat-bK-oFa"/>
+                <constraint firstItem="PLF-wg-uA1" firstAttribute="centerX" secondItem="I17-Hw-3N1" secondAttribute="centerX" id="f7a-g7-qHR"/>
                 <constraint firstItem="I17-Hw-3N1" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="-44" id="gK4-Jg-2Jx"/>
                 <constraint firstAttribute="bottom" secondItem="gkj-ba-eob" secondAttribute="bottom" id="jY6-Sm-k5L"/>
                 <constraint firstItem="7qU-yO-fUk" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="m9o-nc-l9W"/>
+                <constraint firstItem="PLF-wg-uA1" firstAttribute="centerY" secondItem="I17-Hw-3N1" secondAttribute="centerY" id="mIj-01-SGx"/>
                 <constraint firstItem="7qU-yO-fUk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="nYU-8i-1wt"/>
                 <constraint firstItem="gkj-ba-eob" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="xcE-f7-Ob3"/>
                 <constraint firstItem="gkj-ba-eob" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="yae-nm-GOA"/>
@@ -143,7 +166,9 @@
     <resources>
         <image name="Frame 620" width="24" height="24"/>
         <image name="Group 14" width="20" height="20"/>
+        <image name="Group 21403" width="40" height="58"/>
         <image name="Vector" width="20" height="12"/>
+        <image name="btn_my_location_normal" width="44" height="44"/>
         <image name="light red pin" width="72" height="88"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

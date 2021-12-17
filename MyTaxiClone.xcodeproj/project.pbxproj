@@ -81,11 +81,7 @@
 				CEF75204276B3B8A003276B8 /* appUtils */,
 				CEF751ED276B3B44003276B8 /* AppDelegate.swift */,
 				CEF751EF276B3B44003276B8 /* SceneDelegate.swift */,
-				CEF751F3276B3B44003276B8 /* Main.storyboard */,
-				CEF751F9276B3B48003276B8 /* Assets.xcassets */,
-				CEF751FB276B3B48003276B8 /* LaunchScreen.storyboard */,
 				CEF751FE276B3B48003276B8 /* Info.plist */,
-				CEF751F6276B3B44003276B8 /* MyTaxiClone.xcdatamodeld */,
 			);
 			path = MyTaxiClone;
 			sourceTree = "<group>";
@@ -93,6 +89,10 @@
 		CEF75204276B3B8A003276B8 /* appUtils */ = {
 			isa = PBXGroup;
 			children = (
+				CEF751F3276B3B44003276B8 /* Main.storyboard */,
+				CEF751F9276B3B48003276B8 /* Assets.xcassets */,
+				CEF751FB276B3B48003276B8 /* LaunchScreen.storyboard */,
+				CEF751F6276B3B44003276B8 /* MyTaxiClone.xcdatamodeld */,
 			);
 			path = appUtils;
 			sourceTree = "<group>";
@@ -150,6 +150,8 @@
 			dependencies = (
 			);
 			name = MyTaxiClone;
+			packageProductDependencies = (
+			);
 			productName = MyTaxiClone;
 			productReference = CEF751EA276B3B44003276B8 /* MyTaxiClone.app */;
 			productType = "com.apple.product-type.application";
@@ -178,6 +180,8 @@
 				Base,
 			);
 			mainGroup = CEF751E1276B3B44003276B8;
+			packageReferences = (
+			);
 			productRefGroup = CEF751EB276B3B44003276B8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";

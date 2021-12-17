@@ -24,13 +24,13 @@ class MenuController: UIViewController {
         
     }
     class BadgeView: UIView {
-
-      override func awakeFromNib() {
-
-      
-
-       }
-     }
+        
+        override func awakeFromNib() {
+            
+            
+            
+        }
+    }
     // MARK: - Handlers
     
     func configureTableView(){
@@ -67,7 +67,7 @@ extension MenuController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let menuOption = MenuOption(rawValue: indexPath.row)
-        delegete?.handleMenuToggle(forMenuOption: menuOption)  
+        delegete?.handleMenuToggle(forMenuOption: menuOption)
     }
     
     
