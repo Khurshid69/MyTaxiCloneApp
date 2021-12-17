@@ -119,6 +119,9 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="carImage" destination="j5v-yJ-IH5" id="EX6-ei-Vbd"/>
+            </connections>
             <point key="canvasLocation" x="176.81159420289856" y="171.09375"/>
         </tableViewCell>
     </objects>
