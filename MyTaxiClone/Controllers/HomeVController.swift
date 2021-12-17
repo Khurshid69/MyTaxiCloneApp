@@ -31,10 +31,7 @@ class HomeVController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        centerViewOnUserLocation()
-        startTackingUserLocation()
-        setupLocationManager()
-        checkLocationAuthorization()
+      
         checkLocationServices()
         configureSideMenuButton()
         customizeMyLocationButton()
@@ -107,9 +104,13 @@ class HomeVController: UIViewController {
     
     // MARK: - Handlers
     
+    
+    
     @objc func handlreMenuToggle(){
         delegete?.handleMenuToggle(forMenuOption: nil)
     }
+    
+    //MARK: - Customizing handlers
     
     func configureSideMenuButton(){
         
@@ -161,7 +162,7 @@ extension HomeVController: CLLocationManagerDelegate {
 extension HomeVController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
-        let center = getCenterLocation(for: mapView)
+        let center = getCenterLocation(for: mapScreen)
         let geoCoder = CLGeocoder()
         
         guard let previousLocation = self.previousLocation else { return }

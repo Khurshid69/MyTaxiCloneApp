@@ -23,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" showsScale="YES" showsTraffic="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I17-Hw-3N1">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="792"/>
+                    <rect key="frame" x="0.0" y="-56" width="414" height="848"/>
                 </mapView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gkj-ba-eob">
                     <rect key="frame" x="0.0" y="745" width="414" height="151"/>
@@ -131,7 +131,7 @@
                     <buttonConfiguration key="configuration" style="plain" image="btn_my_location_normal"/>
                 </button>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 21403" translatesAutoresizingMaskIntoConstraints="NO" id="PLF-wg-uA1">
-                    <rect key="frame" x="188" y="367.5" width="38" height="57"/>
+                    <rect key="frame" x="188" y="339.5" width="38" height="57"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="57.119999999999997" id="BZc-qc-qFh"/>
                         <constraint firstAttribute="width" constant="38.259999999999998" id="c5v-Se-p0F"/>
@@ -147,7 +147,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="P7C-GJ-Xe0" secondAttribute="trailing" constant="20" id="Hjb-cr-mzt"/>
                 <constraint firstItem="I17-Hw-3N1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dat-bK-oFa"/>
                 <constraint firstItem="PLF-wg-uA1" firstAttribute="centerX" secondItem="I17-Hw-3N1" secondAttribute="centerX" id="f7a-g7-qHR"/>
-                <constraint firstItem="I17-Hw-3N1" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="-44" id="gK4-Jg-2Jx"/>
+                <constraint firstItem="I17-Hw-3N1" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="-100" id="gK4-Jg-2Jx"/>
                 <constraint firstAttribute="bottom" secondItem="gkj-ba-eob" secondAttribute="bottom" id="jY6-Sm-k5L"/>
                 <constraint firstItem="7qU-yO-fUk" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="m9o-nc-l9W"/>
                 <constraint firstItem="PLF-wg-uA1" firstAttribute="centerY" secondItem="I17-Hw-3N1" secondAttribute="centerY" id="mIj-01-SGx"/>

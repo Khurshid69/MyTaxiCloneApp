@@ -8,17 +8,35 @@
 import UIKit
 
 class TripHistoryTableView: UITableViewController {
+    
+    
+    
         
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        
     }
 
+    // MARK: - Navigatoin Bar
+    
+    func addNc(){
+        let more = UIImage(systemName: "slider.horizontal.3")
+        more?.withTintColor(.black)
+        navigationItem.leftBarButtonItems = [UIBarButtonItem(image: more, style: .plain, target: self, action: #selector(leftTapped))]
+        
+        title = "6 Июля, Вторник"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
+    }
+
+    /// Actions
+  
+    @objc func leftTapped(){}
+    
     
     
     // MARK: - Table view data source
@@ -79,7 +97,7 @@ class TripHistoryTableView: UITableViewController {
     */
 
     /*
-    // MARK: - Navigation
+    // MARK: - NavigationBar
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

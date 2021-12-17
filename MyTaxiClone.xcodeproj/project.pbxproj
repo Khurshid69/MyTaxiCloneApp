@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CEAEFB92276CB29E001D21BF /* TripHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEFB90276CB29E001D21BF /* TripHistoryCell.swift */; };
+		CEAEFB93276CB29E001D21BF /* TripHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEAEFB91276CB29E001D21BF /* TripHistoryCell.xib */; };
 		CEF751EE276B3B44003276B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF751ED276B3B44003276B8 /* AppDelegate.swift */; };
 		CEF751F0276B3B44003276B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF751EF276B3B44003276B8 /* SceneDelegate.swift */; };
 		CEF751F5276B3B44003276B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF751F3276B3B44003276B8 /* Main.storyboard */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CEAEFB90276CB29E001D21BF /* TripHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripHistoryCell.swift; sourceTree = "<group>"; };
+		CEAEFB91276CB29E001D21BF /* TripHistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TripHistoryCell.xib; sourceTree = "<group>"; };
 		CEF751EA276B3B44003276B8 /* MyTaxiClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTaxiClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF751ED276B3B44003276B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEF751EF276B3B44003276B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +59,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CEAEFB8F276CB261001D21BF /* TripHistoryList */ = {
+			isa = PBXGroup;
+			children = (
+				CEF75219276BBADE003276B8 /* TripHistoryTableView.swift */,
+				CEF7521A276BBADE003276B8 /* TripHistoryTableView.xib */,
+				CEAEFB90276CB29E001D21BF /* TripHistoryCell.swift */,
+				CEAEFB91276CB29E001D21BF /* TripHistoryCell.xib */,
+			);
+			path = TripHistoryList;
+			sourceTree = "<group>";
+		};
 		CEF751E1276B3B44003276B8 = {
 			isa = PBXGroup;
 			children = (
@@ -100,9 +115,8 @@
 		CEF75205276B3B94003276B8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CEAEFB8F276CB261001D21BF /* TripHistoryList */,
 				CEF75208276B3C27003276B8 /* ContainerController.swift */,
-				CEF75219276BBADE003276B8 /* TripHistoryTableView.swift */,
-				CEF7521A276BBADE003276B8 /* TripHistoryTableView.xib */,
 				CEF75215276B71D5003276B8 /* HomeVController.swift */,
 				CEF75216276B71D5003276B8 /* HomeVController.xib */,
 				CEF7520C276B3C39003276B8 /* MenuController.swift */,
@@ -199,6 +213,7 @@
 				CEF7521C276BBADE003276B8 /* TripHistoryTableView.xib in Resources */,
 				CEF751FD276B3B48003276B8 /* LaunchScreen.storyboard in Resources */,
 				CEF751FA276B3B48003276B8 /* Assets.xcassets in Resources */,
+				CEAEFB93276CB29E001D21BF /* TripHistoryCell.xib in Resources */,
 				CEF751F5276B3B44003276B8 /* Main.storyboard in Resources */,
 				CEF75218276B71D5003276B8 /* HomeVController.xib in Resources */,
 			);
@@ -218,6 +233,7 @@
 				CEF75214276B552E003276B8 /* MenuOption.swift in Sources */,
 				CEF751F8276B3B44003276B8 /* MyTaxiClone.xcdatamodeld in Sources */,
 				CEF75212276B4D30003276B8 /* MenuOptionCell.swift in Sources */,
+				CEAEFB92276CB29E001D21BF /* TripHistoryCell.swift in Sources */,
 				CEF751EE276B3B44003276B8 /* AppDelegate.swift in Sources */,
 				CEF751F0276B3B44003276B8 /* SceneDelegate.swift in Sources */,
 				CEF7521B276BBADE003276B8 /* TripHistoryTableView.swift in Sources */,
@@ -369,7 +385,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QV4M89666W;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyTaxiClone/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -397,7 +413,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QV4M89666W;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyTaxiClone/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
