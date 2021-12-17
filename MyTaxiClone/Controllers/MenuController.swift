@@ -23,14 +23,7 @@ class MenuController: UIViewController {
         
         
     }
-    class BadgeView: UIView {
-        
-        override func awakeFromNib() {
-            
-            
-            
-        }
-    }
+
     // MARK: - Handlers
     
     func configureTableView(){
