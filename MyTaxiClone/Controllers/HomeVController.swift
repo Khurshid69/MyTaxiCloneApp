@@ -11,7 +11,7 @@ import GoogleMaps
 class HomeVController: UIViewController {
     
     // MARK: - Properties
-
+    
     var delegete: HomeControllerDelegete?
     
     @IBOutlet weak var sideMenuButton: UIButton!
@@ -19,14 +19,13 @@ class HomeVController: UIViewController {
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var mapScreen: GMSMapView!
     
-    
     // MARK: - Init
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    
-        // MARK: - Mapping
+    // MARK: - Mapping
+        
         let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
         let mapView = GMSMapView.map(withFrame: mapScreen.frame, camera: camera)
         let marker = GMSMarker()
@@ -35,15 +34,10 @@ class HomeVController: UIViewController {
         marker.snippet = "Australia"
         marker.map = mapView
         
-        
         configureSideMenuButton()
         customizeMyLocationButton()
         
     }
-    
-    
-    
-    
     
     
     // MARK: - Handlers
