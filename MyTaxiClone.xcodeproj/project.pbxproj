@@ -118,9 +118,9 @@
 			isa = PBXGroup;
 			children = (
 				CEF75208276B3C27003276B8 /* ContainerController.swift */,
+				CEF7520C276B3C39003276B8 /* MenuController.swift */,
 				CEF75215276B71D5003276B8 /* HomeVController.swift */,
 				CEF75216276B71D5003276B8 /* HomeVController.xib */,
-				CEF7520C276B3C39003276B8 /* MenuController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";

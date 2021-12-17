@@ -16,7 +16,7 @@ class HomeVController: UIViewController {
     let locationManager = CLLocationManager()
     let regionInMeters: Double = 10000
     var previousLocation: CLLocation?
-    
+    var delegete: HomeControllerDelegete?
     
     @IBOutlet weak var sideMenuButton: UIButton!
     @IBOutlet weak var myLocationButton: UIButton!
@@ -24,14 +24,12 @@ class HomeVController: UIViewController {
     @IBOutlet weak var mapScreen: MKMapView!
     
     
-    var delegete: HomeControllerDelegete?
-    
     // MARK: - Init
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-      
+        
         checkLocationServices()
         configureSideMenuButton()
         customizeMyLocationButton()
@@ -57,7 +55,7 @@ class HomeVController: UIViewController {
             setupLocationManager()
             checkLocationAuthorization()
         } else {
-
+            // ...
         }
     }
     
@@ -98,37 +96,26 @@ class HomeVController: UIViewController {
     
     
     
-    
-    
-    
-    
     // MARK: - Handlers
-    
-    
     
     @objc func handlreMenuToggle(){
         delegete?.handleMenuToggle(forMenuOption: nil)
     }
     
+    
     //MARK: - Customizing handlers
     
     func configureSideMenuButton(){
-        
-        
         sideMenuButton.addTarget(nil, action: #selector(handlreMenuToggle), for: .touchUpInside)
         sideMenuButton.layer.masksToBounds = true
         sideMenuButton.layer.cornerRadius = sideMenuButton.frame.width/2
         sideMenuButton.backgroundColor = .white
-        
         
         sideMenuButton.layer.shadowColor = UIColor.black.cgColor
         sideMenuButton.layer.shadowOffset = CGSize(width: 0.0, height: 6.0)
         sideMenuButton.layer.shadowRadius = 12
         sideMenuButton.layer.shadowOpacity = 0.12
         sideMenuButton.layer.masksToBounds = false
-        
-        
-        
     }
     
     func customizeMyLocationButton(){
@@ -136,37 +123,27 @@ class HomeVController: UIViewController {
         myLocationButton.layer.cornerRadius = myLocationButton.frame.width/2
         myLocationButton.backgroundColor = .white
         
-        
         myLocationButton.layer.shadowColor = UIColor.black.cgColor
         myLocationButton.layer.shadowOffset = CGSize(width: 0.0, height: 6.0)
         myLocationButton.layer.shadowRadius = 12
         myLocationButton.layer.shadowOpacity = 0.12
         myLocationButton.layer.masksToBounds = false
     }
-    
-    
-    
-    
 }
-
-
+// MARK: - Map's Extensions
 
 extension HomeVController: CLLocationManagerDelegate {
-    
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         checkLocationAuthorization()
     }
 }
-
 
 extension HomeVController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         let center = getCenterLocation(for: mapScreen)
         let geoCoder = CLGeocoder()
-        
         guard let previousLocation = self.previousLocation else { return }
-        
         guard center.distance(from: previousLocation) > 50 else { return }
         self.previousLocation = center
         
@@ -177,12 +154,10 @@ extension HomeVController: MKMapViewDelegate {
                 //TODO: Show alert informing the user
                 return
             }
-            
             guard let placemark = placemarks?.first else {
-                //TODO: Show alert informing the user
+                // show alert INFORMING the user //
                 return
             }
-            
             let streetNumber = placemark.subThoroughfare ?? ""
             let streetName = placemark.thoroughfare ?? ""
             
