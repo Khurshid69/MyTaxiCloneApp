@@ -61,6 +61,7 @@ extension MenuController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let menuOption = MenuOption(rawValue: indexPath.row)
         delegete?.handleMenuToggle(forMenuOption: menuOption)
+//        delegete?.handleMenuToggle(forMenuOption: MenuOption.TripDetail)
     }
     
     
