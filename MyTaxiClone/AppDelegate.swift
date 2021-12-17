@@ -7,15 +7,15 @@
 
 import UIKit
 import CoreData
-import GoogleMaps
 import GooglePlaces
+import GoogleMaps
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-//        setNavBar()
         
         GMSServices.provideAPIKey("AIzaSyCR5FqIPa0B0_-nL5GSaAaTLho50YRH_jU")
         GMSPlacesClient.provideAPIKey("AIzaSyCR5FqIPa0B0_-nL5GSaAaTLho50YRH_jU")
@@ -23,20 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
         
     }
-    
-//    func setNavBar(){
-//        let apperiance = UINavigationBarAppearance()
-//        apperiance.configureWithTransparentBackground()
-//
-//
-//
-//
-//        UINavigationBar.appearance().tintColor = UIColor.gray
-//
-//
-//
-//
-//    }
 
     // MARK: UISceneSession Lifecycle
 
