@@ -72,6 +72,13 @@
 			path = TripHistoryList;
 			sourceTree = "<group>";
 		};
+		CEAEFB96276CDC31001D21BF /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		CEF751E1276B3B44003276B8 = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +135,7 @@
 		CEF75206276B3BA6003276B8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CEAEFB96276CDC31001D21BF /* New Group */,
 				CEF75211276B4D30003276B8 /* MenuOptionCell.swift */,
 				CEAEFB8F276CB261001D21BF /* TripHistoryList */,
 			);
