@@ -25,6 +25,11 @@ class MenuOptionCell: UITableViewCell {
         return label
     }()
     
+//    let user: UIView = {
+//        let label1 = UIView()
+//
+//    }()
+    
     // MARK: - Init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

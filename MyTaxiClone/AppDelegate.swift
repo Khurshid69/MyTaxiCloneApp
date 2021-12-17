@@ -7,7 +7,8 @@
 
 import UIKit
 import CoreData
-
+import GoogleMaps
+import GooglePlaces
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -15,6 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 //        setNavBar()
+        
+        GMSServices.provideAPIKey("AIzaSyCR5FqIPa0B0_-nL5GSaAaTLho50YRH_jU")
+        GMSPlacesClient.provideAPIKey("AIzaSyCR5FqIPa0B0_-nL5GSaAaTLho50YRH_jU")
+        
         return true
         
     }
