@@ -8,10 +8,10 @@
 import UIKit
 import GoogleMaps
 
-class HomeVController: UIViewController {
+class HomeVController: UIViewController, GMSMapViewDelegate {
     
     // MARK: - Properties
-    
+    private let locationManager = CLLocationManager()
     var delegete: HomeControllerDelegete?
     
     @IBOutlet weak var sideMenuButton: UIButton!
@@ -24,19 +24,13 @@ class HomeVController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    // MARK: - Mapping
-        
-        let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
-        let mapView = GMSMapView.map(withFrame: mapScreen.frame, camera: camera)
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
-        marker.title = "Sydney"
-        marker.snippet = "Australia"
-        marker.map = mapView
         
         configureSideMenuButton()
         customizeMyLocationButton()
         
+        locationManager.delegate = self
+        mapScreen.delegate = self
+        locationManager.requestWhenInUseAuthorization()
     }
     
     
@@ -45,7 +39,6 @@ class HomeVController: UIViewController {
     @objc func handlreMenuToggle(){
         delegete?.handleMenuToggle(forMenuOption: nil)
     }
-    
     
     //MARK: - Customizing handlers
     
@@ -73,5 +66,60 @@ class HomeVController: UIViewController {
         myLocationButton.layer.shadowOpacity = 0.12
         myLocationButton.layer.masksToBounds = false
     }
+    
+    
+    private func reverseGeocodeCoordinate(_ coordinate: CLLocationCoordinate2D) {
+        
+        // 1
+        let geocoder = GMSGeocoder()
+        
+        // 2
+        geocoder.reverseGeocodeCoordinate(coordinate) { response, error in
+            guard let address = response?.firstResult(), let lines = address.lines else {
+                return
+            }
+            
+            // 3
+            self.addressLabel.text = lines.joined(separator: "\n")
+            
+            // 4
+            UIView.animate(withDuration: 0.25) {
+                self.view.layoutIfNeeded()
+            }
+        }
+    }
+    func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
+        reverseGeocodeCoordinate(position.target)
+    }
 }
 
+// MARK: - CLLocationManagerDelegate
+//1
+extension HomeVController: CLLocationManagerDelegate {
+    // 2
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        // 3
+        guard status == .authorizedWhenInUse else {
+            return
+        }
+        // 4
+        locationManager.startUpdatingLocation()
+        
+        //5
+        mapScreen.isMyLocationEnabled = true
+        mapScreen.settings.myLocationButton = true
+    }
+
+    // 6
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.first else {
+            return
+        }
+        
+        // 7
+        mapScreen.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
+        
+        // 8
+        locationManager.stopUpdatingLocation()
+    }
+}
