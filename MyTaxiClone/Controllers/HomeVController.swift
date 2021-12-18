@@ -14,8 +14,9 @@ class HomeVController: UIViewController, GMSMapViewDelegate {
     private let locationManager = CLLocationManager()
     var delegete: HomeControllerDelegete?
     
+    
     @IBOutlet weak var sideMenuButton: UIButton!
-    @IBOutlet weak var myLocationButton: UIButton!
+    @IBOutlet weak var myLocationButtonReal: UIButton!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var mapScreen: GMSMapView!
     
@@ -24,6 +25,17 @@ class HomeVController: UIViewController, GMSMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let imageV = UIImageView(frame: CGRect(x: 0, y: 0, width: 38.25, height: 57.12))
+        imageV.center = mapScreen.center
+        imageV.clipsToBounds = true
+        imageV.image = UIImage(named: "Group 21403", in: Bundle(for: type(of: self)), compatibleWith: nil)
+        mapScreen.addSubview(imageV)
+        
+        
+        
+        
+
+        mapScreen.padding = UIEdgeInsets(top: 0, left: 0, bottom: 30, right: 0)
         
         configureSideMenuButton()
         customizeMyLocationButton()
@@ -31,6 +43,17 @@ class HomeVController: UIViewController, GMSMapViewDelegate {
         locationManager.delegate = self
         mapScreen.delegate = self
         locationManager.requestWhenInUseAuthorization()
+        
+        
+        let markerSquirt = GMSMarker()
+        markerSquirt.icon = UIImage(named: "Group 21403")
+    }
+
+    
+    @IBAction func myRealLocationButton(_ sender: Any) {
+
+        // MARK: - FOR myLocation
+        
     }
     
     
@@ -56,33 +79,25 @@ class HomeVController: UIViewController, GMSMapViewDelegate {
     }
     
     func customizeMyLocationButton(){
-        myLocationButton.layer.masksToBounds = true
-        myLocationButton.layer.cornerRadius = myLocationButton.frame.width/2
-        myLocationButton.backgroundColor = .white
+        myLocationButtonReal.layer.masksToBounds = true
+        myLocationButtonReal.layer.cornerRadius = myLocationButtonReal.frame.width/2
+        myLocationButtonReal.backgroundColor = .white
         
-        myLocationButton.layer.shadowColor = UIColor.black.cgColor
-        myLocationButton.layer.shadowOffset = CGSize(width: 0.0, height: 6.0)
-        myLocationButton.layer.shadowRadius = 12
-        myLocationButton.layer.shadowOpacity = 0.12
-        myLocationButton.layer.masksToBounds = false
+        myLocationButtonReal.layer.shadowColor = UIColor.black.cgColor
+        myLocationButtonReal.layer.shadowOffset = CGSize(width: 0.0, height: 6.0)
+        myLocationButtonReal.layer.shadowRadius = 12
+        myLocationButtonReal.layer.shadowOpacity = 0.12
+        myLocationButtonReal.layer.masksToBounds = false
     }
     
-    
     private func reverseGeocodeCoordinate(_ coordinate: CLLocationCoordinate2D) {
-        
         // 1
         let geocoder = GMSGeocoder()
-        
         // 2
         geocoder.reverseGeocodeCoordinate(coordinate) { response, error in
-            guard let address = response?.firstResult(), let lines = address.lines else {
-                return
-            }
-            
-            // 3
+            guard let address = response?.firstResult(), let lines = address.lines else { return }
             self.addressLabel.text = lines.joined(separator: "\n")
-            
-            // 4
+
             UIView.animate(withDuration: 0.25) {
                 self.view.layoutIfNeeded()
             }
@@ -99,27 +114,16 @@ extension HomeVController: CLLocationManagerDelegate {
     // 2
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         // 3
-        guard status == .authorizedWhenInUse else {
-            return
-        }
-        // 4
+        guard status == .authorizedWhenInUse else { return }
         locationManager.startUpdatingLocation()
-        
-        //5
-        mapScreen.isMyLocationEnabled = true
-        mapScreen.settings.myLocationButton = true
+//        mapScreen.isMyLocationEnabled = true
+//        mapScreen.settings.myLocationButton = true
     }
-
-    // 6
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.first else {
-            return
-        }
+        guard let location = locations.first else { return }
         
-        // 7
         mapScreen.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
-        
-        // 8
         locationManager.stopUpdatingLocation()
     }
 }
