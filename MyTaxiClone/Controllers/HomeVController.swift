@@ -38,7 +38,7 @@ class HomeVController: UIViewController, GMSMapViewDelegate {
         
         
         
-
+        
         mapScreen.padding = UIEdgeInsets(top: 0, left: 0, bottom: 30, right: 0)
         
         configureSideMenuButton()
@@ -49,9 +49,9 @@ class HomeVController: UIViewController, GMSMapViewDelegate {
         locationManager.requestWhenInUseAuthorization()
         
     }
-
+    
     @IBAction func myRealLocationButton(_ sender: Any) {
-
+        
         // MARK: - FOR myLocation
         
     }
@@ -103,7 +103,7 @@ class HomeVController: UIViewController, GMSMapViewDelegate {
         geocoder.reverseGeocodeCoordinate(coordinate) { response, error in
             guard let address = response?.firstResult(), let lines = address.lines else { return }
             self.addressLabel.text = lines.joined(separator: "\n")
-
+            
             UIView.animate(withDuration: 0.25) {
                 self.view.layoutIfNeeded()
             }
@@ -122,8 +122,8 @@ extension HomeVController: CLLocationManagerDelegate {
         // 3
         guard status == .authorizedWhenInUse else { return }
         locationManager.startUpdatingLocation()
-//        mapScreen.isMyLocationEnabled = true
-//        mapScreen.settings.myLocationButton = true
+        //        mapScreen.isMyLocationEnabled = true
+        //        mapScreen.settings.myLocationButton = true
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
