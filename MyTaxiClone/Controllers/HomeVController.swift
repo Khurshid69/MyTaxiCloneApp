@@ -12,7 +12,7 @@ class HomeVController: UIViewController, GMSMapViewDelegate {
     
     // MARK: - Properties
     private let locationManager = CLLocationManager()
-    var delegete: HomeControllerDelegete?
+    weak var delegete: HomeControllerDelegete?
     
     
     @IBOutlet weak var sideMenuButton: UIButton!
@@ -21,6 +21,7 @@ class HomeVController: UIViewController, GMSMapViewDelegate {
     @IBOutlet weak var mapScreen: GMSMapView!
     
     // MARK: - Init
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

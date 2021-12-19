@@ -10,6 +10,7 @@
 		CEAEFB92276CB29E001D21BF /* TripHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEFB90276CB29E001D21BF /* TripHistoryCell.swift */; };
 		CEAEFB93276CB29E001D21BF /* TripHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEAEFB91276CB29E001D21BF /* TripHistoryCell.xib */; };
 		CEAEFB95276CCFB6001D21BF /* TripHistoryItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEFB94276CCFB6001D21BF /* TripHistoryItems.swift */; };
+		CEF62333276F838E00C1CBEC /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF62332276F838E00C1CBEC /* UserView.swift */; };
 		CEF751EE276B3B44003276B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF751ED276B3B44003276B8 /* AppDelegate.swift */; };
 		CEF751F0276B3B44003276B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF751EF276B3B44003276B8 /* SceneDelegate.swift */; };
 		CEF751F5276B3B44003276B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF751F3276B3B44003276B8 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 		CEAEFB90276CB29E001D21BF /* TripHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripHistoryCell.swift; sourceTree = "<group>"; };
 		CEAEFB91276CB29E001D21BF /* TripHistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TripHistoryCell.xib; sourceTree = "<group>"; };
 		CEAEFB94276CCFB6001D21BF /* TripHistoryItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripHistoryItems.swift; sourceTree = "<group>"; };
+		CEF62332276F838E00C1CBEC /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		CEF751EA276B3B44003276B8 /* MyTaxiClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTaxiClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF751ED276B3B44003276B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEF751EF276B3B44003276B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				CEF7520C276B3C39003276B8 /* MenuController.swift */,
 				CEF75215276B71D5003276B8 /* HomeVController.swift */,
 				CEF75216276B71D5003276B8 /* HomeVController.xib */,
+				CEF62332276F838E00C1CBEC /* UserView.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				CEF75212276B4D30003276B8 /* MenuOptionCell.swift in Sources */,
 				CEAEFB92276CB29E001D21BF /* TripHistoryCell.swift in Sources */,
 				CEF751EE276B3B44003276B8 /* AppDelegate.swift in Sources */,
+				CEF62333276F838E00C1CBEC /* UserView.swift in Sources */,
 				CEF751F0276B3B44003276B8 /* SceneDelegate.swift in Sources */,
 				CEF7521B276BBADE003276B8 /* TripHistoryTableView.swift in Sources */,
 			);

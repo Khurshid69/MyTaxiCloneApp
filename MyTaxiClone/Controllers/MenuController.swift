@@ -8,95 +8,47 @@
 import UIKit
 import SnapKit
 
-private let reuseIdentifer = "MenuOptionCell"
-
 class MenuController: UIViewController {
     
+    let userView = UserView()
+    
     // MARK: - Properties
-    var tableView: UITableView!
-    var delegete: HomeControllerDelegete?
-    
-    // MARK: - Init
-
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        configureTableView()
-        
-        
-        let contentView = UIView(frame: CGRect(x: 0, y: 0, width: 285, height: 88))
-        contentView.backgroundColor = UIColor(red: 0.15, green: 0.15, blue: 0.14, alpha: 1.0)
-        contentView.layer.cornerRadius = 12
-        
-        let header = UIView(frame: CGRect(x:0, y: 40, width: 200, height: 88))
-        
-//        let user: UIStackView = {
-//            
-//            
-//        }()
-        
-        let nameLabel = UILabel()
-        nameLabel.text = "Islombek \nNormuhammadov"
-        nameLabel.font = UIFont.systemFont(ofSize: 18)
-        nameLabel.textColor = .white
-        nameLabel.numberOfLines = 3
-        nameLabel.textAlignment = .left
-        
-        let PhoneNumberLabel = UILabel()
-        PhoneNumberLabel.text = "+998(97) 000-00-00"
-        PhoneNumberLabel.textColor = UIColor(red: 0.49, green:  0.49, blue:  0.49, alpha: 1.0)
-        PhoneNumberLabel.font = UIFont.systemFont(ofSize: 14)
-        PhoneNumberLabel.textColor = .white
-        PhoneNumberLabel.textAlignment = .left
-        PhoneNumberLabel.numberOfLines = 3
-        
-
-        header.addSubview(contentView)
-        contentView.addSubview(nameLabel)
-//        contentView.addSubview(surnameLabel)
-        contentView.addSubview(PhoneNumberLabel)
-
-        tableView.tableHeaderView = header
-        
-
-        let imageView : UIImageView = {
-            let imageView = UIImageView()
-            imageView.image = UIImage(named: "account 1")
-            header.addSubview(imageView)
-
-            return imageView
-        }()
-        
-        
-        imageView.snp.makeConstraints { make in
-            make.edges.equalTo(contentView).inset(UIEdgeInsets(top: 14, left: 14, bottom: 14, right: 209))
-        }
-        
-        nameLabel.snp.makeConstraints { make in
-            make.center.left.equalTo(header).inset(UIEdgeInsets(top: 13, left: 88, bottom: 33, right: 24))
-        }
-        
-        PhoneNumberLabel.snp.makeConstraints { make in
-            make.center.left.equalTo(header).inset(UIEdgeInsets(top: 57, left: 88, bottom: 14, right: 67))
-        }
-        
-        
-        
-    }
-
-    // MARK: - Handlers
-    
-    func configureTableView(){
-        tableView = UITableView()
+    lazy var tableView: UITableView = {
+        let tableView = UITableView()
         tableView.delegate = self
         tableView.dataSource = self
-        
         tableView.register(MenuOptionCell.self, forCellReuseIdentifier: reuseIdentifer)
         tableView.backgroundColor = .black
         tableView.separatorColor = .none
         tableView.rowHeight = 55
+        
+        return tableView
+    }()
     
+    weak var delegete: HomeControllerDelegete?
+    private let reuseIdentifer = "MenuOptionCell"
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        configureTableView()
+        setupTableHeaderView()
+    }
+    
+    private func setupTableHeaderView() {
+       
+        // Setup table header view.
+        let width: CGFloat = UIScreen.main.bounds.width
+        let height: CGFloat = 88
+        let frame = CGRect(x: 0, y: 0, width: width, height: height)
+        let userView = UserView(frame: frame)
+        tableView.tableHeaderView = userView
+    }
+
+    // MARK: - Handlers
+    func configureTableView(){
         view.addSubview(tableView)
+        
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
@@ -123,9 +75,5 @@ extension MenuController: UITableViewDelegate, UITableViewDataSource {
         let menuOption = MenuOption(rawValue: indexPath.row)
         delegete?.handleMenuToggle(forMenuOption: menuOption)
     }
-    
-//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        return 88
-//    }
 }
 
