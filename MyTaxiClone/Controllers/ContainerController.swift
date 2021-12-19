@@ -52,7 +52,7 @@ class ContainterController: UIViewController {
         if shouldExpand{
             UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseOut, animations: { [self] in
                 
-                self.centerController.view.frame.origin.x = centerController.view.frame.width - 80
+                self.centerController.view.frame.origin.x = centerController.view.frame.width - 112
                 
             }, completion: nil)
         }else{

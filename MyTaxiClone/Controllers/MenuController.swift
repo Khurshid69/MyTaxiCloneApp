@@ -30,28 +30,31 @@ class MenuController: UIViewController {
         
         let header = UIView(frame: CGRect(x:0, y: 40, width: 200, height: 88))
         
-        let user: UIStackView = {
-            let nameLabel = UILabel()
-            nameLabel.text = "Islombek \nNormuhammadov"
-            nameLabel.font = UIFont.systemFont(ofSize: 18)
-            nameLabel.textColor = .white
-            nameLabel.numberOfLines = 3
-            nameLabel.textAlignment = .left
-            
-            let PhoneNumberLabel = UILabel()
-            PhoneNumberLabel.text = "+998(97) 000-00-00"
-            PhoneNumberLabel.textColor = UIColor(red: 0.49, green:  0.49, blue:  0.49, alpha: 1.0)
-            PhoneNumberLabel.font = UIFont.systemFont(ofSize: 14)
-            PhoneNumberLabel.textColor = .white
-            PhoneNumberLabel.textAlignment = .left
-            PhoneNumberLabel.numberOfLines = 3
-        }()
+//        let user: UIStackView = {
+//            
+//            
+//        }()
         
+        let nameLabel = UILabel()
+        nameLabel.text = "Islombek \nNormuhammadov"
+        nameLabel.font = UIFont.systemFont(ofSize: 18)
+        nameLabel.textColor = .white
+        nameLabel.numberOfLines = 3
+        nameLabel.textAlignment = .left
         
+        let PhoneNumberLabel = UILabel()
+        PhoneNumberLabel.text = "+998(97) 000-00-00"
+        PhoneNumberLabel.textColor = UIColor(red: 0.49, green:  0.49, blue:  0.49, alpha: 1.0)
+        PhoneNumberLabel.font = UIFont.systemFont(ofSize: 14)
+        PhoneNumberLabel.textColor = .white
+        PhoneNumberLabel.textAlignment = .left
+        PhoneNumberLabel.numberOfLines = 3
         
 
         header.addSubview(contentView)
-        contentView.addSubview(user)
+        contentView.addSubview(nameLabel)
+//        contentView.addSubview(surnameLabel)
+        contentView.addSubview(PhoneNumberLabel)
 
         tableView.tableHeaderView = header
         
