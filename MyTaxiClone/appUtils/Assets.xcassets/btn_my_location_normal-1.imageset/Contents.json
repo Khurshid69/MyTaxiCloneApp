@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "Frame 620.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "btn_my_location_normal@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

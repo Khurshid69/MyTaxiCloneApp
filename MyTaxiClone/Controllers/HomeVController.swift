@@ -25,11 +25,15 @@ class HomeVController: UIViewController, GMSMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let imageV = UIImageView(frame: CGRect(x: 0, y: 0, width: 38.25, height: 57.12))
-        imageV.center = mapScreen.center
-        imageV.clipsToBounds = true
-        imageV.image = UIImage(named: "Group 21403", in: Bundle(for: type(of: self)), compatibleWith: nil)
+        
+        let imageV = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height:38))
+        imageV.image = UIImage(named: "Group 21403")
         mapScreen.addSubview(imageV)
+        imageV.snp.makeConstraints { make in
+            make.center.equalTo(mapScreen)
+            make.size.equalTo(CGSize(width: 40, height: 58))
+        }
+        
         
         
         
@@ -44,12 +48,8 @@ class HomeVController: UIViewController, GMSMapViewDelegate {
         mapScreen.delegate = self
         locationManager.requestWhenInUseAuthorization()
         
-        
-        let markerSquirt = GMSMarker()
-        markerSquirt.icon = UIImage(named: "Group 21403")
     }
 
-    
     @IBAction func myRealLocationButton(_ sender: Any) {
 
         // MARK: - FOR myLocation
@@ -74,9 +74,15 @@ class HomeVController: UIViewController, GMSMapViewDelegate {
         sideMenuButton.layer.shadowColor = UIColor.black.cgColor
         sideMenuButton.layer.shadowOffset = CGSize(width: 0.0, height: 6.0)
         sideMenuButton.layer.shadowRadius = 12
-        sideMenuButton.layer.shadowOpacity = 0.12
+        sideMenuButton.layer.shadowOpacity = 0.10
         sideMenuButton.layer.masksToBounds = false
+        
+        sideMenuButton.snp.makeConstraints { make in
+            make.left.top.equalTo(mapScreen).offset(10)
+            make.top.equalTo(mapScreen).offset(5)
+        }
     }
+    
     
     func customizeMyLocationButton(){
         myLocationButtonReal.layer.masksToBounds = true
@@ -86,7 +92,7 @@ class HomeVController: UIViewController, GMSMapViewDelegate {
         myLocationButtonReal.layer.shadowColor = UIColor.black.cgColor
         myLocationButtonReal.layer.shadowOffset = CGSize(width: 0.0, height: 6.0)
         myLocationButtonReal.layer.shadowRadius = 12
-        myLocationButtonReal.layer.shadowOpacity = 0.12
+        myLocationButtonReal.layer.shadowOpacity = 0.10
         myLocationButtonReal.layer.masksToBounds = false
     }
     

@@ -9,15 +9,12 @@ import Foundation
 import UIKit
 
 enum MenuOption: Int{
-    case Profile
     case TripHistory
     case TripDetail
     case Settings
     
     var description: String{
         switch self {
-        case .Profile:
-            return "Islombek Normukhammadov"
         case .TripHistory:
             return "Мои поездки"
         case .TripDetail:
@@ -29,14 +26,12 @@ enum MenuOption: Int{
     
     var image: UIImage{
         switch self {
-        case .Profile:
-            return UIImage(named: "account 1") ?? UIImage()
         case .TripHistory:
-            return UIImage(named: "Direction#2") ?? UIImage()
+            return UIImage(named: "Direction#2-1") ?? UIImage()
         case .TripDetail:
-            return UIImage(named: "Wallet#2") ?? UIImage()
+            return UIImage(named: "Wallet#2-1") ?? UIImage()
         case .Settings:
-            return UIImage(named: "Half-start") ?? UIImage()
+            return UIImage(named: "Half-start-1") ?? UIImage()
         }
     }
 }

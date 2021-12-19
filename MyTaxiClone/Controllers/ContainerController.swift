@@ -79,8 +79,6 @@ class ContainterController: UIViewController {
     
     func didSelectMenuOption(menuOption: MenuOption){
         switch menuOption {
-        case .Profile:
-            print("Show profile")
         case .TripHistory:
             
             print("Show Мои поездки")

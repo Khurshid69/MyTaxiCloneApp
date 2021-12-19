@@ -25,20 +25,21 @@ class MenuOptionCell: UITableViewCell {
         return label
     }()
     
-//    let user: UIView = {
-//        let label1 = UIView()
-//
-//    }()
+   
+    
     
     // MARK: - Init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        
+        
+        
         backgroundColor = .black
         addSubview(iconImageView)
         iconImageView.translatesAutoresizingMaskIntoConstraints = false
         iconImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        iconImageView.leftAnchor.constraint(equalTo: leftAnchor, constant: 35).isActive = true
+        iconImageView.leftAnchor.constraint(equalTo: leftAnchor, constant: 20).isActive = true
         iconImageView.heightAnchor.constraint(equalToConstant: 27).isActive = true
         iconImageView.widthAnchor.constraint(equalToConstant: 27).isActive = true
         
@@ -46,6 +47,7 @@ class MenuOptionCell: UITableViewCell {
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         descriptionLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         descriptionLabel.leftAnchor.constraint(equalTo: iconImageView.rightAnchor, constant: 12).isActive = true
+        
         
     }
     

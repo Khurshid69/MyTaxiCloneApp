@@ -195,6 +195,7 @@
 				CEF751E7276B3B44003276B8 /* Frameworks */,
 				CEF751E8276B3B44003276B8 /* Resources */,
 				C4C5CA5794A0EAF2C776C747 /* [CP] Copy Pods Resources */,
+				E91528AAE9BB8EAC45225F43 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -292,6 +293,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyTaxiClone/Pods-MyTaxiClone-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E91528AAE9BB8EAC45225F43 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyTaxiClone/Pods-MyTaxiClone-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyTaxiClone/Pods-MyTaxiClone-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyTaxiClone/Pods-MyTaxiClone-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
