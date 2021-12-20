@@ -68,12 +68,13 @@ class UserView: UIView{
     
     
     // Embed subviews.
-    func stackViewAddSubView(){
+    func embedSubViews(){
         addSubview(contentView)
-        addSubview(stackView)
-        stackView.addArrangedSubview(nameLabel)
-        stackView.addArrangedSubview(surnameLabel)
-        stackView.addArrangedSubview(phoneNumberLabel)
+        contentView.addSubview(stackView)
+        contentView.addSubview(imageView)
+        stackView.addSubview(nameLabel)
+        stackView.addSubview(surnameLabel)
+        stackView.addSubview(phoneNumberLabel)
         
     }
     
