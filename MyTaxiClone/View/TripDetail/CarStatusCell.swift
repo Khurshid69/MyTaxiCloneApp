@@ -23,7 +23,7 @@ class CarStatusCell: UITableViewCell {
     let number: UILabel = {
         let number = UILabel()
         number.textAlignment = .justified
-        number.attributedText = NSMutableAttributedString(string: "25  L 771 FA", attributes: [NSAttributedString.Key.kern: -0.2])
+        number.attributedText = NSMutableAttributedString(string: "25|L 771 FA", attributes: [NSAttributedString.Key.kern: -0.2])
         
         return number
     }()
@@ -65,27 +65,31 @@ class CarStatusCell: UITableViewCell {
     // MARK: -  Setup constraints.
     
     func setNumberViewConstraints(){
-        numberView.snp.makeConstraints { make in
-            //
-        }
-    }
-    
-    func setNumberConstraints(){
-        number.snp.makeConstraints { make in
-            //
-        }
+//        view.translatesAutoresizingMaskIntoConstraints = false
+//        view.widthAnchor.constraint(equalToConstant: 119).isActive = true
+//        view.heightAnchor.constraint(equalToConstant: 32).isActive = true
+//        view.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: 16).isActive = true
+//        view.topAnchor.constraint(equalTo: parent.topAnchor, constant: 336).isActive = true
+
+
     }
     
     func setCarImageConstraints(){
-        carImage.snp.makeConstraints { make in
-            //
-        }
+//        view.translatesAutoresizingMaskIntoConstraints = false
+//        view.widthAnchor.constraint(equalToConstant: 104).isActive = true
+//        view.heightAnchor.constraint(equalToConstant: 38).isActive = true
+//        view.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: 256).isActive = true
+//        view.topAnchor.constraint(equalTo: parent.topAnchor, constant: 346).isActive = true
+//
     }
     
     func setCarNameConstraints(){
-        typeOfCar.snp.makeConstraints { make in
-            //
-        }
+        
+//        view.widthAnchor.constraint(equalToConstant: 104).isActive = true
+//        view.heightAnchor.constraint(equalToConstant: 38).isActive = true
+//        view.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: 256).isActive = true
+//        view.topAnchor.constraint(equalTo: parent.topAnchor, constant: 346).isActive = true
+                
     }
     
     
