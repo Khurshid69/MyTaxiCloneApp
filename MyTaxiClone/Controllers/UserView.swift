@@ -65,8 +65,6 @@ class UserView: UIView{
         return stackView
     }()
     
-    
-    
     // Embed subviews.
     func embedSubViews(){
         addSubview(contentView)

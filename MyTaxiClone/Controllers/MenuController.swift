@@ -10,6 +10,8 @@ import SnapKit
 
 class MenuController: UIViewController {
     // MARK: - Properties
+    
+    
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.delegate = self
@@ -18,6 +20,7 @@ class MenuController: UIViewController {
         tableView.backgroundColor = .black
         tableView.separatorColor = .none
         tableView.rowHeight = 55
+        tableView.tableFooterView = UIView()
         
         return tableView
     }()
@@ -30,6 +33,7 @@ class MenuController: UIViewController {
         
         configureTableView()
         setupTableHeaderView()
+        
     }
     
     private func setupTableHeaderView() {
