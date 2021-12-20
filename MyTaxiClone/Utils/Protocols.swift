@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol HomeControllerDelegete: AnyObject {
+protocol HomeViewControllerDelegete: AnyObject {
     func handleMenuToggle(forMenuOption: MenuOption?)
 }

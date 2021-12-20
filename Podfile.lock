@@ -1,4 +1,5 @@
 PODS:
+  - FloatingPanel (2.5.1)
   - GoogleMaps (6.0.1):
     - GoogleMaps/Maps (= 6.0.1)
   - GoogleMaps/Base (6.0.1)
@@ -8,21 +9,24 @@ PODS:
   - SnapKit (5.0.1)
 
 DEPENDENCIES:
+  - FloatingPanel
   - GoogleMaps
   - GooglePlaces
   - SnapKit
 
 SPEC REPOS:
   trunk:
+    - FloatingPanel
     - GoogleMaps
     - GooglePlaces
     - SnapKit
 
 SPEC CHECKSUMS:
+  FloatingPanel: 523cb50f490f151fc03fabf24a8322e44d22f65f
   GoogleMaps: c213fc2334b7374144cede914da779b99be0ab74
   GooglePlaces: c97d96ae68594acb64035c9ca9f26fbfc1d23af1
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 05cee15cac7ef296abf8114f96a3f184350cbf7e
+PODFILE CHECKSUM: a5b2d2cae4dfac3c349fd6bef4bda5538466dfa8
 
 COCOAPODS: 1.11.2

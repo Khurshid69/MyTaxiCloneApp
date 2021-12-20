@@ -12,7 +12,7 @@ class HomeVController: UIViewController, GMSMapViewDelegate {
     
     // MARK: - Properties
     private let locationManager = CLLocationManager()
-    weak var delegete: HomeControllerDelegete?
+    weak var delegete: HomeViewControllerDelegete?
     
     
     @IBOutlet weak var sideMenuButton: UIButton!

@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import FloatingPanel
 
 class MenuController: UIViewController {
     // MARK: - Properties
@@ -18,14 +19,13 @@ class MenuController: UIViewController {
         tableView.dataSource = self
         tableView.register(MenuOptionCell.self, forCellReuseIdentifier: reuseIdentifer)
         tableView.backgroundColor = .black
-        tableView.separatorColor = .none
+        tableView.separatorColor = UIColor(red: 43, green: 43, blue: 40, alpha: 1)
         tableView.rowHeight = 55
         tableView.tableFooterView = UIView()
-        
         return tableView
     }()
     
-    weak var delegete: HomeControllerDelegete?
+    weak var delegete: HomeViewControllerDelegete?
     private let reuseIdentifer = "MenuOptionCell"
     
     override func viewDidLoad() {

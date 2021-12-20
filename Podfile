@@ -9,5 +9,6 @@ target 'MyTaxiClone' do
   pod 'GoogleMaps'
   pod 'GooglePlaces'
   pod 'SnapKit'
+  pod 'FloatingPanel'
 
 end

@@ -88,7 +88,7 @@ class ContainterController: UIViewController {
     }
 }
 
-extension ContainterController: HomeControllerDelegete{
+extension ContainterController: HomeViewControllerDelegete{
     func handleMenuToggle(forMenuOption menuOption: MenuOption?) {
         if !isExpended {
             configureMenuController()
