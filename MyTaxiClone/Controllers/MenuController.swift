@@ -9,9 +9,6 @@ import UIKit
 import SnapKit
 
 class MenuController: UIViewController {
-    
-    let userView = UserView()
-    
     // MARK: - Properties
     lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -36,7 +33,7 @@ class MenuController: UIViewController {
     }
     
     private func setupTableHeaderView() {
-       
+        
         // Setup table header view.
         let width: CGFloat = UIScreen.main.bounds.width
         let height: CGFloat = 88

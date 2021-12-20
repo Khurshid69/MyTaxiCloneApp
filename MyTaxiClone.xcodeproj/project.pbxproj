@@ -11,6 +11,7 @@
 		CEAEFB93276CB29E001D21BF /* TripHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEAEFB91276CB29E001D21BF /* TripHistoryCell.xib */; };
 		CEAEFB95276CCFB6001D21BF /* TripHistoryItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEFB94276CCFB6001D21BF /* TripHistoryItems.swift */; };
 		CEF62333276F838E00C1CBEC /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF62332276F838E00C1CBEC /* UserView.swift */; };
+		CEF62335276FC7D300C1CBEC /* TripDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF62334276FC7D300C1CBEC /* TripDetail.swift */; };
 		CEF751EE276B3B44003276B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF751ED276B3B44003276B8 /* AppDelegate.swift */; };
 		CEF751F0276B3B44003276B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF751EF276B3B44003276B8 /* SceneDelegate.swift */; };
 		CEF751F5276B3B44003276B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF751F3276B3B44003276B8 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 		CEAEFB91276CB29E001D21BF /* TripHistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TripHistoryCell.xib; sourceTree = "<group>"; };
 		CEAEFB94276CCFB6001D21BF /* TripHistoryItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripHistoryItems.swift; sourceTree = "<group>"; };
 		CEF62332276F838E00C1CBEC /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		CEF62334276FC7D300C1CBEC /* TripDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetail.swift; sourceTree = "<group>"; };
 		CEF751EA276B3B44003276B8 /* MyTaxiClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTaxiClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF751ED276B3B44003276B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEF751EF276B3B44003276B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,11 +81,12 @@
 			path = TripHistoryList;
 			sourceTree = "<group>";
 		};
-		CEAEFB96276CDC31001D21BF /* New Group */ = {
+		CEAEFB96276CDC31001D21BF /* TripDetail */ = {
 			isa = PBXGroup;
 			children = (
+				CEF62334276FC7D300C1CBEC /* TripDetail.swift */,
 			);
-			path = "New Group";
+			path = TripDetail;
 			sourceTree = "<group>";
 		};
 		CEF751E1276B3B44003276B8 = {
@@ -145,7 +148,7 @@
 		CEF75206276B3BA6003276B8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CEAEFB96276CDC31001D21BF /* New Group */,
+				CEAEFB96276CDC31001D21BF /* TripDetail */,
 				CEF75211276B4D30003276B8 /* MenuOptionCell.swift */,
 				CEAEFB8F276CB261001D21BF /* TripHistoryList */,
 			);
@@ -331,6 +334,7 @@
 				CEF751F8276B3B44003276B8 /* MyTaxiClone.xcdatamodeld in Sources */,
 				CEF75212276B4D30003276B8 /* MenuOptionCell.swift in Sources */,
 				CEAEFB92276CB29E001D21BF /* TripHistoryCell.swift in Sources */,
+				CEF62335276FC7D300C1CBEC /* TripDetail.swift in Sources */,
 				CEF751EE276B3B44003276B8 /* AppDelegate.swift in Sources */,
 				CEF62333276F838E00C1CBEC /* UserView.swift in Sources */,
 				CEF751F0276B3B44003276B8 /* SceneDelegate.swift in Sources */,

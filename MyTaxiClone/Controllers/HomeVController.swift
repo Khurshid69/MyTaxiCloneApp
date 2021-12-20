@@ -36,10 +36,6 @@ class HomeVController: UIViewController, GMSMapViewDelegate {
         }
         
         
-        
-        
-        
-        
         mapScreen.padding = UIEdgeInsets(top: 0, left: 0, bottom: 30, right: 0)
         
         configureSideMenuButton()
