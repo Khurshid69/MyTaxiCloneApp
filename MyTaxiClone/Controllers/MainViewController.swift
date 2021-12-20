@@ -154,7 +154,7 @@ class MainViewController: UIViewController, GMSMapViewDelegate {
     //MARK: - vector frame
     var letsGoButton: UIButton = {
         var letsGoButton = UIButton()
-    
+        letsGoButton.setImage(UIImage(named: "Vector"), for: .normal)
         letsGoButton.frame = CGRect(x: 0, y: 0, width: 60, height: 52)
         letsGoButton.backgroundColor = .white
         letsGoButton.layer.backgroundColor = UIColor(red: 0.9, green: 0.899, blue: 0.891, alpha: 1).cgColor

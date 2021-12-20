@@ -59,7 +59,6 @@ class ContainterController: UIViewController {
             // hide menu
             UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
                 
-                
             }, completion: nil)
             
             UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
@@ -69,7 +68,6 @@ class ContainterController: UIViewController {
                 self.didSelectMenuOption(menuOption: menuOption)
             }
         }
-        
     }
     
     func callTripHistory(){
