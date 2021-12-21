@@ -13,14 +13,14 @@ class TripHistoryCell: UITableViewCell {
     let container: UIView = {
         let view = UIView()
         view.frame = CGRect(x: 0, y: 0, width: 343, height: 118)
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(red: 0.898, green: 0.898, blue: 0.898, alpha: 1)
         
         return view
     }()
     
     let redImage: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "")
+        image.image = UIImage(named: "Frame 6201")
         image.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
         
         return image
@@ -39,7 +39,7 @@ class TripHistoryCell: UITableViewCell {
     
     let blueImage: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "")
+        image.image = UIImage(named: "Frame 620")
         image.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
         
         return image
@@ -80,7 +80,7 @@ class TripHistoryCell: UITableViewCell {
     
     let frameImage: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "")
+        image.image = UIImage(named: "Bitmap-2")
         image.frame = CGRect(x: 0, y: 0, width: 108, height: 39)
         
         return image

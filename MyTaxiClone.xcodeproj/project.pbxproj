@@ -18,6 +18,7 @@
 		CE46F38B2771AB9C00EE658A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46F38A2771AB9C00EE658A /* Extensions.swift */; };
 		CE46F38F2771ADD900EE658A /* TripHistoryTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46F38E2771ADD900EE658A /* TripHistoryTable.swift */; };
 		CE46F3912771AE5000EE658A /* TripHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46F3902771AE5000EE658A /* TripHistoryCell.swift */; };
+		CE46F3932771CE0400EE658A /* PeymentMethodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46F3922771CE0400EE658A /* PeymentMethodCell.swift */; };
 		CEAEFB95276CCFB6001D21BF /* TripHistoryItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEFB94276CCFB6001D21BF /* TripHistoryItems.swift */; };
 		CEF62333276F838E00C1CBEC /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF62332276F838E00C1CBEC /* UserView.swift */; };
 		CEF751EE276B3B44003276B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF751ED276B3B44003276B8 /* AppDelegate.swift */; };
@@ -50,6 +51,7 @@
 		CE46F38A2771AB9C00EE658A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		CE46F38E2771ADD900EE658A /* TripHistoryTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripHistoryTable.swift; sourceTree = "<group>"; };
 		CE46F3902771AE5000EE658A /* TripHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripHistoryCell.swift; sourceTree = "<group>"; };
+		CE46F3922771CE0400EE658A /* PeymentMethodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeymentMethodCell.swift; sourceTree = "<group>"; };
 		CEAEFB94276CCFB6001D21BF /* TripHistoryItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripHistoryItems.swift; sourceTree = "<group>"; };
 		CEF62332276F838E00C1CBEC /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		CEF751EA276B3B44003276B8 /* MyTaxiClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTaxiClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +110,7 @@
 				CE4542AE27708CC80043F785 /* CarStatusCell.swift */,
 				CE4542D527710E830043F785 /* TripHistoryStreetCell.swift */,
 				CE4542D727711C5E0043F785 /* DriverCell.swift */,
+				CE46F3922771CE0400EE658A /* PeymentMethodCell.swift */,
 				CE46F38327719CBE00EE658A /* CostCalculationCell.swift */,
 				CE46F3852771A1E900EE658A /* TotalCell.swift */,
 			);
@@ -359,6 +362,7 @@
 				CE46F3912771AE5000EE658A /* TripHistoryCell.swift in Sources */,
 				CE46F38427719CBE00EE658A /* CostCalculationCell.swift in Sources */,
 				CEAEFB95276CCFB6001D21BF /* TripHistoryItems.swift in Sources */,
+				CE46F3932771CE0400EE658A /* PeymentMethodCell.swift in Sources */,
 				CE4542D827711C5E0043F785 /* DriverCell.swift in Sources */,
 				CEF75214276B552E003276B8 /* MenuOption.swift in Sources */,
 				CE4542D627710E830043F785 /* TripHistoryStreetCell.swift in Sources */,
