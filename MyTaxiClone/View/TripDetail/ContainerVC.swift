@@ -9,7 +9,7 @@ import UIKit
 
 class ContainerVC: UIViewController {
     
-    private let sections: [TripDetailSections] = [.carStatus, .tripHistory, .driver, .costCalculation, .totalCost]
+    private let sections: [TripDetailSections] = [.carStatus, .tripHistory, .driver, .paymentMethod, .costCalculation, .totalCost]
     
     private(set) lazy var tableView: UITableView = {
         let view = UITableView()
@@ -19,6 +19,7 @@ class ContainerVC: UIViewController {
         view.registerNib(CarStatusCell.self)
         view.registerNib(TripHistoryStreetCell.self)
         view.registerNib(DriverCell.self)
+        view.registerNib(PeymentMethodCell.self)
         view.registerNib(CostCalculationCell.self)
         view.registerNib(TotalCell.self)
         view.separatorStyle = .none
@@ -61,6 +62,9 @@ extension ContainerVC: UITableViewDataSource, UITableViewDelegate {
             
         case .totalCost:
             let cell: TotalCell = tableView.dequeueReusableCell(withIdentifier: "TotalCell", for: indexPath) as! TotalCell
+            return cell
+        case .paymentMethod:
+            let cell: PeymentMethodCell = tableView.dequeueReusableCell(withIdentifier: "PeymentMethodCell", for: indexPath) as! PeymentMethodCell
             return cell
         }
     }

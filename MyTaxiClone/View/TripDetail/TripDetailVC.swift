@@ -11,6 +11,7 @@ enum TripDetailSections: Int, CaseIterable {
     case carStatus = 0
     case tripHistory
     case driver
+    case paymentMethod
     case costCalculation
     case totalCost
 }
