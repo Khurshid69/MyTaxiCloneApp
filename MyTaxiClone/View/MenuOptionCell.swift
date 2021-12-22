@@ -14,6 +14,8 @@ class MenuOptionCell: UITableViewCell {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
         iv.clipsToBounds = true
+        iv.translatesAutoresizingMaskIntoConstraints = false
+        
         return iv
     }()
     
@@ -22,6 +24,8 @@ class MenuOptionCell: UITableViewCell {
         label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 13)
         label.text = "Sample text"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
         return label
     }()
     
@@ -30,20 +34,31 @@ class MenuOptionCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         backgroundColor = .black
-        addSubview(iconImageView)
-        iconImageView.translatesAutoresizingMaskIntoConstraints = false
-        iconImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        iconImageView.leftAnchor.constraint(equalTo: leftAnchor, constant: 20).isActive = true
-        iconImageView.heightAnchor.constraint(equalToConstant: 27).isActive = true
-        iconImageView.widthAnchor.constraint(equalToConstant: 27).isActive = true
-        
-        addSubview(descriptionLabel)
-        descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
-        descriptionLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        descriptionLabel.leftAnchor.constraint(equalTo: iconImageView.rightAnchor, constant: 12).isActive = true
-        
+        embedViews()
         
     }
+    
+    func embedViews(){
+        addSubview(iconImageView)
+        addSubview(descriptionLabel)
+    }
+    
+    func setDescriptionLabelConstraints(){
+        NSLayoutConstraint.activate([
+            descriptionLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+            descriptionLabel.leftAnchor.constraint(equalTo: iconImageView.rightAnchor, constant: 12)
+        ])
+    }
+    
+    func setIconImageConstraints(){
+        NSLayoutConstraint.activate([
+            iconImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            iconImageView.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
+            iconImageView.heightAnchor.constraint(equalToConstant: 27),
+            iconImageView.widthAnchor.constraint(equalToConstant: 27)
+        ])
+    }
+    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder: ) has not been implemented")

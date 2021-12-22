@@ -1,29 +1,29 @@
-import UIKit
-////
-////  TripDetailVC.swift
-////  MyTaxiClone
-////
-////  Created by user on 20/12/21.
-//
-//
 //import UIKit
+//////
+//////  TripDetailVC.swift
+//////  MyTaxiClone
+//////
+//////  Created by user on 20/12/21.
 ////
-enum TripDetailSections: Int, CaseIterable {
-    case carStatus = 0
-    case tripHistory
-    case driver
-    case paymentMethod
-    case costCalculation
-    case totalCost
-}
-
+////
+////import UIKit
+//////
+//enum TripDetailSections: Int, CaseIterable {
+//    case carStatus = 0
+//    case tripHistory
+//    case driver
+//    case paymentMethod
+//    case costCalculation
+//    case totalCost
+//}
+//
 //class TripDetailVC: UIViewController {
 //    // MARK: - Properties
 //    lazy var tableView: UITableView = {
 //        let tableView = UITableView()
 //        tableView.delegate = self
 //        tableView.dataSource = self
-//        tableView.register(TripVcCell.self, forCellReuseIdentifier: reuseIdentifer)
+//        tableView.register(ContainerVC.self, forCellReuseIdentifier: reuseIdentifer)
 //        tableView.backgroundColor = UIColor(red: 0.898, green: 0.898, blue: 0.898, alpha: 1)
 //        tableView.translatesAutoresizingMaskIntoConstraints = false
 //
@@ -44,10 +44,10 @@ enum TripDetailSections: Int, CaseIterable {
 //        view.addSubview(tableView)
 //
 //        NSLayoutConstraint.activate([
-//            tableView.leftAnchor.constraint(equalTo: leftAnchor),
-//            tableView.bottomAnchor.constraint(equalTo: bottomAnchor),
-//            tableView.rightAnchor.constraint(equalTo: rightAnchor),
-//            tableView.topAnchor.constraint(equalTo: topAnchor)
+//            tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
+//            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+//            tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
+//            tableView.topAnchor.constraint(equalTo: view.topAnchor)
 //        ])
 //    }
 //
@@ -58,11 +58,11 @@ enum TripDetailSections: Int, CaseIterable {
 //
 //extension TripDetailVC: UITableViewDelegate, UITableViewDataSource {
 //    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        <#code#>
+//
 //    }
 //
 //    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        <#code#>
+//
 //    }
 //
 //

@@ -168,7 +168,6 @@
 				CEF7520C276B3C39003276B8 /* MenuController.swift */,
 				CEF75215276B71D5003276B8 /* HomeVController.swift */,
 				CEF75216276B71D5003276B8 /* HomeVController.xib */,
-				CEF62332276F838E00C1CBEC /* UserView.swift */,
 				CE4542AA277063000043F785 /* MainViewController.swift */,
 			);
 			path = Controllers;
@@ -180,6 +179,7 @@
 				CE46F38D2771AD9100EE658A /* TripHistory */,
 				CEAEFB96276CDC31001D21BF /* TripDetail */,
 				CEF75211276B4D30003276B8 /* MenuOptionCell.swift */,
+				CEF62332276F838E00C1CBEC /* UserView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
