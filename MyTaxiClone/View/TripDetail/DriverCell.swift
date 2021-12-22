@@ -106,10 +106,10 @@ class DriverCell: UITableViewCell {
     
     func profileImageConstraints(){
         NSLayoutConstraint.activate([
-            image.widthAnchor.constraint(equalToConstant: 56),
-            image.heightAnchor.constraint(equalToConstant: 56),
-            image.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            image.topAnchor.constraint(equalTo: topAnchor, constant: 616)
+            profileImage.widthAnchor.constraint(equalToConstant: 56),
+            profileImage.heightAnchor.constraint(equalToConstant: 56),
+            profileImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            profileImage.topAnchor.constraint(equalTo: topAnchor, constant: 616)
         ])
     }
     
