@@ -6,11 +6,8 @@
 //
 
 import Foundation
+import UIKit
 
-class Post {
-    let carImage: String? 
-    
-    init(carImage: String){
-        self.carImage = carImage
-    }
+struct Post{
+    var carImage: UIImage
 }

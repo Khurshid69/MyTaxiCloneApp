@@ -9,15 +9,23 @@ import UIKit
 
 class TripHistoryTable: UIViewController {
     
+    lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(TripHistoryCell.self, forCellReuseIdentifier: reuseIdentifer)
+        
+        
+        return tableView
+    }()
+    
     var datas: Array<Post> = Array()
+    private let reuseIdentifer = "TripHistoryCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.backgroundColor = .white
-        datas.append(Post(carImage: "Bitmap-1"))
-        datas.append(Post(carImage: "Bitmap-2"))
-        datas.append(Post(carImage: "Bitmap"))
+        view.backgroundColor = .black
+        view.addSubview(tableView)
         
     }
     
@@ -31,7 +39,8 @@ extension TripHistoryTable: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let items = datas[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "TripHistoryCell", for: indexPath)as! TripHistoryCell
-        cell.frameImage.image = UIImage(named: items.carImage!)
+        cell.frameImage.image = items.carImage
+        cell.backgroundColor = .black
         return cell
     }
     

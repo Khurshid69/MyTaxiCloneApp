@@ -9,6 +9,12 @@ import UIKit
 
 class TripHistoryCell: UITableViewCell {
     
+    var itemsToShow : Post? {
+        didSet {
+            frameImage.image = itemsToShow?.carImage
+        }
+    }
+    
     // MARK: - Properties
     let container: UIView = {
         let view = UIView()
@@ -105,7 +111,8 @@ class TripHistoryCell: UITableViewCell {
     // MARK: - Embed subviews.
         
     func embedSubViews(){
-        
+        addSubview(container)
+        container.addSubview(bottomFrame)
     }
     
     

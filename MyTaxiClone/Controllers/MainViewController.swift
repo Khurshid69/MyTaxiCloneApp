@@ -151,7 +151,7 @@ class MainViewController: UIViewController, GMSMapViewDelegate {
     // MARK: - Embed subviews.
 
     func embedSubViews(){
-
+        view.addSubview(mapScreen)
     }
     //
     //
