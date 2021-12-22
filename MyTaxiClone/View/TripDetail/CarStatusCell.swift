@@ -91,8 +91,8 @@ class CarStatusCell: UITableViewCell {
         NSLayoutConstraint.activate([
             typeOfCar.widthAnchor.constraint(equalToConstant: 104),
             typeOfCar.heightAnchor.constraint(equalToConstant: 38),
-            typeOfCar.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: 256),
-            typeOfCar.topAnchor.constraint(equalTo: parent.topAnchor, constant: 346)
+            typeOfCar.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 256),
+            typeOfCar.topAnchor.constraint(equalTo: topAnchor, constant: 346)
         ])
     }
     
