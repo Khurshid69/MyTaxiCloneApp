@@ -19,7 +19,7 @@ class MenuController: UIViewController {
         tableView.dataSource = self
         tableView.register(MenuOptionCell.self, forCellReuseIdentifier: reuseIdentifer)
         tableView.backgroundColor = .black
-        tableView.separatorColor = UIColor(red: 43, green: 43, blue: 40, alpha: 1)
+        tableView.separatorColor = .darkGray
         tableView.rowHeight = 55
         tableView.tableFooterView = UIView()
         return tableView
@@ -44,6 +44,7 @@ class MenuController: UIViewController {
         let frame = CGRect(x: 0, y: 0, width: width, height: height)
         let userView = UserView(frame: frame)
         tableView.tableHeaderView = userView
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 80)
     }
 
     // MARK: - Handlers
