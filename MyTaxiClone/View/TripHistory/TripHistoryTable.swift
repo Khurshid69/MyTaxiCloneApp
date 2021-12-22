@@ -14,7 +14,7 @@ class TripHistoryTable: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        view.backgroundColor = .white
         datas.append(Post(carImage: "Bitmap-1"))
         datas.append(Post(carImage: "Bitmap-2"))
         datas.append(Post(carImage: "Bitmap"))

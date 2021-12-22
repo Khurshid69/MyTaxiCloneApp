@@ -70,15 +70,12 @@ class ContainterController: UIViewController {
         }
     }
     
-    func callTripHistory(){
-        let vc = TripHistoryTable()
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
     func didSelectMenuOption(menuOption: MenuOption){
         switch menuOption {
         case .TripHistory:
-            callTripHistory()
+            let tripController = TripHistoryTable()
+            present(tripController, animated: true, completion: nil)
+//            self.navigationController?.pushViewController(tripController, animated: true)
             print("Show Мои поездки")
         case .TripDetail:
             print("Show Способы оплаты ")
