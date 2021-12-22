@@ -1,3 +1,4 @@
+import UIKit
 ////
 ////  TripDetailVC.swift
 ////  MyTaxiClone
@@ -15,7 +16,7 @@ enum TripDetailSections: Int, CaseIterable {
     case costCalculation
     case totalCost
 }
-//
+
 //class TripDetailVC: UIViewController {
 //    // MARK: - Properties
 //    lazy var tableView: UITableView = {
@@ -24,10 +25,11 @@ enum TripDetailSections: Int, CaseIterable {
 //        tableView.dataSource = self
 //        tableView.register(TripVcCell.self, forCellReuseIdentifier: reuseIdentifer)
 //        tableView.backgroundColor = UIColor(red: 0.898, green: 0.898, blue: 0.898, alpha: 1)
+//        tableView.translatesAutoresizingMaskIntoConstraints = false
 //
 //        return tableView
 //    }()
-//    
+//
 //    weak var delegete: MenuController?
 //    private let reuseIdentifer = "TripVcCell"
 //
@@ -41,11 +43,12 @@ enum TripDetailSections: Int, CaseIterable {
 //    func configureTableView(){
 //        view.addSubview(tableView)
 //
-//        tableView.translatesAutoresizingMaskIntoConstraints = false
-//        tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-//        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-//        tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-//        tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+//        NSLayoutConstraint.activate([
+//            tableView.leftAnchor.constraint(equalTo: leftAnchor),
+//            tableView.bottomAnchor.constraint(equalTo: bottomAnchor),
+//            tableView.rightAnchor.constraint(equalTo: rightAnchor),
+//            tableView.topAnchor.constraint(equalTo: topAnchor)
+//        ])
 //    }
 //
 //
