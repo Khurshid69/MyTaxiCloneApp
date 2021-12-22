@@ -6,19 +6,28 @@
 //
 
 import Foundation
+import UIKit
 
-extension UITableView {
-    func registerNib<Cell: UITableViewCell>(_ cell: Cell.Type) {
-        register(UINib(nibName: String(describing: cell), bundle: nil), forCellReuseIdentifier: cell.identifer)
-    }
-
-    func reusableCell<Cell: UITableViewCell>(for indexPath: IndexPath) -> Cell {
-        dequeueReusableCell(withIdentifier: Cell.identifer, for: indexPath) as! Cell
+public extension UITableViewCell {
+    static var uid: String {
+        return String(describing: self)
     }
 }
 
-extension UITableViewCell {
-    static var identifer: String {
-        String(describing: self)
+public extension UITableView {
+    /// Register UITableViewCell using class name.
+    ///
+    /// - Parameters:
+    ///   - nib: Nib file used to create the collectionView cell.
+    ///   - name: UITableViewCell type.
+    func register<T: UITableViewCell>(nib: UINib?, forCellWithClass name: T.Type) {
+        register(nib, forCellReuseIdentifier: name.uid)
+    }
+    
+    /// Register UITableViewCell using class name.
+    ///
+    /// - Parameter cellClass: UITableViewCell type.
+    func register(_ cellClass: UITableViewCell.Type) {
+        register(cellClass, forCellReuseIdentifier: cellClass.uid)
     }
 }

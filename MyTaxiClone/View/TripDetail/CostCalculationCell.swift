@@ -18,6 +18,7 @@ class CostCalculationCell: UITableViewCell {
         header.font = UIFont(name: "Lato-Black", size: 20)
         header.textAlignment = .justified
         header.text = "Расчёт стоимости"
+        header.translatesAutoresizingMaskIntoConstraints = false
         
         return header
     }()
@@ -30,7 +31,8 @@ class CostCalculationCell: UITableViewCell {
         min.font = UIFont(name: "Lato-SemiBold", size: 14)
         min.textAlignment = .justified
         min.text = "Минимальная сумма"
-
+        min.translatesAutoresizingMaskIntoConstraints = false
+        
         return min
     }()
     
@@ -42,7 +44,8 @@ class CostCalculationCell: UITableViewCell {
         sum.font = UIFont(name: "Lato-Bold", size: 14)
         sum.textAlignment = .justified
         sum.text = "10,000 UZS"
-       
+        sum.translatesAutoresizingMaskIntoConstraints = false
+        
         return sum
     }()
     
@@ -53,7 +56,8 @@ class CostCalculationCell: UITableViewCell {
         string.font = UIFont(name: "Lato-SemiBold", size: 14)
         string.textAlignment = .justified
         string.text = "Сумма поездки"
-
+        string.translatesAutoresizingMaskIntoConstraints = false
+        
         return string
     }()
     
@@ -64,6 +68,7 @@ class CostCalculationCell: UITableViewCell {
         sum.font = UIFont(name: "Lato-Bold", size: 14)
         sum.textAlignment = .justified
         sum.text = "31,645 UZS"
+        sum.translatesAutoresizingMaskIntoConstraints = false
         
         return sum
     }()
@@ -76,6 +81,7 @@ class CostCalculationCell: UITableViewCell {
         string.font = UIFont(name: "Lato-SemiBold", size: 14)
         string.textAlignment = .justified
         string.text = "Цена ожидании"
+        string.translatesAutoresizingMaskIntoConstraints = false
         
         return string
     }()
@@ -88,15 +94,17 @@ class CostCalculationCell: UITableViewCell {
         sum.font = UIFont(name: "Lato-Bold", size: 14)
         sum.textAlignment = .justified
         sum.text = "0 UZS"
+        sum.translatesAutoresizingMaskIntoConstraints = false
         
         return sum
     }()
     
     
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        embedSubviews()
     }
     
     // MARK: - Embed subviews.
@@ -109,73 +117,73 @@ class CostCalculationCell: UITableViewCell {
     // MARK: -  Setup constraints.
     
     func headerConstraints(){
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        view.widthAnchor.constraint(equalToConstant: 170).isActive = true
-//        view.heightAnchor.constraint(equalToConstant: 24).isActive = true
-//        view.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: 16).isActive = true
-//        view.topAnchor.constraint(equalTo: parent.topAnchor, constant: 906).isActive = true
-//
+        NSLayoutConstraint.activate([
+            headerCalculation.widthAnchor.constraint(equalToConstant: 170),
+            headerCalculation.heightAnchor.constraint(equalToConstant: 24),
+            headerCalculation.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            headerCalculation.topAnchor.constraint(equalTo: topAnchor, constant: 906)
+        ])
     }
     
     func minimumAmountConsraints(){
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        view.widthAnchor.constraint(equalToConstant: 136).isActive = true
-//        view.heightAnchor.constraint(equalToConstant: 17).isActive = true
-//        view.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: 16).isActive = tru
-//        view.topAnchor.constraint(equalTo: parent.topAnchor, constant: 951).isActive = true
-
+        NSLayoutConstraint.activate([
+            minimumAmount.widthAnchor.constraint(equalToConstant: 136),
+            minimumAmount.heightAnchor.constraint(equalToConstant: 17),
+            minimumAmount.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            minimumAmount.topAnchor.constraint(equalTo: topAnchor, constant: 951)
+        ])
     }
     
     func minimumSum(){
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        view.widthAnchor.constraint(equalToConstant: 74).isActive = true
-//        view.heightAnchor.constraint(equalToConstant: 17).isActive = true
-//        view.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: 285).isActive = tru
-//        view.topAnchor.constraint(equalTo: parent.topAnchor, constant: 951).isActive = true
-
+        NSLayoutConstraint.activate([
+            minSum.widthAnchor.constraint(equalToConstant: 74),
+            minSum.heightAnchor.constraint(equalToConstant: 17),
+            minSum.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 285),
+            minSum.topAnchor.constraint(equalTo: topAnchor, constant: 951)
+        ])
     }
     
     func tripAmountConstraints(){
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        view.widthAnchor.constraint(equalToConstant: 101).isActive = true
-//        view.heightAnchor.constraint(equalToConstant: 17).isActive = true
-//        view.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: 16).isActive = true
-//        view.topAnchor.constraint(equalTo: parent.topAnchor, constant: 980).isActive = true
-
+        NSLayoutConstraint.activate([
+            tripSum.widthAnchor.constraint(equalToConstant: 101),
+            tripSum.heightAnchor.constraint(equalToConstant: 17),
+            tripSum.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            tripSum.topAnchor.constraint(equalTo: topAnchor, constant: 980)
+        ])
     }
     
     func tripSumConstraints(){
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        view.widthAnchor.constraint(equalToConstant: 74).isActive = true
-//        view.heightAnchor.constraint(equalToConstant: 17).isActive = true
-//        view.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: 285).isActive = true
-//        view.topAnchor.constraint(equalTo: parent.topAnchor, constant: 980).isActive = true
-
+        NSLayoutConstraint.activate([
+            tripSum.widthAnchor.constraint(equalToConstant: 74),
+            tripSum.heightAnchor.constraint(equalToConstant: 17),
+            tripSum.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 285),
+            tripSum.topAnchor.constraint(equalTo: topAnchor, constant: 980)
+        ])
     }
     
     func pricePendingConstraints(){
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        view.widthAnchor.constraint(equalToConstant: 104).isActive = true
-//        view.heightAnchor.constraint(equalToConstant: 17).isActive = true
-//        view.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: 16).isActive = true
-//        view.topAnchor.constraint(equalTo: parent.topAnchor, constant: 1009).isActive = true
-        
+        NSLayoutConstraint.activate([
+            pricePending.widthAnchor.constraint(equalToConstant: 104),
+            pricePending.heightAnchor.constraint(equalToConstant: 17),
+            pricePending.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            pricePending.topAnchor.constraint(equalTo: topAnchor, constant: 1009)
+        ])
     }
     
     func pricePendingSumConstraints(){
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        view.widthAnchor.constraint(equalToConstant: 39).isActive = true
-//        view.heightAnchor.constraint(equalToConstant: 17).isActive = true
-//        view.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: 320).isActive = true
-//        view.topAnchor.constraint(equalTo: parent.topAnchor, constant: 1009).isActive = true
+        NSLayoutConstraint.activate([
+            pricePendingSum.widthAnchor.constraint(equalToConstant: 39),
+            pricePendingSum.heightAnchor.constraint(equalToConstant: 17),
+            pricePendingSum.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 320),
+            pricePendingSum.topAnchor.constraint(equalTo: topAnchor, constant: 1009)
+        ])
+    }
+    
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
         
     }
     
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        
-    }
-
 }

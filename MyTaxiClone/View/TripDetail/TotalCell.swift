@@ -18,6 +18,7 @@ class TotalCell: UITableViewCell {
         string.font = UIFont(name: "Lato-Black", size: 20)
         string.textAlignment = .justified
         string.text = "Итого"
+        string.translatesAutoresizingMaskIntoConstraints = false
         
         return string
     }()
@@ -30,13 +31,15 @@ class TotalCell: UITableViewCell {
         sum.font = UIFont(name: "Lato-Black", size: 20)
         sum.textAlignment = .justified
         sum.text = "39,600 UZS"
+        sum.translatesAutoresizingMaskIntoConstraints = false
         
         return sum
     }()
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        embedSubviews()
     }
     
     // MARK: - Embed subviews.
@@ -49,27 +52,27 @@ class TotalCell: UITableViewCell {
     // MARK: -  Setup constraints.
     
     func headerConstraints(){
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        view.widthAnchor.constraint(equalToConstant: 57).isActive = true
-//        view.heightAnchor.constraint(equalToConstant: 24).isActive = true
-//        view.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: 16).isActive = true
-//        view.topAnchor.constraint(equalTo: parent.topAnchor, constant: 1055).isActive = true
-
+        NSLayoutConstraint.activate([
+            totalHeader.widthAnchor.constraint(equalToConstant: 57),
+            totalHeader.heightAnchor.constraint(equalToConstant: 24),
+            totalHeader.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            totalHeader.topAnchor.constraint(equalTo: topAnchor, constant: 1055)
+        ])
     }
     
     func sumConstraints(){
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        view.widthAnchor.constraint(equalToConstant: 104).isActive = true
-//        view.heightAnchor.constraint(equalToConstant: 24).isActive = true
-//        view.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: 255).isActive = true
-//        view.topAnchor.constraint(equalTo: parent.topAnchor, constant: 1055).isActive = true
-        
+        NSLayoutConstraint.activate([
+            totalSum.widthAnchor.constraint(equalToConstant: 104),
+            totalSum.heightAnchor.constraint(equalToConstant: 24),
+            totalSum.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 255),
+            totalSum.topAnchor.constraint(equalTo: topAnchor, constant: 1055)
+        ])
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
 }

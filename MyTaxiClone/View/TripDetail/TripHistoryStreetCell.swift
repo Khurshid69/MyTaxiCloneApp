@@ -18,6 +18,7 @@ class TripHistoryStreetCell: UITableViewCell {
         fromPointDot.image = UIImage(named: "Frame 6201")
         fromPointDot.frame = CGRect(x: 0, y: 0, width: 13.4, height: 13.4)
         fromPointDot.backgroundColor = .white
+        fromPointDot.translatesAutoresizingMaskIntoConstraints = false
         
         return fromPointDot
     }()
@@ -30,6 +31,7 @@ class TripHistoryStreetCell: UITableViewCell {
         streetName.font = UIFont(name: "Lato-Bold", size: 14)
         streetName.textAlignment = .justified
         streetName.text = "улица Sharof Rashidov, Ташкент"
+        streetName.translatesAutoresizingMaskIntoConstraints = false
         
         return streetName
     }()
@@ -40,6 +42,7 @@ class TripHistoryStreetCell: UITableViewCell {
         toPointDot.image = UIImage(named: "Frame 620")
         toPointDot.frame = CGRect(x: 0, y: 0, width: 13.4, height: 13.4)
         toPointDot.backgroundColor = .white
+        toPointDot.translatesAutoresizingMaskIntoConstraints = false
         
         return toPointDot
     }()
@@ -52,6 +55,7 @@ class TripHistoryStreetCell: UITableViewCell {
         streetName.font = UIFont(name: "Lato-Bold", size: 14)
         streetName.textAlignment = .justified
         streetName.text = "5a улица Асадуллы Ходжаева"
+        streetName.translatesAutoresizingMaskIntoConstraints = false
         
         return streetName
     }()
@@ -64,6 +68,7 @@ class TripHistoryStreetCell: UITableViewCell {
         view.frame = CGRect(x: 0, y: 0, width: 109, height: 56)
         view.layer.backgroundColor = UIColor(red: 0.996, green: 0.973, blue: 0.91, alpha: 1).cgColor
         view.layer.cornerRadius = 12
+        view.translatesAutoresizingMaskIntoConstraints = false
         
         return view
     }()
@@ -72,6 +77,7 @@ class TripHistoryStreetCell: UITableViewCell {
         let image = UIImageView()
         image.image = UIImage(named: "help-circle.2 1") // TODO - set Image here
         image.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
+        image.translatesAutoresizingMaskIntoConstraints = false
         
         return image
     }()
@@ -85,6 +91,7 @@ class TripHistoryStreetCell: UITableViewCell {
         paragraphStyle.lineHeightMultiple = 0.97
         string.textAlignment = .justified
         string.attributedText = NSMutableAttributedString(string: "Помощь", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
+        string.translatesAutoresizingMaskIntoConstraints = false
         
         return string
     }()
@@ -95,6 +102,7 @@ class TripHistoryStreetCell: UITableViewCell {
         button.frame = CGRect(x: 0, y: 0, width: 109, height: 56)
         button.layer.backgroundColor = UIColor(red: 0.925, green: 0.949, blue: 0.992, alpha: 1).cgColor
         button.layer.cornerRadius = 12
+        button.translatesAutoresizingMaskIntoConstraints = false
         
         return button
     }()
@@ -103,6 +111,7 @@ class TripHistoryStreetCell: UITableViewCell {
         let image = UIImageView()
         image.image = UIImage(named: "Group 21250") // TODO - set Image here
         image.frame = CGRect(x: 0, y: 0, width: 16, height: 16)
+        image.translatesAutoresizingMaskIntoConstraints = false
         
         return image
     }()
@@ -116,6 +125,7 @@ class TripHistoryStreetCell: UITableViewCell {
         paragraphStyle.lineHeightMultiple = 0.97
         string.textAlignment = .justified
         string.attributedText = NSMutableAttributedString(string: "Повторить", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
+        string.translatesAutoresizingMaskIntoConstraints = false
         
         return string
     }()
@@ -126,6 +136,7 @@ class TripHistoryStreetCell: UITableViewCell {
         view.frame = CGRect(x: 0, y: 0, width: 109, height: 56)
         view.layer.backgroundColor = UIColor(red: 0.925, green: 0.949, blue: 0.992, alpha: 1).cgColor
         view.layer.cornerRadius = 12
+        view.translatesAutoresizingMaskIntoConstraints = false
         
         return view
     }()
@@ -134,6 +145,7 @@ class TripHistoryStreetCell: UITableViewCell {
         let image = UIImageView()
         image.image = UIImage(named: "Group 21251") // TODO - set Image here
         image.frame = CGRect(x: 0, y: 0, width: 16, height: 16)
+        image.translatesAutoresizingMaskIntoConstraints = false
         
         return image
     }()
@@ -147,11 +159,12 @@ class TripHistoryStreetCell: UITableViewCell {
         paragraphStyle.lineHeightMultiple = 0.97
         string.textAlignment = .justified
         string.attributedText = NSMutableAttributedString(string: "Позвонить", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
+        string.translatesAutoresizingMaskIntoConstraints = false
         
         return string
     }()
     
-  
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         embedSubViews()
@@ -166,65 +179,69 @@ class TripHistoryStreetCell: UITableViewCell {
     // MARK: -  Setup constraints.
     
     func bluePoint(){
-//        view.widthAnchor.constraint(equalToConstant: 24).isActive = true
-//        view.heightAnchor.constraint(equalToConstant: 24).isActive = true
-//        view.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: 16).isActive = true
-//        view.topAnchor.constraint(equalTo: parent.topAnchor, constant: 415).isActive = true
-
+        NSLayoutConstraint.activate([
+            fromPointDot.widthAnchor.constraint(equalToConstant: 24),
+            fromPointDot.heightAnchor.constraint(equalToConstant: 24),
+            fromPointDot.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            fromPointDot.topAnchor.constraint(equalTo: topAnchor, constant: 415)
+        ])
+        
     }
     
     func redPoint(){
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        view.widthAnchor.constraint(equalToConstant: 24).isActive = true
-//        view.heightAnchor.constraint(equalToConstant: 24).isActive = true
-//        view.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: 16).isActive = true
-//        view.topAnchor.constraint(equalTo: parent.topAnchor, constant: 447).isActive = true
-//
+        NSLayoutConstraint.activate([
+            ToPointDot.widthAnchor.constraint(equalToConstant: 24),
+            ToPointDot.heightAnchor.constraint(equalToConstant: 24),
+            ToPointDot.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            ToPointDot.topAnchor.constraint(equalTo: topAnchor, constant: 447)
+        ])
     }
     
     func startedStringConstraints(){
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        view.widthAnchor.constraint(equalToConstant: 205).isActive = true
-//        view.heightAnchor.constraint(equalToConstant: 17).isActive = true
-//        view.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: 48).isActive = true
-//        view.topAnchor.constraint(equalTo: parent.topAnchor, constant: 417).isActive = true
-//
+        NSLayoutConstraint.activate([
+            starterStreetName.widthAnchor.constraint(equalToConstant: 205),
+            starterStreetName.heightAnchor.constraint(equalToConstant: 17),
+            starterStreetName.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 48),
+            starterStreetName.topAnchor.constraint(equalTo: topAnchor, constant: 417)
+        ])
     }
     
     func finishStringConstraints(){
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        view.widthAnchor.constraint(equalToConstant: 196).isActive = true
-//        view.heightAnchor.constraint(equalToConstant: 17).isActive = true
-//        view.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: 48).isActive = true
-//        view.topAnchor.constraint(equalTo: parent.topAnchor, constant: 449).isActive = true
-//
+        NSLayoutConstraint.activate([
+            finishStreetName.widthAnchor.constraint(equalToConstant: 196),
+            finishStreetName.heightAnchor.constraint(equalToConstant: 17),
+            finishStreetName.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 48),
+            finishStreetName.topAnchor.constraint(equalTo: topAnchor, constant: 449)
+        ])
     }
     
     func helpButtonConstraints(){
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        view.widthAnchor.constraint(equalToConstant: 109).isActive = true
-//        view.heightAnchor.constraint(equalToConstant: 56).isActive = true
-//        view.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: 0).isActive = true
-//        view.topAnchor.constraint(equalTo: parent.topAnchor, constant: 0).isActive = true
-
+        NSLayoutConstraint.activate([
+            helpButton.widthAnchor.constraint(equalToConstant: 109),
+            helpButton.heightAnchor.constraint(equalToConstant: 56),
+            helpButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
+            helpButton.topAnchor.constraint(equalTo: topAnchor, constant: 0)
+        ])
+        
     }
     
     func reDoButtonConstraints(){
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        view.widthAnchor.constraint(equalToConstant: 109).isActive = true
-//        view.heightAnchor.constraint(equalToConstant: 56).isActive = true
-//        view.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: 0).isActive = true
-//        view.topAnchor.constraint(equalTo: parent.topAnchor, constant: 0).isActive = true
-
+        NSLayoutConstraint.activate([
+            ReDoButtonString.widthAnchor.constraint(equalToConstant: 109),
+            ReDoButtonString.heightAnchor.constraint(equalToConstant: 56),
+            ReDoButtonString.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
+            ReDoButtonString.topAnchor.constraint(equalTo: topAnchor, constant: 0)
+        ])
     }
     
     func callButtonConstraints(){
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        view.widthAnchor.constraint(equalToConstant: 109).isActive = true
-//        view.heightAnchor.constraint(equalToConstant: 56).isActive = true
-//        view.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: 0).isActive = true
-//        view.topAnchor.constraint(equalTo: parent.topAnchor, constant: 0).isActive = true
-
+        NSLayoutConstraint.activate([
+            helpButtonsString.widthAnchor.constraint(equalToConstant: 109),
+            helpButtonsString.heightAnchor.constraint(equalToConstant: 56),
+            helpButtonsString.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
+            helpButtonsString.topAnchor.constraint(equalTo: topAnchor, constant: 0)
+            
+        ])
     }
     
     

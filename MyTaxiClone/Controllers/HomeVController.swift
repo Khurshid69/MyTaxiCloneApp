@@ -26,7 +26,7 @@ class HomeVController: UIViewController, GMSMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        statusBarEnterLightBackground()
         let imageV = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height:38))
         imageV.image = UIImage(named: "Group 21403")
         mapScreen.addSubview(imageV)
@@ -34,6 +34,7 @@ class HomeVController: UIViewController, GMSMapViewDelegate {
             make.center.equalTo(mapScreen)
             make.size.equalTo(CGSize(width: 40, height: 58))
         }
+        
         
         
         mapScreen.padding = UIEdgeInsets(top: 0, left: 0, bottom: 30, right: 0)
@@ -45,6 +46,26 @@ class HomeVController: UIViewController, GMSMapViewDelegate {
         mapScreen.delegate = self
         locationManager.requestWhenInUseAuthorization()
         
+    }
+    
+    var isDarkContentBackground = false // <1>
+
+    func statusBarEnterLightBackground() { // <2>
+        isDarkContentBackground = false
+        setNeedsStatusBarAppearanceUpdate()
+    }
+
+    func statusBarEnterDarkBackground() { // <3>
+        isDarkContentBackground = true
+        setNeedsStatusBarAppearanceUpdate() 
+    }
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        if isDarkContentBackground { // <5>
+            return .lightContent
+        } else {
+            return .darkContent
+        }
     }
     
     @IBAction func myRealLocationButton(_ sender: Any) {

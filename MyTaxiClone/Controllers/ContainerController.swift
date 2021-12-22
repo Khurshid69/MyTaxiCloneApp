@@ -71,14 +71,14 @@ class ContainterController: UIViewController {
     }
     
     func callTripHistory(){
-        let vc = TripHistoryTableView(nibName: "TripHistoryTableView", bundle: nil)
+        let vc = TripHistoryTable()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func didSelectMenuOption(menuOption: MenuOption){
         switch menuOption {
         case .TripHistory:
-            
+            callTripHistory()
             print("Show Мои поездки")
         case .TripDetail:
             print("Show Способы оплаты ")

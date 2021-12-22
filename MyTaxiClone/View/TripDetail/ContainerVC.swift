@@ -16,25 +16,25 @@ class ContainerVC: UIViewController {
         view.dataSource = self
         view.delegate = self
         view.backgroundColor = .systemGroupedBackground
-        view.registerNib(CarStatusCell.self)
-        view.registerNib(TripHistoryStreetCell.self)
-        view.registerNib(DriverCell.self)
-        view.registerNib(PeymentMethodCell.self)
-        view.registerNib(CostCalculationCell.self)
-        view.registerNib(TotalCell.self)
+        view.register(CarStatusCell.self)
+        view.register(TripHistoryStreetCell.self)
+        view.register(DriverCell.self)
+        view.register(PeymentMethodCell.self)
+        view.register(CostCalculationCell.self)
+        view.register(TotalCell.self)
         view.separatorStyle = .none
         view.showsVerticalScrollIndicator = false
         view.translatesAutoresizingMaskIntoConstraints = false
         
         return view
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         
     }
-
+    
 }
 
 extension ContainerVC: UITableViewDataSource, UITableViewDelegate {

@@ -18,6 +18,7 @@ class DriverCell: UITableViewCell {
         header.font = UIFont(name: "Lato-Black", size: 20)
         header.textAlignment = .justified
         header.text = "Водитель"
+        header.translatesAutoresizingMaskIntoConstraints = false
         
         return header
     }()
@@ -26,6 +27,7 @@ class DriverCell: UITableViewCell {
     let profileImage: UIImageView = {
         let image = UIImageView()
         image.frame = CGRect(x: 0, y: 0, width: 56, height: 56)
+        image.translatesAutoresizingMaskIntoConstraints = false
         
         return image
     }()
@@ -37,6 +39,7 @@ class DriverCell: UITableViewCell {
         name.font = UIFont(name: "Lato-Bold", size: 18)
         name.textAlignment = .justified
         name.text = "Umid Abdurakhimov"
+        name.translatesAutoresizingMaskIntoConstraints = false
         
         return name
     }()
@@ -49,6 +52,7 @@ class DriverCell: UITableViewCell {
         rating.font = UIFont(name: "Lato-SemiBold", size: 14)
         rating.textAlignment = .justified
         rating.text = "Рейтинг: 5"
+        rating.translatesAutoresizingMaskIntoConstraints = false
         
         return rating
     }()
@@ -57,6 +61,7 @@ class DriverCell: UITableViewCell {
         let image = UIImageView()
         image.image = UIImage(named: "") // TODO set image here
         image.frame = CGRect(x: 0, y: 0, width: 10, height: 9.51)
+        image.translatesAutoresizingMaskIntoConstraints = false
         
         return image
     }()
@@ -69,10 +74,11 @@ class DriverCell: UITableViewCell {
         trips.font = UIFont(name: "Lato-SemiBold", size: 14)
         trips.textAlignment = .justified
         trips.text = "Поездки: 1 885"
+        trips.translatesAutoresizingMaskIntoConstraints = false
         
         return trips
     }()
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         embedSubviews()
@@ -89,72 +95,64 @@ class DriverCell: UITableViewCell {
     // MARK: -  Setup constraints.
     
     func headerConstraints(){
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        view.widthAnchor.constraint(equalToConstant: 92).isActive = true
-//        view.heightAnchor.constraint(equalToConstant: 24).isActive = true
-//        view.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: 16).isActive = true
-//        view.topAnchor.constraint(equalTo: parent.topAnchor, constant: 571).isActive = true
-//
-        
+        NSLayoutConstraint.activate([
+            drivarHeader.widthAnchor.constraint(equalToConstant: 92),
+            drivarHeader.heightAnchor.constraint(equalToConstant: 24),
+            drivarHeader.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            drivarHeader.topAnchor.constraint(equalTo: topAnchor, constant: 571)
+            
+        ])
     }
     
     func profileImageConstraints(){
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        view.widthAnchor.constraint(equalToConstant: 56).isActive = true
-//        view.heightAnchor.constraint(equalToConstant: 56).isActive = true
-//        view.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: 16).isActive = true
-//        view.topAnchor.constraint(equalTo: parent.topAnchor, constant: 616).isActive = true
-
+        NSLayoutConstraint.activate([
+            image.widthAnchor.constraint(equalToConstant: 56),
+            image.heightAnchor.constraint(equalToConstant: 56),
+            image.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            image.topAnchor.constraint(equalTo: topAnchor, constant: 616)
+        ])
     }
     
     func nameConstraint(){
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        view.widthAnchor.constraint(equalToConstant: 165).isActive = true
-//        view.heightAnchor.constraint(equalToConstant: 22).isActive = true
-//        view.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: 88).isActive = true
-//        view.topAnchor.constraint(equalTo: parent.topAnchor, constant: 621).isActive = true
-//
+        NSLayoutConstraint.activate([
+            name.widthAnchor.constraint(equalToConstant: 165),
+            name.heightAnchor.constraint(equalToConstant: 22),
+            name.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 88),
+            name.topAnchor.constraint(equalTo: topAnchor, constant: 621)
+        ])
     }
     
     func ratingConstraints(){
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        view.widthAnchor.constraint(equalToConstant: 57).isActive = true
-//        view.heightAnchor.constraint(equalToConstant: 17).isActive = true
-//        view.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: 88).isActive = true
-//        view.topAnchor.constraint(equalTo: parent.topAnchor, constant: 648).isActive = true
-//
-        
+        NSLayoutConstraint.activate([
+            rating.widthAnchor.constraint(equalToConstant: 57),
+            rating.heightAnchor.constraint(equalToConstant: 17),
+            rating.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 88),
+            rating.topAnchor.constraint(equalTo: topAnchor, constant: 648)
+        ])
     }
     
     func starConstraints(){
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        view.widthAnchor.constraint(equalToConstant: 12).isActive = true
-//        view.heightAnchor.constraint(equalToConstant: 12).isActive = true
-//        view.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: 160).isActive = true
-//        view.topAnchor.constraint(equalTo: parent.topAnchor, constant: 651).isActive = true
-
+        NSLayoutConstraint.activate([
+            starImage.widthAnchor.constraint(equalToConstant: 12),
+            starImage.heightAnchor.constraint(equalToConstant: 12),
+            starImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 160),
+            starImage.topAnchor.constraint(equalTo: topAnchor, constant: 651)
+        ])
     }
     
     func tripsContstarints(){
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        view.widthAnchor.constraint(equalToConstant: 60).isActive = true
-//        view.heightAnchor.constraint(equalToConstant: 17).isActive = true
-//        view.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: 184).isActive = true
-//        view.topAnchor.constraint(equalTo: parent.topAnchor, constant: 648).isActive = true
-
+        NSLayoutConstraint.activate([
+            trips.widthAnchor.constraint(equalToConstant: 60),
+            trips.heightAnchor.constraint(equalToConstant: 17),
+            trips.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 184),
+            trips.topAnchor.constraint(equalTo: topAnchor, constant: 648)
+        ])
     }
     
-    
-    
-    
-    
-    
-    
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
 }

@@ -10,9 +10,6 @@ import UIKit
 import SnapKit
 
 class UserView: UIView{
-    
-    var userView = UserView()
-    
     var contentView: UIView = {
         let contentView = UIView()
         contentView.backgroundColor = UIColor(red: 0.15, green: 0.15, blue: 0.14, alpha: 1.0)
@@ -65,19 +62,49 @@ class UserView: UIView{
         return stackView
     }()
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setup() {
+        embedSubViews()
+        setupSubviewConstriants()
+    }
+    
     // Embed subviews.
-    func embedSubViews(){
+    private func embedSubViews(){
         addSubview(contentView)
         contentView.addSubview(stackView)
         contentView.addSubview(imageView)
-        stackView.addSubview(nameLabel)
-        stackView.addSubview(surnameLabel)
-        stackView.addSubview(phoneNumberLabel)
         
+        stackView.addArrangedSubview(nameLabel)
+        stackView.addArrangedSubview(surnameLabel)
+        stackView.addArrangedSubview(phoneNumberLabel)
     }
     
-    // Setup constraints.
-    func setImageConstraints(){
+    private func setupSubviewConstriants() {
+        setContentViewConstraints()
+        setImageConstraints()
+        setStackViewConstraints()
+    }
+}
+
+extension UserView {
+    private func setContentViewConstraints(){
+        let width = UIScreen.main.bounds.width - 84
+        contentView.snp.makeConstraints { make in
+            make.left.equalTo(self).offset(16)
+            make.width.equalTo(width)
+            make.top.bottom.equalTo(self)
+        }
+    }
+    
+    private func setImageConstraints(){
         imageView.snp.makeConstraints { make in
             make.width.height.equalTo(56)
             make.left.equalTo(contentView.snp.left).offset(12)
@@ -85,19 +112,13 @@ class UserView: UIView{
         }
     }
     
-    func setStackViewConstraints(){
+    private func setStackViewConstraints(){
         stackView.snp.makeConstraints { make in
             make.top.equalTo(contentView).offset(12)
             make.right.bottom.equalTo(contentView).offset(-12)
             make.left.equalTo(imageView.snp.right).offset(12)
         }
     }
-    
-    func setContentViewConstraints(){
-        contentView.snp.makeConstraints { make in
-            make.left.equalTo(userView).offset(16)
-            make.right.equalTo(userView).offset(-72)
-            make.top.bottom.equalTo(userView)
-        }
-    }
 }
+
+
