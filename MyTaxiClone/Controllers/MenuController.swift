@@ -7,11 +7,9 @@
 
 import UIKit
 import SnapKit
-import FloatingPanel
 
 class MenuController: UIViewController {
     // MARK: - Properties
-    
     
     lazy var tableView: UITableView = {
         let tableView = UITableView()

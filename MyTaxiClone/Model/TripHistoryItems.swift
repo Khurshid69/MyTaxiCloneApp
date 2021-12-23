@@ -8,6 +8,22 @@
 import Foundation
 import UIKit
 
-struct Post{
-    var carImage: UIImage
+enum TripHistoryItems: Int{
+    case first
+    
+    var description: String {
+        switch self {
+        case .first:
+            return "Мои поездки"
+        }
+    }
+    
+}
+
+class Post{
+    var carImage: UIImage?
+    
+    init(carImage: UIImage){
+        self.carImage = carImage
+    }
 }

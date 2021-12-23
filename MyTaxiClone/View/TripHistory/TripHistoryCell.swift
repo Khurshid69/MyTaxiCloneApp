@@ -17,19 +17,20 @@ class TripHistoryCell: UITableViewCell {
     
     // MARK: - Properties
     let container: UIView = {
-        let view = UIView()
-        view.frame = CGRect(x: 0, y: 0, width: 343, height: 118)
-        view.backgroundColor = UIColor(red: 0.898, green: 0.898, blue: 0.898, alpha: 1)
-        view.translatesAutoresizingMaskIntoConstraints = false
+        let viewCon = UIView()
+        viewCon.frame = CGRect(x: 10, y: 10, width: 343, height: 118)
+//        view.backgroundColor = UIColor(red: 0.898, green: 0.898, blue: 0.898, alpha: 1)
+        viewCon.backgroundColor = .black
+        viewCon.translatesAutoresizingMaskIntoConstraints = false
         
-        return view
+        return viewCon
     }()
     
     let redImage: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "Frame 6201")
         image.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
-            image.translatesAutoresizingMaskIntoConstraints = false
+        image.translatesAutoresizingMaskIntoConstraints = false
         
         return image
     }()
@@ -37,11 +38,10 @@ class TripHistoryCell: UITableViewCell {
     let redsStreet: UILabel = {
         let string = UILabel()
         string.frame = CGRect(x: 0, y: 0, width: 287, height: 17)
-        string.backgroundColor = .white
         string.textColor = UIColor(red: 0.262, green: 0.262, blue: 0.262, alpha: 1)
         string.font = UIFont(name: "Lato-Bold", size: 14)
         string.text = "улица Sharof Rashidov, Ташкент"
-            string.translatesAutoresizingMaskIntoConstraints = false
+        string.translatesAutoresizingMaskIntoConstraints = false
         
         return string
     }()
@@ -50,7 +50,7 @@ class TripHistoryCell: UITableViewCell {
         let image = UIImageView()
         image.image = UIImage(named: "Frame 620")
         image.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
-            image.translatesAutoresizingMaskIntoConstraints = false
+        image.translatesAutoresizingMaskIntoConstraints = false
         
         return image
     }()
@@ -62,7 +62,7 @@ class TripHistoryCell: UITableViewCell {
         string.textColor = UIColor(red: 0.262, green: 0.262, blue: 0.262, alpha: 1)
         string.font = UIFont(name: "Lato-Bold", size: 14)
         string.text = "5a улица Асадуллы Ходжаева"
-            string.translatesAutoresizingMaskIntoConstraints = false
+        string.translatesAutoresizingMaskIntoConstraints = false
         
         return string
     }()
@@ -70,7 +70,6 @@ class TripHistoryCell: UITableViewCell {
     let bottomFrame: UIView = {
         let frame = UIView()
         frame.frame = CGRect(x: 0, y: 0, width: 343, height: 42)
-        frame.backgroundColor = .white
         frame.layer.backgroundColor = UIColor(red: 0.973, green: 0.973, blue: 0.973, alpha: 1).cgColor
         frame.translatesAutoresizingMaskIntoConstraints = false
         
@@ -109,11 +108,14 @@ class TripHistoryCell: UITableViewCell {
     }
     
     // MARK: - Embed subviews.
-        
+    
     func embedSubViews(){
-        addSubview(container)
-        container.addSubview(bottomFrame)
-        addSubview(redImage)
+        contentView.addSubview(container)
+    }
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        container.frame = CGRect(x: 10, y: 10, width: 343, height: contentView.frame.size.height-20)
+        
     }
     
     
@@ -127,7 +129,7 @@ class TripHistoryCell: UITableViewCell {
             redImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
             redImage.topAnchor.constraint(equalTo: topAnchor, constant: 12)
         ])
-
+        
     }
     
     func blueImageConstraints(){
@@ -138,17 +140,17 @@ class TripHistoryCell: UITableViewCell {
             blueImage.topAnchor.constraint(equalTo: topAnchor, constant: 40)
         ])
         
-
+        
     }
     
     func redStreetConstraints(){
         NSLayoutConstraint.activate([
             redImage.widthAnchor.constraint(equalToConstant: 287),
             redImage.heightAnchor.constraint(equalToConstant: 17),
-            redImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 44),
-            redImage.topAnchor.constraint(equalTo: topAnchor, constant: 14)
+            redImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 44),
+            redImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 14)
         ])
-
+        
     }
     
     func blueStreetConstraints(){
@@ -168,7 +170,7 @@ class TripHistoryCell: UITableViewCell {
             bottomFrame.topAnchor.constraint(equalTo: topAnchor, constant: 76)
         ])
         
-
+        
     }
     
     func clockConstraints(){
@@ -178,7 +180,7 @@ class TripHistoryCell: UITableViewCell {
             frameClock.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             frameClock.topAnchor.constraint(equalTo: topAnchor, constant: 12)
         ])
-
+        
     }
     
     func carImageConstraints(){
@@ -191,10 +193,5 @@ class TripHistoryCell: UITableViewCell {
         
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+    
 }

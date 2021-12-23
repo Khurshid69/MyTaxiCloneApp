@@ -45,9 +45,7 @@ class HomeVController: UIViewController, GMSMapViewDelegate {
         locationManager.delegate = self
         mapScreen.delegate = self
         locationManager.requestWhenInUseAuthorization()
-        UIView.animate(withDuration: 0.33) { [self] in
-            mapScreen.layoutIfNeeded()
-        }
+        
         
     }
     
