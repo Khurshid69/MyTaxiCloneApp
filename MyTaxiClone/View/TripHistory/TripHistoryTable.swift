@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TripHistoryTable: UIViewController {
+class TripHistoryTable: UIViewController, UIGestureRecognizerDelegate {
     
     lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -25,12 +25,18 @@ class TripHistoryTable: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .black
+        view.backgroundColor = .white
         view.addSubview(tableView)
+        
+
+        
+        let backButton = UIBarButtonItem()
+        backButton.title = "Мои поездки"
+        backButton.tintColor = .black
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         
     }
     
-
 }
 extension TripHistoryTable: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
