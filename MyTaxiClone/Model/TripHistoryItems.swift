@@ -8,18 +8,6 @@
 import Foundation
 import UIKit
 
-enum TripHistoryItems: Int{
-    case first
-    
-    var description: String {
-        switch self {
-        case .first:
-            return "Мои поездки"
-        }
-    }
-    
-}
-
 class Post{
     var carImage: UIImage?
     
