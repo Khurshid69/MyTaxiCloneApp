@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+
 class ContainterController: UIViewController {
     
     // MARK: - Properties
@@ -73,9 +74,8 @@ class ContainterController: UIViewController {
     func didSelectMenuOption(menuOption: MenuOption){
         switch menuOption {
         case .TripHistory:
-            let tripController = TripHistoryTable()
-            present(tripController, animated: true, completion: nil)
-//            self.navigationController?.pushViewController(tripController, animated: true)
+            let vc = TripHistoryTable()
+            self.navigationController?.pushViewController(vc, animated: true)
             print("Show Мои поездки")
         case .TripDetail:
             print("Show Способы оплаты ")

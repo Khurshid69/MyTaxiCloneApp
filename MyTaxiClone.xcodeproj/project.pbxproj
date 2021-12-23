@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5FCEED6ED2F03581785B3462 /* Pods_MyTaxiClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269CF9B71217C815AC36FF33 /* Pods_MyTaxiClone.framework */; };
 		CE4542AB277063000043F785 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4542AA277063000043F785 /* MainViewController.swift */; };
 		CE4542AD27708AAA0043F785 /* TripDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4542AC27708AAA0043F785 /* TripDetailVC.swift */; };
 		CE4542AF27708CC80043F785 /* CarStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4542AE27708CC80043F785 /* CarStatusCell.swift */; };
@@ -34,7 +35,6 @@
 		CEF75214276B552E003276B8 /* MenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF75213276B552E003276B8 /* MenuOption.swift */; };
 		CEF75217276B71D5003276B8 /* HomeVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF75215276B71D5003276B8 /* HomeVController.swift */; };
 		CEF75218276B71D5003276B8 /* HomeVController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF75216276B71D5003276B8 /* HomeVController.xib */; };
-		DE4F93D8ED5A7DD6D7B5B57F /* Pods_MyTaxiClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269CF9B71217C815AC36FF33 /* Pods_MyTaxiClone.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,7 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE4F93D8ED5A7DD6D7B5B57F /* Pods_MyTaxiClone.framework in Frameworks */,
+				5FCEED6ED2F03581785B3462 /* Pods_MyTaxiClone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

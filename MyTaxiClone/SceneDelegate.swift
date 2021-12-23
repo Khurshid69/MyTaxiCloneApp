@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = ContainterController(nibName: nil, bundle: nil)
+        window?.rootViewController = UINavigationController(rootViewController: ContainterController(nibName: nil, bundle: nil))
         window?.makeKeyAndVisible()
         
         if #available(iOS 13.0, *) {

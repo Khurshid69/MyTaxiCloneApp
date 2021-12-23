@@ -14,6 +14,7 @@ class TripHistoryTable: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(TripHistoryCell.self, forCellReuseIdentifier: reuseIdentifer)
+        tableView.separatorColor = .white
         
         
         return tableView
@@ -33,7 +34,7 @@ class TripHistoryTable: UIViewController {
 }
 extension TripHistoryTable: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return datas.count
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -41,6 +42,7 @@ extension TripHistoryTable: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TripHistoryCell", for: indexPath)as! TripHistoryCell
         cell.frameImage.image = items.carImage
         cell.backgroundColor = .black
+        
         return cell
     }
     

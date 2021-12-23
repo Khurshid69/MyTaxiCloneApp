@@ -113,6 +113,7 @@ class TripHistoryCell: UITableViewCell {
     func embedSubViews(){
         addSubview(container)
         container.addSubview(bottomFrame)
+        addSubview(redImage)
     }
     
     
