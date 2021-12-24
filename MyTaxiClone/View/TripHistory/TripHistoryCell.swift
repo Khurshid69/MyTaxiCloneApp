@@ -19,8 +19,8 @@ class TripHistoryCell: UITableViewCell {
     let container: UIView = {
         let viewCon = UIView()
         viewCon.frame = CGRect(x: 10, y: 10, width: 343, height: 118)
-//        view.backgroundColor = UIColor(red: 0.898, green: 0.898, blue: 0.898, alpha: 1)
-        viewCon.backgroundColor = .black
+        viewCon.layer.cornerRadius = 12
+        viewCon.backgroundColor = UIColor(red: 0.898, green: 0.898, blue: 0.898, alpha: 1)
         viewCon.translatesAutoresizingMaskIntoConstraints = false
         
         return viewCon
@@ -99,22 +99,45 @@ class TripHistoryCell: UITableViewCell {
         return image
     }()
     
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setUp()
     
+    }
+
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-        embedSubViews()
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     // MARK: - Embed subviews.
     
-    func embedSubViews(){
-        contentView.addSubview(container)
+    private func setUp(){
+        embedSubViews()
+        setUpSubviewConstraints()
     }
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        container.frame = CGRect(x: 10, y: 10, width: 343, height: contentView.frame.size.height-20)
+    
+    func embedSubViews(){
+        addSubview(container)
+        container.addSubview(frameImage)
+        container.addSubview(bottomFrame)
+        bottomFrame.addSubview(frameClock)
+        bottomFrame.addSubview(frameImage)
+        container.addSubview(redImage)
+        container.addSubview(redsStreet)
+        container.addSubview(blueImage)
+        container.addSubview(blueStreet)
+        
+    }
+    func setUpSubviewConstraints(){
+        containerConstraints()
+        redImageConstraints()
+        redStreetConstraints()
+        blueImageConstraints()
+        blueStreetConstraints()
+        bottomFrameConstraints()
+        clockConstraints()
+        carImageConstraints()
         
     }
     
@@ -122,12 +145,24 @@ class TripHistoryCell: UITableViewCell {
     
     // MARK: -  Setup constraints.
     
+    func containerConstraints(){
+        NSLayoutConstraint.activate([
+            container.widthAnchor.constraint(equalToConstant: 13),
+            container.heightAnchor.constraint(equalToConstant: 13),
+            container.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            container.topAnchor.constraint(equalTo: topAnchor, constant: 149),
+            container.centerXAnchor.constraint(equalTo: self.centerXAnchor)
+
+        ])
+    }
+    
     func redImageConstraints(){
         NSLayoutConstraint.activate([
-            redImage.widthAnchor.constraint(equalToConstant: 24),
-            redImage.heightAnchor.constraint(equalToConstant: 24),
+            redImage.widthAnchor.constraint(equalToConstant: 16),
+            redImage.heightAnchor.constraint(equalToConstant: 16),
             redImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
             redImage.topAnchor.constraint(equalTo: topAnchor, constant: 12)
+            
         ])
         
     }
@@ -147,8 +182,8 @@ class TripHistoryCell: UITableViewCell {
         NSLayoutConstraint.activate([
             redImage.widthAnchor.constraint(equalToConstant: 287),
             redImage.heightAnchor.constraint(equalToConstant: 17),
-            redImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 44),
-            redImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 14)
+            redImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 44),
+            redImage.topAnchor.constraint(equalTo: topAnchor, constant: 14)
         ])
         
     }

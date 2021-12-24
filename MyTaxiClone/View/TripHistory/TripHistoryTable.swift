@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TripHistoryTable: UIViewController, UIGestureRecognizerDelegate {
+class TripHistoryTable: UIViewController {
     
     lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -15,7 +15,7 @@ class TripHistoryTable: UIViewController, UIGestureRecognizerDelegate {
         tableView.dataSource = self
         tableView.register(TripHistoryCell.self, forCellReuseIdentifier: reuseIdentifer)
         tableView.separatorColor = .white
-        tableView.rowHeight = 55
+        tableView.rowHeight = 120
         
         
         return tableView
@@ -49,6 +49,7 @@ class TripHistoryTable: UIViewController, UIGestureRecognizerDelegate {
     
     
 }
+
 extension TripHistoryTable: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
@@ -56,13 +57,8 @@ extension TripHistoryTable: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifer, for: indexPath)as! TripHistoryCell
-        cell.textLabel?.text = "Jello"
         
         return cell
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
-    }
-    
     
 }

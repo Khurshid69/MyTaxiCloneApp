@@ -79,7 +79,7 @@ class HomeVController: UIViewController, GMSMapViewDelegate {
         
         sideMenuButton.snp.makeConstraints { make in
             make.left.top.equalTo(mapScreen).offset(10)
-            make.top.equalTo(mapScreen).offset(5)
+//            make.top.equalTo(mapScreen).offset(5)
         }
     }
     
