@@ -16,12 +16,19 @@ class TripHistoryCell: UITableViewCell {
     }
     
     // MARK: - Properties
+    
+    let view: UIView = {
+        let view = UIView()
+        view.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width-16, height: 118)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        return view
+    }()
+    
     let container: UIView = {
         let viewCon = UIView()
-        viewCon.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        viewCon.frame = CGRect(x: 0, y: 0, width: 50, height: UIScreen.main.bounds.height)
         viewCon.layer.cornerRadius = 12
-        viewCon.layer.borderWidth = 7
-        viewCon.layer.borderColor = UIColor.black.cgColor
         viewCon.translatesAutoresizingMaskIntoConstraints = false
         
         return viewCon
@@ -40,7 +47,8 @@ class TripHistoryCell: UITableViewCell {
         let string = UILabel()
         string.frame = CGRect(x: 0, y: 0, width: 287, height: 17)
         string.textColor = UIColor(red: 0.262, green: 0.262, blue: 0.262, alpha: 1)
-        string.font = UIFont(name: "Lato-Bold", size: 14)
+        string.font = UIFont(name: "Avenir Nexr", size: 14)
+        string.font = UIFont.boldSystemFont(ofSize: 14)
         string.text = "улица Sharof Rashidov, Ташкент"
         string.translatesAutoresizingMaskIntoConstraints = false
         
@@ -60,7 +68,8 @@ class TripHistoryCell: UITableViewCell {
         let string = UILabel()
         string.frame = CGRect(x: 0, y: 0, width: 287, height: 17)
         string.textColor = UIColor(red: 0.262, green: 0.262, blue: 0.262, alpha: 1)
-        string.font = UIFont(name: "Lato-Bold", size: 14)
+        string.font = UIFont(name: "Avenir Nexr", size: 14)
+        string.font = UIFont.boldSystemFont(ofSize: 14)
         string.text = "5a улица Асадуллы Ходжаева"
         string.translatesAutoresizingMaskIntoConstraints = false
         
@@ -69,7 +78,7 @@ class TripHistoryCell: UITableViewCell {
     
     let bottomFrame: UIView = {
         let frame = UIView()
-        frame.frame = CGRect(x: 0, y: 0, width: 343, height: 42)
+        frame.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 42)
         frame.layer.backgroundColor = UIColor(red: 0.973, green: 0.973, blue: 0.973, alpha: 1).cgColor
         frame.translatesAutoresizingMaskIntoConstraints = false
         
@@ -80,7 +89,8 @@ class TripHistoryCell: UITableViewCell {
         let clock = UILabel()
         clock.frame = CGRect(x: 0, y: 0, width: 100, height: 18)
         clock.textColor = UIColor(red: 0.262, green: 0.262, blue: 0.262, alpha: 1)
-        clock.font = UIFont(name: "Lato-Bold", size: 13)
+        clock.font = UIFont(name: "Avenir Nexr", size: 13)
+        clock.font = UIFont.boldSystemFont(ofSize: 14)
         var paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineHeightMultiple = 1.07
         clock.attributedText = NSMutableAttributedString(string: "12:00 - 12:19", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
@@ -117,7 +127,8 @@ class TripHistoryCell: UITableViewCell {
     }
     
     func embedSubViews(){
-        addSubview(container)
+        addSubview(view)
+        view.addSubview(container)
         container.addSubview(bottomFrame)
         container.addSubview(frameImage)
         bottomFrame.addSubview(frameClock)
@@ -129,6 +140,7 @@ class TripHistoryCell: UITableViewCell {
         
     }
     func setUpSubviewConstraints(){
+        viewConstraints()
         containerConstraints()
         redImageConstraints()
         redStreetConstraints()
@@ -144,11 +156,20 @@ class TripHistoryCell: UITableViewCell {
     
     // MARK: -  Setup constraints.
     
+    func viewConstraints(){
+        NSLayoutConstraint.activate([
+            view.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: -16),
+            view.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -26),
+            view.topAnchor.constraint(equalTo: self.topAnchor, constant: -16),
+            view.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16)
+        ])
+    }
+    
+    
     func containerConstraints(){
         NSLayoutConstraint.activate([
-            container.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: -16),
-            container.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
-            container.centerXAnchor.constraint(equalTo: self.centerXAnchor)
+            container.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            container.trailingAnchor.constraint(equalTo: view.trailingAnchor),
 
         ])
     }
@@ -197,7 +218,7 @@ class TripHistoryCell: UITableViewCell {
     
     func bottomFrameConstraints(){
         NSLayoutConstraint.activate([
-            bottomFrame.widthAnchor.constraint(equalToConstant: 343),
+            bottomFrame.widthAnchor.constraint(equalTo: widthAnchor, constant: 200),
             bottomFrame.heightAnchor.constraint(equalToConstant: 42),
             bottomFrame.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
             bottomFrame.topAnchor.constraint(equalTo: topAnchor, constant: 76)

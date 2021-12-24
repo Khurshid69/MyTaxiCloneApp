@@ -23,15 +23,15 @@
 //        let tableView = UITableView()
 //        tableView.delegate = self
 //        tableView.dataSource = self
-//        tableView.register(ContainerVC.self, forCellReuseIdentifier: reuseIdentifer)
+//        tableView.register(CarStatusCell.self, forCellReuseIdentifier: reuseIdentifer)
 //        tableView.backgroundColor = UIColor(red: 0.898, green: 0.898, blue: 0.898, alpha: 1)
 //        tableView.translatesAutoresizingMaskIntoConstraints = false
 //
 //        return tableView
 //    }()
 //
-//    weak var delegete: MenuController?
-//    private let reuseIdentifer = "TripVcCell"
+//    weak var delegete: TripDetailVC?
+//    private let reuseIdentifer = "CarStatusCell"
 //
 //    override func viewDidLoad() {
 //        super.viewDidLoad()
@@ -58,7 +58,7 @@
 //
 //extension TripDetailVC: UITableViewDelegate, UITableViewDataSource {
 //    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//
+//        
 //    }
 //
 //    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

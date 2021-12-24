@@ -66,15 +66,19 @@ class CarStatusCell: UITableViewCell {
     }
     
     func setUp(){
+        embedSubViews()
         
     }
     
     // MARK: - Embed subviews.
     
     func embedSubViews(){
-        numberView.addSubview(number)
-        addSubview(carImage)
-        addSubview(typeOfCar)
+        
+        
+    }
+    
+    private func setUpConstraints(){
+        
     }
     
     // MARK: -  Setup constraints.
