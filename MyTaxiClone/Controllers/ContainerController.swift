@@ -28,7 +28,7 @@ class ContainterController: UIViewController {
     // MARK: - Handlers
     
     func configureHomeController(){
-        let homeController = HomeVController()
+        let homeController = MainViewController()
         homeController.delegete = self
         centerController = UINavigationController(rootViewController: homeController)
         view.addSubview(centerController.view)

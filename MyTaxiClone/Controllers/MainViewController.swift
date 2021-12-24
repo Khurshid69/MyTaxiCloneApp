@@ -13,13 +13,18 @@ class MainViewController: UIViewController, GMSMapViewDelegate {
 
     // MARK: - Properties
 
-    private let locationManager = CLLocationManager()
 
+    private let locationManager = CLLocationManager()
+    weak var delegete: HomeViewControllerDelegete?
+    
+    let screenSize: CGRect = UIScreen.main.bounds
 
     lazy var mapScreen: GMSMapView = {
-        let mapScreen = GMSMapView()
+        let mapScreen = GMSMapView(frame: CGRect(x: 0, y: 0, width: 300, height: 500))
         mapScreen.delegate = self
-        view.addSubview(mapScreen)
+        mapScreen.padding = UIEdgeInsets(top: 0, left: 0, bottom: 40, right: 0)
+        mapScreen.translatesAutoresizingMaskIntoConstraints = false
+        
         return mapScreen
     }()
 
@@ -27,7 +32,7 @@ class MainViewController: UIViewController, GMSMapViewDelegate {
 
     var bottomView: UIView = {
         var bottomView = UIView()
-        bottomView.frame = CGRect(x: 0, y: 0, width: 343, height: 118)
+        bottomView.frame = CGRect(x: 0, y: 0, width: 20, height: 137)
         bottomView.backgroundColor = .white
         bottomView.layer.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0).cgColor
         bottomView.translatesAutoresizingMaskIntoConstraints = false
@@ -147,22 +152,56 @@ class MainViewController: UIViewController, GMSMapViewDelegate {
         return btnHamburger
     }()
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+//        self.view = mapScreen
+        view.addSubview(mapScreen)
+        mapScreen.delegate = self
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        
+        locationViewConstraints()
+        
+        
+        
+
+    }
+    
 
     // MARK: - Embed subviews.
-
-    func embedSubViews(){
-        view.addSubview(mapScreen)
+    func setUp(){
+        embedSubViews()
+        setUpConstraints()
+        
     }
+    
+    
+    func embedSubViews(){
+        view.addSubview(bottomView)
+        
+    }
+    
+    func setUpConstraints(){
+        bottomViewConstraints()
+    }
+    
     //
     //
     //    // MARK: -  Setup constraints.
     //
+    func mapScreenConstraints(){
+        NSLayoutConstraint.activate([
+            mapScreen.widthAnchor.constraint(equalTo: view.widthAnchor),
+            mapScreen.heightAnchor.constraint(equalTo: view.heightAnchor),
+        ])
+    }
+    
+    
     func bottomViewConstraints(){
         NSLayoutConstraint.activate([
             bottomView.widthAnchor.constraint(equalToConstant: 375),
             bottomView.heightAnchor.constraint(equalToConstant: 147),
-            bottomView.leadingAnchor.constraint(equalTo: mapScreen.leadingAnchor, constant: 0),
-            bottomView.topAnchor.constraint(equalTo: mapScreen.topAnchor, constant: 665)
+            bottomView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
         ])
     }
 
@@ -170,8 +209,8 @@ class MainViewController: UIViewController, GMSMapViewDelegate {
         NSLayoutConstraint.activate([
             locationViewer.widthAnchor.constraint(equalToConstant: 343),
             locationViewer.heightAnchor.constraint(equalToConstant: 105),
-            locationViewer.leadingAnchor.constraint(equalTo: mapScreen.leadingAnchor, constant: 16),
-            locationViewer.topAnchor.constraint(equalTo: mapScreen.topAnchor, constant: 16)
+            locationViewer.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            locationViewer.topAnchor.constraint(equalTo: view.topAnchor, constant: 16)
 
         ])
     }
@@ -237,18 +276,6 @@ class MainViewController: UIViewController, GMSMapViewDelegate {
         ])
     }
 
-
-
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-
-        
-
-    }
 
     private func reverseGeocodeCoordinate(_ coordinate: CLLocationCoordinate2D) {
         // 1

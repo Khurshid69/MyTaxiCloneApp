@@ -25,9 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = UINavigationController(rootViewController: ContainterController(nibName: nil, bundle: nil))
         window?.makeKeyAndVisible()
         
-        if #available(iOS 13.0, *) {
-            UIWindow.appearance().overrideUserInterfaceStyle = .light
-        }
+
         
     }
     

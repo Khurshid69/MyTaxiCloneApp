@@ -34,8 +34,6 @@
 		CEF75210276B47D4003276B8 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7520F276B47D4003276B8 /* Protocols.swift */; };
 		CEF75212276B4D30003276B8 /* MenuOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF75211276B4D30003276B8 /* MenuOptionCell.swift */; };
 		CEF75214276B552E003276B8 /* MenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF75213276B552E003276B8 /* MenuOption.swift */; };
-		CEF75217276B71D5003276B8 /* HomeVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF75215276B71D5003276B8 /* HomeVController.swift */; };
-		CEF75218276B71D5003276B8 /* HomeVController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF75216276B71D5003276B8 /* HomeVController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,8 +67,6 @@
 		CEF7520F276B47D4003276B8 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		CEF75211276B4D30003276B8 /* MenuOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOptionCell.swift; sourceTree = "<group>"; };
 		CEF75213276B552E003276B8 /* MenuOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOption.swift; sourceTree = "<group>"; };
-		CEF75215276B71D5003276B8 /* HomeVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVController.swift; sourceTree = "<group>"; };
-		CEF75216276B71D5003276B8 /* HomeVController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVController.xib; sourceTree = "<group>"; };
 		E97A382EEC5F2014D169C4B0 /* Pods-MyTaxiClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTaxiClone.debug.xcconfig"; path = "Target Support Files/Pods-MyTaxiClone/Pods-MyTaxiClone.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -169,8 +165,6 @@
 			children = (
 				CEF75208276B3C27003276B8 /* ContainerController.swift */,
 				CEF7520C276B3C39003276B8 /* MenuController.swift */,
-				CEF75215276B71D5003276B8 /* HomeVController.swift */,
-				CEF75216276B71D5003276B8 /* HomeVController.xib */,
 				CE4542AA277063000043F785 /* MainViewController.swift */,
 			);
 			path = Controllers;
@@ -285,7 +279,6 @@
 				CEF751FD276B3B48003276B8 /* LaunchScreen.storyboard in Resources */,
 				CEF751FA276B3B48003276B8 /* Assets.xcassets in Resources */,
 				CEF751F5276B3B44003276B8 /* Main.storyboard in Resources */,
-				CEF75218276B71D5003276B8 /* HomeVController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,7 +350,6 @@
 			files = (
 				CEF7520D276B3C39003276B8 /* MenuController.swift in Sources */,
 				CE09811E2775D94300D44813 /* PanController.swift in Sources */,
-				CEF75217276B71D5003276B8 /* HomeVController.swift in Sources */,
 				CEF75209276B3C27003276B8 /* ContainerController.swift in Sources */,
 				CE4542AF27708CC80043F785 /* CarStatusCell.swift in Sources */,
 				CE4542AD27708AAA0043F785 /* TripDetailVC.swift in Sources */,
