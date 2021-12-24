@@ -36,10 +36,19 @@ class TotalCell: UITableViewCell {
         return sum
     }()
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-        embedSubviews()
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setUp()
+    
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setUp(){
+        
     }
     
     // MARK: - Embed subviews.

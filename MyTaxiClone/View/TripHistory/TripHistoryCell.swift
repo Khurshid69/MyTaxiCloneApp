@@ -18,9 +18,10 @@ class TripHistoryCell: UITableViewCell {
     // MARK: - Properties
     let container: UIView = {
         let viewCon = UIView()
-        viewCon.frame = CGRect(x: 10, y: 10, width: 343, height: 118)
+        viewCon.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         viewCon.layer.cornerRadius = 12
-        viewCon.backgroundColor = UIColor(red: 0.898, green: 0.898, blue: 0.898, alpha: 1)
+        viewCon.layer.borderWidth = 7
+        viewCon.layer.borderColor = UIColor.black.cgColor
         viewCon.translatesAutoresizingMaskIntoConstraints = false
         
         return viewCon
@@ -28,7 +29,7 @@ class TripHistoryCell: UITableViewCell {
     
     let redImage: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "Frame 6201")
+        image.image = UIImage(named: "Frame 621")
         image.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
         image.translatesAutoresizingMaskIntoConstraints = false
         
@@ -58,7 +59,6 @@ class TripHistoryCell: UITableViewCell {
     let blueStreet: UILabel = {
         let string = UILabel()
         string.frame = CGRect(x: 0, y: 0, width: 287, height: 17)
-        string.backgroundColor = .white
         string.textColor = UIColor(red: 0.262, green: 0.262, blue: 0.262, alpha: 1)
         string.font = UIFont(name: "Lato-Bold", size: 14)
         string.text = "5a улица Асадуллы Ходжаева"
@@ -78,10 +78,9 @@ class TripHistoryCell: UITableViewCell {
     
     let frameClock: UILabel = {
         let clock = UILabel()
-        clock.frame = CGRect(x: 0, y: 0, width: 85, height: 18)
-        clock.backgroundColor = .white
+        clock.frame = CGRect(x: 0, y: 0, width: 100, height: 18)
         clock.textColor = UIColor(red: 0.262, green: 0.262, blue: 0.262, alpha: 1)
-        clock.font = UIFont(name: "Lato-Bold", size: 14)
+        clock.font = UIFont(name: "Lato-Bold", size: 13)
         var paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineHeightMultiple = 1.07
         clock.attributedText = NSMutableAttributedString(string: "12:00 - 12:19", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
@@ -119,8 +118,8 @@ class TripHistoryCell: UITableViewCell {
     
     func embedSubViews(){
         addSubview(container)
-        container.addSubview(frameImage)
         container.addSubview(bottomFrame)
+        container.addSubview(frameImage)
         bottomFrame.addSubview(frameClock)
         bottomFrame.addSubview(frameImage)
         container.addSubview(redImage)
@@ -147,10 +146,8 @@ class TripHistoryCell: UITableViewCell {
     
     func containerConstraints(){
         NSLayoutConstraint.activate([
-            container.widthAnchor.constraint(equalToConstant: 13),
-            container.heightAnchor.constraint(equalToConstant: 13),
-            container.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            container.topAnchor.constraint(equalTo: topAnchor, constant: 149),
+            container.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: -16),
+            container.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             container.centerXAnchor.constraint(equalTo: self.centerXAnchor)
 
         ])
@@ -158,8 +155,8 @@ class TripHistoryCell: UITableViewCell {
     
     func redImageConstraints(){
         NSLayoutConstraint.activate([
-            redImage.widthAnchor.constraint(equalToConstant: 16),
-            redImage.heightAnchor.constraint(equalToConstant: 16),
+            redImage.widthAnchor.constraint(equalToConstant: 24),
+            redImage.heightAnchor.constraint(equalToConstant: 24),
             redImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
             redImage.topAnchor.constraint(equalTo: topAnchor, constant: 12)
             
@@ -180,10 +177,11 @@ class TripHistoryCell: UITableViewCell {
     
     func redStreetConstraints(){
         NSLayoutConstraint.activate([
-            redImage.widthAnchor.constraint(equalToConstant: 287),
-            redImage.heightAnchor.constraint(equalToConstant: 17),
-            redImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 44),
-            redImage.topAnchor.constraint(equalTo: topAnchor, constant: 14)
+            redsStreet.widthAnchor.constraint(equalToConstant: 287),
+            redsStreet.heightAnchor.constraint(equalToConstant: 17),
+            redsStreet.leadingAnchor.constraint(equalTo: redImage.trailingAnchor, constant: 8),
+            redsStreet.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 12),
+            redsStreet.topAnchor.constraint(equalTo: topAnchor, constant: 14)
         ])
         
     }
@@ -192,8 +190,8 @@ class TripHistoryCell: UITableViewCell {
         NSLayoutConstraint.activate([
             blueStreet.widthAnchor.constraint(equalToConstant: 287),
             blueStreet.heightAnchor.constraint(equalToConstant: 17),
-            blueStreet.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 44),
-            blueStreet.topAnchor.constraint(equalTo: topAnchor, constant: 42)
+            blueStreet.leadingAnchor.constraint(equalTo: blueImage.trailingAnchor, constant: 8),
+            blueStreet.topAnchor.constraint(equalTo: topAnchor, constant: 42),
         ])
     }
     
@@ -210,10 +208,10 @@ class TripHistoryCell: UITableViewCell {
     
     func clockConstraints(){
         NSLayoutConstraint.activate([
-            frameClock.widthAnchor.constraint(equalToConstant: 85),
-            frameClock.heightAnchor.constraint(equalToConstant: 18),
+            frameClock.widthAnchor.constraint(equalToConstant: 150),
+            frameClock.heightAnchor.constraint(equalToConstant: 13),
             frameClock.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            frameClock.topAnchor.constraint(equalTo: topAnchor, constant: 12)
+            frameClock.bottomAnchor.constraint(equalTo: bottomFrame.bottomAnchor, constant: -12)
         ])
         
     }
@@ -223,7 +221,7 @@ class TripHistoryCell: UITableViewCell {
             frameImage.widthAnchor.constraint(equalToConstant: 108),
             frameImage.heightAnchor.constraint(equalToConstant: 39),
             frameImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 225),
-            frameImage.topAnchor.constraint(equalTo: topAnchor, constant: -10)
+            frameImage.bottomAnchor.constraint(equalTo: bottomFrame.bottomAnchor, constant: -13)
         ])
         
     }

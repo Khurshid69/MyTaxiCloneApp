@@ -30,7 +30,6 @@ class TripHistoryTable: UIViewController {
         configureTableView()
         
         
-        
         let backButton = UIBarButtonItem()
         backButton.title = "Мои поездки"
         backButton.tintColor = .black
@@ -40,10 +39,11 @@ class TripHistoryTable: UIViewController {
     func configureTableView(){
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        tableView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 16).isActive = true
+        tableView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 16).isActive = true
+        tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 16).isActive = true
+        
         
     }
     
@@ -57,6 +57,11 @@ extension TripHistoryTable: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifer, for: indexPath)as! TripHistoryCell
+        
+        cell.layer.borderColor = UIColor.systemGray5.cgColor
+        cell.layer.borderWidth = 1
+        cell.layer.cornerRadius = 12
+        cell.clipsToBounds = true
         
         return cell
     }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5FCEED6ED2F03581785B3462 /* Pods_MyTaxiClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269CF9B71217C815AC36FF33 /* Pods_MyTaxiClone.framework */; };
+		CE09811E2775D94300D44813 /* PanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09811D2775D94300D44813 /* PanController.swift */; };
 		CE4542AB277063000043F785 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4542AA277063000043F785 /* MainViewController.swift */; };
 		CE4542AD27708AAA0043F785 /* TripDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4542AC27708AAA0043F785 /* TripDetailVC.swift */; };
 		CE4542AF27708CC80043F785 /* CarStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4542AE27708CC80043F785 /* CarStatusCell.swift */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		269CF9B71217C815AC36FF33 /* Pods_MyTaxiClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTaxiClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C45630DDDD4C52C6BACAFB52 /* Pods-MyTaxiClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTaxiClone.release.xcconfig"; path = "Target Support Files/Pods-MyTaxiClone/Pods-MyTaxiClone.release.xcconfig"; sourceTree = "<group>"; };
+		CE09811D2775D94300D44813 /* PanController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanController.swift; sourceTree = "<group>"; };
 		CE4542AA277063000043F785 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CE4542AC27708AAA0043F785 /* TripDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailVC.swift; sourceTree = "<group>"; };
 		CE4542AE27708CC80043F785 /* CarStatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarStatusCell.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				CE46F38A2771AB9C00EE658A /* Extensions.swift */,
+				CE09811D2775D94300D44813 /* PanController.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEF7520D276B3C39003276B8 /* MenuController.swift in Sources */,
+				CE09811E2775D94300D44813 /* PanController.swift in Sources */,
 				CEF75217276B71D5003276B8 /* HomeVController.swift in Sources */,
 				CEF75209276B3C27003276B8 /* ContainerController.swift in Sources */,
 				CE4542AF27708CC80043F785 /* CarStatusCell.swift in Sources */,
