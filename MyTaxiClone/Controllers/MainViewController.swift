@@ -154,13 +154,11 @@ class MainViewController: UIViewController, GMSMapViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.view = mapScreen
-        view.addSubview(mapScreen)
+        self.view = mapScreen
         mapScreen.delegate = self
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
-        
-        locationViewConstraints()
+        setUp()
         
         
         
@@ -170,6 +168,7 @@ class MainViewController: UIViewController, GMSMapViewDelegate {
 
     // MARK: - Embed subviews.
     func setUp(){
+        
         embedSubViews()
         setUpConstraints()
         
@@ -183,25 +182,19 @@ class MainViewController: UIViewController, GMSMapViewDelegate {
     
     func setUpConstraints(){
         bottomViewConstraints()
+        
     }
     
     //
     //
     //    // MARK: -  Setup constraints.
     //
-    func mapScreenConstraints(){
-        NSLayoutConstraint.activate([
-            mapScreen.widthAnchor.constraint(equalTo: view.widthAnchor),
-            mapScreen.heightAnchor.constraint(equalTo: view.heightAnchor),
-        ])
-    }
     
     
     func bottomViewConstraints(){
         NSLayoutConstraint.activate([
             bottomView.widthAnchor.constraint(equalToConstant: 375),
-            bottomView.heightAnchor.constraint(equalToConstant: 147),
-            bottomView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            bottomView.heightAnchor.constraint(equalToConstant: 147)
         ])
     }
 
