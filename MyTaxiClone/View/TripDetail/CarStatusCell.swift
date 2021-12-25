@@ -14,7 +14,7 @@ class CarStatusCell: UITableViewCell {
         let number = UIView()
         number.layer.cornerRadius = 6
         number.frame = CGRect(x: 0, y: 0, width: 119, height: 32)
-        number.backgroundColor = .white
+        number.backgroundColor = .black
         number.translatesAutoresizingMaskIntoConstraints = false
         
         return number
@@ -67,18 +67,18 @@ class CarStatusCell: UITableViewCell {
     
     func setUp(){
         embedSubViews()
-        
+        setUpConstraints()
     }
     
     // MARK: - Embed subviews.
     
     func embedSubViews(){
-        
+        self.addSubview(numberView)
         
     }
     
-    private func setUpConstraints(){
-        
+    func setUpConstraints(){
+        setNumberViewConstraints()
     }
     
     // MARK: -  Setup constraints.

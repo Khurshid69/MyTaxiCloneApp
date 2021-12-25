@@ -15,7 +15,6 @@ class ContainerVC: UIViewController {
         let view = UITableView()
         view.dataSource = self
         view.delegate = self
-        view.backgroundColor = .white
         view.register(CarStatusCell.self)
         view.register(TripHistoryStreetCell.self)
         view.register(DriverCell.self)
@@ -23,7 +22,6 @@ class ContainerVC: UIViewController {
         view.register(CostCalculationCell.self)
         view.register(TotalCell.self)
         view.separatorStyle = .none
-        view.showsVerticalScrollIndicator = false
         view.translatesAutoresizingMaskIntoConstraints = false
 
         return view
@@ -31,8 +29,26 @@ class ContainerVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
+        setup()
+    }
+    
+    func setup() {
+        embedSubviews()
+        setSubviewsConstraints()
+    }
+    
+    func embedSubviews() {
+        view.addSubview(tableView)
+    }
+    
+    func setSubviewsConstraints() {
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            
+        ])
     }
 
 }
@@ -46,6 +62,7 @@ extension ContainerVC: UITableViewDataSource, UITableViewDelegate {
         switch sections[indexPath.row] {
         case .carStatus:
             let cell: CarStatusCell = tableView.dequeueReusableCell(withIdentifier: "CarStatusCell", for: indexPath) as! CarStatusCell
+            cell.textLabel?.text = "Hello"
             return cell
 
         case .tripHistory:
@@ -72,6 +89,4 @@ extension ContainerVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
-
-
 }
