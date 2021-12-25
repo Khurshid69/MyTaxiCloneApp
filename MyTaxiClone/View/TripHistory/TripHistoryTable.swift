@@ -15,6 +15,7 @@ class TripHistoryTable: UIViewController {
         tableView.dataSource = self
         tableView.register(TripHistoryCell.self, forCellReuseIdentifier: reuseIdentifer)
         tableView.separatorColor = .white
+        tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = 118
         
         
@@ -89,11 +90,12 @@ extension TripHistoryTable: UITableViewDelegate, UITableViewDataSource {
             return 3
         }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let tripHistoryTable = TripDetailVC(rawValue: indexPath.row)
-//
-//
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = TripDetailVC()
+        self.navigationController?.pushViewController(vc, animated: true)
+
+
+    }
     
 }
 

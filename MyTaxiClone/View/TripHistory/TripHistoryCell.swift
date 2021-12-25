@@ -160,8 +160,8 @@ class TripHistoryCell: UITableViewCell {
         NSLayoutConstraint.activate([
             view.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: -16),
             view.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -26),
-            view.topAnchor.constraint(equalTo: self.topAnchor, constant: -16),
-            view.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16)
+            view.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
+            view.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 10)
         ])
     }
     

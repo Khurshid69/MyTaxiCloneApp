@@ -21,6 +21,8 @@
 		CE46F38F2771ADD900EE658A /* TripHistoryTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46F38E2771ADD900EE658A /* TripHistoryTable.swift */; };
 		CE46F3912771AE5000EE658A /* TripHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46F3902771AE5000EE658A /* TripHistoryCell.swift */; };
 		CE46F3932771CE0400EE658A /* PeymentMethodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46F3922771CE0400EE658A /* PeymentMethodCell.swift */; };
+		CE5DADE62776E48400CC0D5C /* HomeVController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE5DADE52776E48300CC0D5C /* HomeVController.xib */; };
+		CE5DADE82776E4A600CC0D5C /* HomeVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5DADE72776E4A600CC0D5C /* HomeVController.swift */; };
 		CEAEFB95276CCFB6001D21BF /* TripHistoryItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEFB94276CCFB6001D21BF /* TripHistoryItems.swift */; };
 		CEF62333276F838E00C1CBEC /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF62332276F838E00C1CBEC /* UserView.swift */; };
 		CEF751EE276B3B44003276B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF751ED276B3B44003276B8 /* AppDelegate.swift */; };
@@ -52,6 +54,8 @@
 		CE46F38E2771ADD900EE658A /* TripHistoryTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripHistoryTable.swift; sourceTree = "<group>"; };
 		CE46F3902771AE5000EE658A /* TripHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripHistoryCell.swift; sourceTree = "<group>"; };
 		CE46F3922771CE0400EE658A /* PeymentMethodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeymentMethodCell.swift; sourceTree = "<group>"; };
+		CE5DADE52776E48300CC0D5C /* HomeVController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeVController.xib; sourceTree = "<group>"; };
+		CE5DADE72776E4A600CC0D5C /* HomeVController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVController.swift; sourceTree = "<group>"; };
 		CEAEFB94276CCFB6001D21BF /* TripHistoryItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripHistoryItems.swift; sourceTree = "<group>"; };
 		CEF62332276F838E00C1CBEC /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		CEF751EA276B3B44003276B8 /* MyTaxiClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTaxiClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,6 +169,8 @@
 			children = (
 				CEF75208276B3C27003276B8 /* ContainerController.swift */,
 				CEF7520C276B3C39003276B8 /* MenuController.swift */,
+				CE5DADE72776E4A600CC0D5C /* HomeVController.swift */,
+				CE5DADE52776E48300CC0D5C /* HomeVController.xib */,
 				CE4542AA277063000043F785 /* MainViewController.swift */,
 			);
 			path = Controllers;
@@ -279,6 +285,7 @@
 				CEF751FD276B3B48003276B8 /* LaunchScreen.storyboard in Resources */,
 				CEF751FA276B3B48003276B8 /* Assets.xcassets in Resources */,
 				CEF751F5276B3B44003276B8 /* Main.storyboard in Resources */,
+				CE5DADE62776E48400CC0D5C /* HomeVController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,6 +374,7 @@
 				CE4542AB277063000043F785 /* MainViewController.swift in Sources */,
 				CE46F38B2771AB9C00EE658A /* Extensions.swift in Sources */,
 				CE46F38F2771ADD900EE658A /* TripHistoryTable.swift in Sources */,
+				CE5DADE82776E4A600CC0D5C /* HomeVController.swift in Sources */,
 				CEF751EE276B3B44003276B8 /* AppDelegate.swift in Sources */,
 				CEF62333276F838E00C1CBEC /* UserView.swift in Sources */,
 				CE46F3862771A1E900EE658A /* TotalCell.swift in Sources */,
