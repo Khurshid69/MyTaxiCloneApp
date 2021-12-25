@@ -93,13 +93,5 @@ extension TripHistoryTable: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = TripDetailVC()
         self.navigationController?.pushViewController(vc, animated: true)
-
-
     }
-    
 }
-
-//func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//    let menuOption = MenuOption(rawValue: indexPath.row)
-//    delegete?.handleMenuToggle(forMenuOption: menuOption)
-//}

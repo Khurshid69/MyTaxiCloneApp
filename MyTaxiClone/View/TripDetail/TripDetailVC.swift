@@ -1,4 +1,4 @@
-import UIKit
+
 ////
 ////  TripDetailVC.swift
 ////  MyTaxiClone
@@ -20,16 +20,20 @@ enum TripDetailSections: Int, CaseIterable {
 
 class TripDetailVC: UIViewController, GMSMapViewDelegate {
     // MARK: - Properties
-    
+
     private let locationManager = CLLocationManager()
         weak var delegete: HomeViewControllerDelegete?
-    
+
     lazy var mapScreen: GMSMapView = {
         let mapScreen = GMSMapView()
         mapScreen.delegate = self
         mapScreen.translatesAutoresizingMaskIntoConstraints = false
-        
+
         return mapScreen
+    }()
+
+    private lazy var containerVC: ContainerVC = {
+        return ContainerVC()
     }()
 
     override func viewDidLoad() {
@@ -39,17 +43,22 @@ class TripDetailVC: UIViewController, GMSMapViewDelegate {
         mapScreen.delegate = self
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
-        
-        
+
+
     }
-    
+
+
+
+
+
     private func reverseGeocodeCoordinate(_ coordinate: CLLocationCoordinate2D) {
             // 1
             let geocoder = GMSGeocoder()
             // 2
             geocoder.reverseGeocodeCoordinate(coordinate) { response, error in
-                guard let address = response?.firstResult(), let lines = address.lines else { return }
-    
+//                guard let address = response?.firstResult(),
+//                      let lines = address.lines else { return }
+
                 UIView.animate(withDuration: 0.25) {
                     self.view.layoutIfNeeded()
                 }

@@ -15,12 +15,14 @@ class ContainerVC: UIViewController {
         let view = UITableView()
         view.dataSource = self
         view.delegate = self
-        view.register(CarStatusCell.self)
-        view.register(TripHistoryStreetCell.self)
-        view.register(DriverCell.self)
-        view.register(PeymentMethodCell.self)
-        view.register(CostCalculationCell.self)
-        view.register(TotalCell.self)
+        tableView.delegate = self
+        tableView.dataSource = self
+        view.register(CarStatusCell.self, forCellReuseIdentifier: "CarStatusCell")
+        view.register(TripHistoryStreetCell.self, forCellReuseIdentifier: "TripHistoryStreetCell")
+        view.register(DriverCell.self, forCellReuseIdentifier: "DriverCell")
+        view.register(PeymentMethodCell.self, forCellReuseIdentifier: "PeymentMethodCell")
+        view.register(CostCalculationCell.self, forCellReuseIdentifier: "CostCalculationCell")
+        view.register(TotalCell.self, forCellReuseIdentifier: "TotalCell")
         view.separatorStyle = .none
         view.translatesAutoresizingMaskIntoConstraints = false
 
@@ -30,6 +32,7 @@ class ContainerVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        tableView.frame = self.view.bounds
     }
     
     func setup() {
@@ -43,7 +46,7 @@ class ContainerVC: UIViewController {
     
     func setSubviewsConstraints() {
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: -300),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)

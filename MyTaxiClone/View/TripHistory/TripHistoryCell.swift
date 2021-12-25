@@ -241,7 +241,7 @@ class TripHistoryCell: UITableViewCell {
         NSLayoutConstraint.activate([
             frameImage.widthAnchor.constraint(equalToConstant: 108),
             frameImage.heightAnchor.constraint(equalToConstant: 39),
-            frameImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 225),
+            frameImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 230),
             frameImage.bottomAnchor.constraint(equalTo: bottomFrame.bottomAnchor, constant: -13)
         ])
         
