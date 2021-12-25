@@ -22,7 +22,7 @@ class TripHistoryTable: UIViewController {
         return tableView
     }()
     
-    var datas: Array<Post> = Array()
+    var datas: Array<TripHistoryItems> = Array()
     private let reuseIdentifer = "TripHistoryCell"
 
     override func viewDidLoad() {
@@ -58,6 +58,10 @@ extension TripHistoryTable: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifer, for: indexPath)as! TripHistoryCell
+        let historyInfo = TripHistoryItems(rawValue: indexPath.row)
+        cell.selectionStyle = .none
+        cell.frameImage.image = historyInfo?.CarImage
+        cell.frameClock.text = historyInfo?.time
         
         cell.layer.borderColor = UIColor.systemGray5.cgColor
         cell.layer.borderWidth = 1

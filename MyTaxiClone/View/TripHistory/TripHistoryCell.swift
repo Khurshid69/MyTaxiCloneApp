@@ -9,9 +9,9 @@ import UIKit
 
 class TripHistoryCell: UITableViewCell {
     
-    var itemsToShow : Post? {
+    var itemsToShow : TripHistoryItems? {
         didSet {
-            frameImage.image = itemsToShow?.carImage
+            frameImage.image = itemsToShow?.CarImage
         }
     }
     
