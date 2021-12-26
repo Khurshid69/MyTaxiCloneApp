@@ -37,9 +37,9 @@ class DirectionBottomView: UIView {
     var locationViewerLabel: UILabel = {
         let string = UILabel()
         string.text = "Somethere"
-        string.frame = CGRect(x: 0, y: 0, width: 196, height: 17)
+        string.frame = CGRect(x: 0, y: 0, width: 196, height: 14)
         string.textColor = UIColor(red: 0.692, green: 0.692, blue: 0.692, alpha: 1)
-        string.font = UIFont(name: "Avenir", size: 14)
+        string.font = UIFont(name: "Avenir ", size: 13)
         
         return string
     }()
@@ -64,9 +64,9 @@ class DirectionBottomView: UIView {
     var whereLabel: UILabel = {
         let string = UILabel()
         string.text = "Куда?"
-        string.frame = CGRect(x: 0, y: 0, width: 196, height: 17)
+        string.frame = CGRect(x: 0, y: 0, width: 196, height: 14)
         string.textColor = UIColor(red: 0.692, green: 0.692, blue: 0.692, alpha: 1)
-        string.font = UIFont(name: "Avenir", size: 14)
+        string.font = UIFont(name: "Avenir ", size: 13)
         
         return string
     }()
@@ -87,8 +87,6 @@ class DirectionBottomView: UIView {
     }()
     
     
-    
-
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
