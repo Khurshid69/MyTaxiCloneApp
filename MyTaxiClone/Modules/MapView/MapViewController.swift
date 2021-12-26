@@ -41,11 +41,10 @@ class MapViewController: BaseViewController, GMSMapViewDelegate {
     }()
     
     private(set) lazy var bottomView: UIView = {
-        let view = UIView()
-        let width: CGFloat = UIScreen.main.bounds.width
-        let height: CGFloat = 375
-        let frame = CGRect(x: 0, y: 0, width: width, height: height)
-        return DirectionBottomView(frame: frame)
+        let view = DirectionBottomView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        return view
     }()
     
     private(set) lazy var myLocationButton: UIButton = {

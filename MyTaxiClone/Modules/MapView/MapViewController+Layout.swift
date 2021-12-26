@@ -31,7 +31,7 @@ extension MapViewController {
         view.addSubview(mapView)
         view.addSubview(sideMenuButton)
         view.addSubview(marker)
-        mapView.addSubview(bottomView)
+        view.addSubview(bottomView)
         
         
     }
@@ -62,6 +62,15 @@ extension MapViewController {
             marker.heightAnchor.constraint(equalToConstant: dwgConst.markerSize.height),
             marker.centerXAnchor.constraint(equalTo: mapView.centerXAnchor),
             marker.centerYAnchor.constraint(equalTo: mapView.centerYAnchor, constant: -dwgConst.markerSize.height / 2),
+        ])
+    }
+    
+    private func setBottomConstraints(){
+        NSLayoutConstraint.activate([
+            bottomView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            bottomView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            bottomView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            bottomView.heightAnchor.constraint(equalToConstant: 137),
         ])
     }
 }

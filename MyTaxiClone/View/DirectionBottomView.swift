@@ -10,16 +10,18 @@ import UIKit
 class DirectionBottomView: UIView {
     var contentView: UIView = {
         let contentView = UIView()
-        contentView.backgroundColor = .red
+        contentView.backgroundColor = .white
+        contentView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 137)
+        
     
         return contentView
     }()
     
     var stackView: UIView = {
         let stackView = UIView()
-        stackView.backgroundColor = .white
+        stackView.backgroundColor = UIColor(red: 0.973, green: 0.973, blue: 0.973, alpha: 1)
         stackView.layer.cornerRadius = 12
-        stackView.frame = CGRect(x: 0, y: 0, width: 343, height: 105)
+        stackView.clipsToBounds = true
 
         return stackView
     }()
@@ -34,7 +36,7 @@ class DirectionBottomView: UIView {
     
     var locationViewerLabel: UILabel = {
         let string = UILabel()
-        string.text = "somethere"
+        string.text = "Somethere"
         string.frame = CGRect(x: 0, y: 0, width: 196, height: 17)
         string.textColor = UIColor(red: 0.692, green: 0.692, blue: 0.692, alpha: 1)
         string.font = UIFont(name: "Avenir", size: 14)
@@ -69,9 +71,15 @@ class DirectionBottomView: UIView {
         return string
     }()
     
-    var tapButtonView: UIImageView = {
+    var vectorButtonView: UIView = {
+        let view = UIView()
+        view.layer.backgroundColor = UIColor(red: 0.9, green: 0.899, blue: 0.891, alpha: 1).cgColor
+        
+        return view
+    }()
+    
+    var tapButtonImageView: UIImageView = {
         let image = UIImageView()
-        image.frame = CGRect(x: 0, y: 0, width: 60, height: 52)
         image.layer.backgroundColor = UIColor(red: 0.9, green: 0.899, blue: 0.891, alpha: 1).cgColor
         image.image = UIImage(named: "Vector")
         
@@ -104,7 +112,9 @@ class DirectionBottomView: UIView {
         stackView.addSubview(bottomStacks)
         bottomStacks.addSubview(blueImage)
         bottomStacks.addSubview(whereLabel)
-        bottomStacks.addSubview(tapButtonView)
+        bottomStacks.addSubview(vectorButtonView)
+        vectorButtonView.addSubview(tapButtonImageView)
+        
     }
     
     // Setting Up Constraints to EmbedSubviews.
@@ -116,23 +126,18 @@ class DirectionBottomView: UIView {
         setBottomStackConstraints()
         setBlueImageConstraints()
         setWhereLabelConstraints()
-        setTapButtonViewConstraints()
+        setVektorViewConstraints()
+        setVektorImageConstraints()
     }
 }
 
 extension DirectionBottomView {
     private func setContentViewConstraints(){
-        contentView.snp.makeConstraints { make in
-//            let width = UIScreen.main.bounds.width
-//            let height: CGFloat = 375
-            NSLayoutConstraint.activate([
-                contentView.heightAnchor.constraint(equalTo: self.heightAnchor, constant: 137),
-                contentView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-                contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-                contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 100)
-            ])
+        NSLayoutConstraint.activate([
             
-        }
+            contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+//            contentView.heightAnchor.constraint(equalToConstant: 148),
+        ])
     }
     
     private func setStackViewConstraints(){
@@ -148,13 +153,16 @@ extension DirectionBottomView {
         redPinImage.snp.makeConstraints { make in
             make.left.equalTo(stackView).offset(12)
             make.top.equalTo(stackView).offset(14)
-            make.bottom.equalTo(bottomStacks).offset(14)
+            make.bottom.equalTo(stackView.snp_topMargin).offset(-14)
+            make.size.equalTo(CGSize(width: 24, height: 24))
         }
     }
     
     private func setLocationViewerStringConstraints(){
         locationViewerLabel.snp.makeConstraints { make in
-            make.left.equalTo(redPinImage).offset(8)
+            make.left.equalTo(redPinImage.snp_rightMargin).offset(13.3)
+            make.top.equalTo(stackView).offset(18)
+            
         }
     }
     
@@ -171,23 +179,28 @@ extension DirectionBottomView {
             make.left.equalTo(bottomStacks).offset(12)
             make.top.equalTo(bottomStacks).offset(14)
             make.bottom.equalTo(bottomStacks).offset(-14)
+            
         }
     }
     
     private func setWhereLabelConstraints(){
         whereLabel.snp.makeConstraints { make in
-            make.left.equalTo(blueImage).offset(13.3)
+            make.left.equalTo(blueImage.snp_rightMargin).offset(13.3)
             make.top.equalTo(bottomStacks).offset(-18)
             make.bottom.equalTo(bottomStacks).offset(17)
             
         }
     }
     
-    private func setTapButtonViewConstraints(){
-        tapButtonView.snp.makeConstraints { make in
+    private func setVektorViewConstraints(){
+        vectorButtonView.snp.makeConstraints { make in
             make.bottom.top.right.equalTo(bottomStacks)
-            
+            make.size.equalTo(CGSize(width: 60, height: 52))
         }
     }
-    
+    private func setVektorImageConstraints(){
+        tapButtonImageView.snp.makeConstraints { make in
+            make.center.equalTo(vectorButtonView)
+        }
+    }
 }
