@@ -99,12 +99,12 @@ class CostCalculationCell: UITableViewCell {
         return sum
     }()
     
-
+    
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setUp()
-    
+        
     }
     
     required init?(coder: NSCoder) {
@@ -112,86 +112,86 @@ class CostCalculationCell: UITableViewCell {
     }
     
     func setUp(){
-        
+        embedSubviews()
+        setConstraints()
     }
     
     // MARK: - Embed subviews.
     
     func embedSubviews(){
-        
+        self.addSubview(headerCalculation)
+        self.addSubview(minimumAmount)
+        self.addSubview(minSum)
+        self.addSubview(tipAmount)
+        self.addSubview(tripSum)
+        self.addSubview(pricePending)
+        self.addSubview(pricePendingSum) 
     }
     
+    func setConstraints(){
+        headerConstraints()
+        minimumAmountConsraints()
+        minimumSum()
+        tripAmountConstraints()
+        tripSumConstraints()
+        pricePendingConstraints()
+        pricePendingSumConstraints()
+    }
     
     // MARK: -  Setup constraints.
     
     func headerConstraints(){
-        NSLayoutConstraint.activate([
-            headerCalculation.widthAnchor.constraint(equalToConstant: 170),
-            headerCalculation.heightAnchor.constraint(equalToConstant: 24),
-            headerCalculation.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            headerCalculation.topAnchor.constraint(equalTo: topAnchor, constant: 906)
-        ])
+        headerCalculation.snp.makeConstraints { make in
+            make.top.equalTo(self).offset(25)
+            make.left.equalTo(self).offset(16)
+            
+        }
     }
     
     func minimumAmountConsraints(){
-        NSLayoutConstraint.activate([
-            minimumAmount.widthAnchor.constraint(equalToConstant: 136),
-            minimumAmount.heightAnchor.constraint(equalToConstant: 17),
-            minimumAmount.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            minimumAmount.topAnchor.constraint(equalTo: topAnchor, constant: 951)
-        ])
+        minimumAmount.snp.makeConstraints { make in
+            make.top.equalTo(headerCalculation).offset(25)
+            make.left.equalTo(self).offset(16)
+            
+        }
     }
     
     func minimumSum(){
-        NSLayoutConstraint.activate([
-            minSum.widthAnchor.constraint(equalToConstant: 74),
-            minSum.heightAnchor.constraint(equalToConstant: 17),
-            minSum.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 285),
-            minSum.topAnchor.constraint(equalTo: topAnchor, constant: 951)
-        ])
+        minSum.snp.makeConstraints { make in
+            make.right.equalTo(self).offset(16)
+            make.top.equalTo(headerCalculation).offset(21)
+            
+        }
     }
     
     func tripAmountConstraints(){
-        NSLayoutConstraint.activate([
-            tripSum.widthAnchor.constraint(equalToConstant: 101),
-            tripSum.heightAnchor.constraint(equalToConstant: 17),
-            tripSum.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            tripSum.topAnchor.constraint(equalTo: topAnchor, constant: 980)
-        ])
+        tipAmount.snp.makeConstraints { make in
+            make.left.equalTo(16)
+            make.top.equalTo(minimumAmount).offset(12)
+            
+        }
     }
     
     func tripSumConstraints(){
-        NSLayoutConstraint.activate([
-            tripSum.widthAnchor.constraint(equalToConstant: 74),
-            tripSum.heightAnchor.constraint(equalToConstant: 17),
-            tripSum.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 285),
-            tripSum.topAnchor.constraint(equalTo: topAnchor, constant: 980)
-        ])
+        tripSum.snp.makeConstraints { make in
+            make.right.equalTo(self).offset(16)
+            make.top.equalTo(minSum).offset(12)
+        }
     }
     
     func pricePendingConstraints(){
-        NSLayoutConstraint.activate([
-            pricePending.widthAnchor.constraint(equalToConstant: 104),
-            pricePending.heightAnchor.constraint(equalToConstant: 17),
-            pricePending.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            pricePending.topAnchor.constraint(equalTo: topAnchor, constant: 1009)
-        ])
+        pricePending.snp.makeConstraints { make in
+            make.left.equalTo(16)
+            make.top.equalTo(tipAmount).offset(12)
+            
+        }
     }
     
     func pricePendingSumConstraints(){
-        NSLayoutConstraint.activate([
-            pricePendingSum.widthAnchor.constraint(equalToConstant: 39),
-            pricePendingSum.heightAnchor.constraint(equalToConstant: 17),
-            pricePendingSum.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 320),
-            pricePendingSum.topAnchor.constraint(equalTo: topAnchor, constant: 1009)
-        ])
+        pricePendingSum.snp.makeConstraints { make in
+            make.right.equalTo(16)
+            make.top.equalTo(tripSum).offset(12)
+            
+        }
     }
-    
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        
-    }
-    
 }

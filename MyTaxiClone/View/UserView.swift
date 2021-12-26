@@ -96,11 +96,12 @@ class UserView: UIView{
 
 extension UserView {
     private func setContentViewConstraints(){
-        let width = UIScreen.main.bounds.width - 84
+        let width = (UIScreen.main.bounds.width - 12) - (UIScreen.main.bounds.width * 0.15)
         contentView.snp.makeConstraints { make in
             make.left.equalTo(self).offset(16)
             make.width.equalTo(width)
-            make.top.bottom.equalTo(self)
+            make.top.equalTo(self).offset(12)
+            make.bottom.equalTo(self).offset(-12)
         }
     }
     

@@ -10,7 +10,6 @@ import UIKit
 class TotalCell: UITableViewCell {
     
     // MARK: - Properties
-    
     let totalHeader: UILabel = {
         let string = UILabel()
         string.frame = CGRect(x: 0, y: 0, width: 57, height: 24)
@@ -40,7 +39,7 @@ class TotalCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setUp()
-    
+        
     }
     
     required init?(coder: NSCoder) {
@@ -48,40 +47,38 @@ class TotalCell: UITableViewCell {
     }
     
     func setUp(){
-        
+        embedSubviews()
+        setUpConstraints()
     }
     
     // MARK: - Embed subviews.
     
     func embedSubviews(){
-        
+        self.addSubview(totalHeader)
+        self.addSubview(totalSum)
     }
-    
     
     // MARK: -  Setup constraints.
     
+    func setUpConstraints(){
+        headerConstraints()
+        sumConstraints()
+    }
+    
+    
     func headerConstraints(){
-        NSLayoutConstraint.activate([
-            totalHeader.widthAnchor.constraint(equalToConstant: 57),
-            totalHeader.heightAnchor.constraint(equalToConstant: 24),
-            totalHeader.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            totalHeader.topAnchor.constraint(equalTo: topAnchor, constant: 1055)
-        ])
+        totalHeader.snp.makeConstraints { make in
+            make.left.equalTo(self).offset(16)
+            make.top.equalTo(self).offset(12)
+            make.bottom.equalTo(self).offset(28)
+        }
     }
     
     func sumConstraints(){
-        NSLayoutConstraint.activate([
-            totalSum.widthAnchor.constraint(equalToConstant: 104),
-            totalSum.heightAnchor.constraint(equalToConstant: 24),
-            totalSum.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 255),
-            totalSum.topAnchor.constraint(equalTo: topAnchor, constant: 1055)
-        ])
+        totalSum.snp.makeConstraints { make in
+            make.top.equalTo(12)
+            make.right.equalTo(16)
+            make.bottom.equalTo(self).offset(28)
+        }
     }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
-    }
-    
 }

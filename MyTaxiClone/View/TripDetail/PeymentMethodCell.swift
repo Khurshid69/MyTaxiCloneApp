@@ -154,12 +154,12 @@ class PeymentMethodCell: UITableViewCell {
         
         return string
     }()
-
+    
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setUp()
-    
+        
     }
     
     required init?(coder: NSCoder) {
@@ -167,131 +167,129 @@ class PeymentMethodCell: UITableViewCell {
     }
     
     func setUp(){
-        
+        embedSubviews()
+        setUpConstraints()
     }
     
     // MARK: - Embed subviews.
     
     func embedSubviews(){
+        self.addSubview(header)
+        self.addSubview(rateLabel)
+        self.addSubview(rateType)
+        self.addSubview(paymentMethod)
+        self.addSubview(paymentImage)
+        self.addSubview(paymentMethodType)
+        self.addSubview(orderLabel)
+        self.addSubview(orderCount)
+        self.addSubview(data)
+        self.addSubview(dataTime)
+        self.addSubview(tripTime)
+        self.addSubview(tripHours)
         
+    }
+    
+    func setUpConstraints(){
+        headerConstraints()
+        rateLabelConstraints()
+        rateTypeConstraints()
+        paymentMethodsConstraints()
+        paymentImageConstaints()
+        paymentTypeConstraints()
+        orderLabelConstrainsts()
+        orderCountConstaints()
+        dataLabelConstraints()
+        dataTimeConstraints()
+        tripTimeConstraints()
+        tripHoursConstraints()
     }
     
     
     // MARK: -  Setup constraints.
     
     func headerConstraints(){
-        NSLayoutConstraint.activate([
-            header.widthAnchor.constraint(equalToConstant: 145),
-            header.heightAnchor.constraint(equalToConstant: 24),
-            header.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            header.topAnchor.constraint(equalTo: topAnchor, constant: 696)
-        ])
+        header.snp.makeConstraints { make in
+            make.left.equalTo(self).offset(16)
+            make.top.equalTo(self).offset(26)
+        }
         
     }
     
     func rateLabelConstraints(){
-        NSLayoutConstraint.activate([
-            rateLabel.widthAnchor.constraint(equalToConstant: 40),
-            rateLabel.heightAnchor.constraint(equalToConstant: 17),
-            rateLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            rateLabel.topAnchor.constraint(equalTo: topAnchor, constant: 741)
-        ])
+        rateLabel.snp.makeConstraints { make in
+            make.left.equalTo(self).offset(16)
+            
+        }
     }
     
     func rateTypeConstraints(){
-        NSLayoutConstraint.activate([
-            rateType.widthAnchor.constraint(equalToConstant: 46),
-            rateType.heightAnchor.constraint(equalToConstant: 17),
-            rateType.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 313),
-            rateType.topAnchor.constraint(equalTo: topAnchor, constant: 741)
-        ])
+        rateType.snp.makeConstraints { make in
+            make.right.equalTo(self).offset(16)
+            
+        }
     }
     
     func paymentMethodsConstraints(){
-        NSLayoutConstraint.activate([
-            paymentMethod.widthAnchor.constraint(equalToConstant: 101),
-            paymentMethod.heightAnchor.constraint(equalToConstant: 17),
-            paymentMethod.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            paymentMethod.topAnchor.constraint(equalTo: topAnchor, constant: 773)
-        ])
+        paymentMethod.snp.makeConstraints { make in
+            make.right.equalTo(self).offset(16)
+            make.top.equalTo(rateLabel).offset(15)
+        }
     }
     
     func paymentImageConstaints(){
-        
-        
+        paymentImage.snp.makeConstraints { make in
+            make.left.equalTo(self).offset(8)
+        }
     }
     
     func paymentTypeConstraints(){
-        NSLayoutConstraint.activate([
-            paymentMethodType.widthAnchor.constraint(equalToConstant: 79),
-            paymentMethodType.heightAnchor.constraint(equalToConstant: 17),
-            paymentMethodType.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 280),
-            paymentMethodType.topAnchor.constraint(equalTo: topAnchor, constant: 773)
-        ])
+        paymentMethodType.snp.makeConstraints { make in
+            make.right.equalTo(self).offset(16)
+            make.top.equalTo(rateType).offset(15)
+        }
     }
     
     
     func orderLabelConstrainsts(){
-        NSLayoutConstraint.activate([
-            orderLabel.widthAnchor.constraint(equalToConstant: 56),
-            orderLabel.heightAnchor.constraint(equalToConstant: 17),
-            orderLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            orderLabel.topAnchor.constraint(equalTo: topAnchor, constant: 806)
-        ])
+        orderLabel.snp.makeConstraints { make in
+            make.right.equalTo(self).offset(16)
+            make.top.equalTo(paymentMethod).offset(16)
+        }
     }
     
     func orderCountConstaints(){
-        NSLayoutConstraint.activate([
-            orderCount.widthAnchor.constraint(equalToConstant: 56),
-            orderCount.heightAnchor.constraint(equalToConstant: 17),
-            orderCount.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            orderCount.topAnchor.constraint(equalTo: topAnchor, constant: 806)
-        ])
+        orderCount.snp.makeConstraints { make in
+            make.left.equalTo(self).offset(16)
+            make.top.equalTo(paymentMethodType).offset(12)
+        }
     }
     
     func dataLabelConstraints(){
-        NSLayoutConstraint.activate([
-            data.widthAnchor.constraint(equalToConstant: 57),
-            data.heightAnchor.constraint(equalToConstant: 17),
-            data.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 302),
-            data.topAnchor.constraint(equalTo: topAnchor, constant: 806)
-        ])
+        data.snp.makeConstraints { make in
+            make.left.equalTo(self).offset(16)
+            make.top.equalTo(orderLabel).offset(12)
+        }
     }
     
     func dataTimeConstraints(){
-        NSLayoutConstraint.activate([
-            dataTime.widthAnchor.constraint(equalToConstant: 144),
-            dataTime.heightAnchor.constraint(equalToConstant: 17),
-            dataTime.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            dataTime.topAnchor.constraint(equalTo: topAnchor, constant: 835)
-        ])
+        dataTime.snp.makeConstraints { make in
+            make.right.equalTo(self).offset(16)
+            make.top.equalTo(orderCount).offset(12)
+        }
     }
     
     func tripTimeConstraints(){
-        NSLayoutConstraint.activate([
-            tripTime.widthAnchor.constraint(equalToConstant: 194),
-            tripTime.heightAnchor.constraint(equalToConstant: 17),
-            tripTime.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            tripTime.topAnchor.constraint(equalTo: topAnchor, constant: 864)
-        ])
+        tripTime.snp.makeConstraints { make in
+            make.left.equalTo(self).offset(16)
+            make.top.equalTo(data).offset(16)
+        }
     }
     
     func tripHoursConstraints(){
-        NSLayoutConstraint.activate([
-            tripHours.widthAnchor.constraint(equalToConstant: 37),
-            tripHours.heightAnchor.constraint(equalToConstant: 17),
-            tripHours.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 322),
-            tripHours.topAnchor.constraint(equalTo: topAnchor, constant: 865)
-        ])
+        tripHours.snp.makeConstraints { make in
+            make.right.equalTo(self).offset(16)
+            make.top.equalTo(dataTime).offset(13)
+            // make.bottom.equalTo(self).offset(40)
+        }
     }
-    
-    
-    
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
-    }
-    
 }

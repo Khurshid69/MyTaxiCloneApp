@@ -29,6 +29,7 @@ class MenuOptionCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        selectionStyle = .none
         backgroundColor = .black
         addSubview(iconImageView)
         iconImageView.translatesAutoresizingMaskIntoConstraints = false

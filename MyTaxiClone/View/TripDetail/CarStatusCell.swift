@@ -74,40 +74,49 @@ class CarStatusCell: UITableViewCell {
     
     func embedSubViews(){
         self.addSubview(numberView)
+        numberView.addSubview(number)
+        self.addSubview(carImage)
+        self.addSubview(typeOfCar)
         
     }
     
     func setUpConstraints(){
         setNumberViewConstraints()
+        setNumberConstraints()
+        setCarImageConstraints()
+        setCarNameConstraints()
     }
     
     // MARK: -  Setup constraints.
     
     func setNumberViewConstraints(){
-        NSLayoutConstraint.activate([
-            number.widthAnchor.constraint(equalToConstant: 119),
-            number.heightAnchor.constraint(equalToConstant: 32),
-            number.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            number.topAnchor.constraint(equalTo: topAnchor, constant: 336)
-        ])
+        numberView.snp.makeConstraints { make in
+            make.left.top.equalTo(self).offset(16)
+            make.bottom.equalTo(typeOfCar).offset(8)
+        }
+    }
+    
+    func setNumberConstraints(){
+        number.snp.makeConstraints { make in
+            make.top.equalTo(numberView).offset(5)
+            make.bottom.equalTo(numberView).offset(4)
+            make.left.right.equalTo(numberView).offset(6)
+        }
     }
     
     func setCarImageConstraints(){
-        NSLayoutConstraint.activate([
-            carImage.widthAnchor.constraint(equalToConstant: 104),
-            carImage.heightAnchor.constraint(equalToConstant: 38),
-            carImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 256),
-            carImage.topAnchor.constraint(equalTo: topAnchor, constant: 346)
-        ])
+        carImage.snp.makeConstraints { make in
+            make.right.equalTo(self).offset(15)
+            make.top.equalTo(self).offset(26)
+        }
     }
     
     func setCarNameConstraints(){
-        NSLayoutConstraint.activate([
-            typeOfCar.widthAnchor.constraint(equalToConstant: 104),
-            typeOfCar.heightAnchor.constraint(equalToConstant: 38),
-            typeOfCar.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 256),
-            typeOfCar.topAnchor.constraint(equalTo: topAnchor, constant: 346)
-        ])
+        typeOfCar.snp.makeConstraints { make in
+            make.top.equalTo(numberView).offset(12)
+            make.left.equalTo(self).offset(17)
+            make.bottom.equalTo(self).offset(5)
+        }
     }
     
     

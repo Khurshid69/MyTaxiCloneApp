@@ -91,71 +91,71 @@ class DriverCell: UITableViewCell {
     }
     
     func setUp(){
+        embedSubviews()
         
     }
     
     // MARK: - Embed subviews.
     
     func embedSubviews(){
-        
+        self.addSubview(drivarHeader)
+        self.addSubview(profileImage)
+        self.addSubview(name)
+        self.addSubview(rating)
+        self.addSubview(trips)
+    }
+    
+    func setUpConstraints(){
+        headerConstraints()
+        profileImageConstraints()
+        nameConstraint()
+        ratingConstraints()
+        starConstraints()
+        tripsContstarints()
     }
     
     
     // MARK: -  Setup constraints.
     
     func headerConstraints(){
-        NSLayoutConstraint.activate([
-            drivarHeader.widthAnchor.constraint(equalToConstant: 92),
-            drivarHeader.heightAnchor.constraint(equalToConstant: 24),
-            drivarHeader.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            drivarHeader.topAnchor.constraint(equalTo: topAnchor, constant: 571)
-            
-        ])
+        drivarHeader.snp.makeConstraints { make in
+            make.left.equalTo(self).offset(16)
+        }
     }
     
     func profileImageConstraints(){
-        NSLayoutConstraint.activate([
-            profileImage.widthAnchor.constraint(equalToConstant: 56),
-            profileImage.heightAnchor.constraint(equalToConstant: 56),
-            profileImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            profileImage.topAnchor.constraint(equalTo: topAnchor, constant: 616)
-        ])
+        profileImage.snp.makeConstraints { make in
+            make.top.equalTo(drivarHeader).offset(21)
+            make.left.equalTo(self).offset(16)
+            make.bottom.equalTo(self).offset(24)
+        }
     }
     
     func nameConstraint(){
-        NSLayoutConstraint.activate([
-            name.widthAnchor.constraint(equalToConstant: 165),
-            name.heightAnchor.constraint(equalToConstant: 22),
-            name.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 88),
-            name.topAnchor.constraint(equalTo: topAnchor, constant: 621)
-        ])
+        name.snp.makeConstraints { make in
+            make.left.equalTo(profileImage).offset(16)
+            make.top.equalTo(drivarHeader).offset(26)
+        }
     }
     
     func ratingConstraints(){
-        NSLayoutConstraint.activate([
-            rating.widthAnchor.constraint(equalToConstant: 57),
-            rating.heightAnchor.constraint(equalToConstant: 17),
-            rating.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 88),
-            rating.topAnchor.constraint(equalTo: topAnchor, constant: 648)
-        ])
+        rating.snp.makeConstraints { make in
+            make.top.equalTo(name).offset(5)
+            make.left.equalTo(profileImage).offset(16)
+            make.bottom.equalTo(self).offset(31)
+        }
     }
     
     func starConstraints(){
-        NSLayoutConstraint.activate([
-            starImage.widthAnchor.constraint(equalToConstant: 12),
-            starImage.heightAnchor.constraint(equalToConstant: 12),
-            starImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 160),
-            starImage.topAnchor.constraint(equalTo: topAnchor, constant: 651)
-        ])
+        starImage.snp.makeConstraints { make in
+            make.left.equalTo(rating).offset(3)
+        }
     }
     
     func tripsContstarints(){
-        NSLayoutConstraint.activate([
-            trips.widthAnchor.constraint(equalToConstant: 60),
-            trips.heightAnchor.constraint(equalToConstant: 17),
-            trips.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 184),
-            trips.topAnchor.constraint(equalTo: topAnchor, constant: 648)
-        ])
+        trips.snp.makeConstraints { make in
+            make.left.equalTo(starImage).offset(13)
+        }
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

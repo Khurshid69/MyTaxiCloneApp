@@ -176,86 +176,164 @@ class TripHistoryStreetCell: UITableViewCell {
     }
     
     func setUp(){
-        
+        embedSubViews()
+        setUpConstraints()
     }
     
     // MARK: - Embed subviews.
     func embedSubViews(){
+        self.addSubview(fromPointDot)
+        self.addSubview(starterStreetName)
+        self.addSubview(ToPointDot)
+        self.addSubview(finishStreetName)
+        self.addSubview(helpButton)
+        helpButton.addSubview(helpButtonImage)
+        helpButton.addSubview(helpButtonsString)
+        self.addSubview(ReDoView)
+        ReDoView.addSubview(ReDoButtonImage)
+        ReDoView.addSubview(ReDoButtonString)
+        self.addSubview(CallView)
+        CallView.addSubview(CallViewImage)
+        CallView.addSubview(CallString)
         
+    }
+    
+    func setUpConstraints(){
+        redPoint()
+        bluePoint()
+        startedStringConstraints()
+        finishStringConstraints()
+        helpButtonConstraints()
+        helpButtonImageConstraints()
+        helpButtonStringConstraints()
+        reDoButtonConstraints()
+        reDoButtonImageConstraints()
+        reDoButtonStringConstraints()
+        callButtonConstraints()
+        callButtonImageConstraints()
+        callButtonStringConstraints()
     }
     
     
     // MARK: -  Setup constraints.
     
-    func bluePoint(){
-        NSLayoutConstraint.activate([
-            fromPointDot.widthAnchor.constraint(equalToConstant: 24),
-            fromPointDot.heightAnchor.constraint(equalToConstant: 24),
-            fromPointDot.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            fromPointDot.topAnchor.constraint(equalTo: topAnchor, constant: 415)
-        ])
-        
+    func redPoint(){
+        fromPointDot.snp.makeConstraints { make in
+            make.left.top.equalTo(self).offset(16)
+            make.bottom.equalTo(ToPointDot).offset(13)
+        }
     }
     
-    func redPoint(){
-        NSLayoutConstraint.activate([
-            ToPointDot.widthAnchor.constraint(equalToConstant: 24),
-            ToPointDot.heightAnchor.constraint(equalToConstant: 24),
-            ToPointDot.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            ToPointDot.topAnchor.constraint(equalTo: topAnchor, constant: 447)
-        ])
+    func bluePoint(){
+        ToPointDot.snp.makeConstraints { make in
+            make.left.top.equalTo(self).offset(16)
+            
+        }
     }
     
     func startedStringConstraints(){
-        NSLayoutConstraint.activate([
-            starterStreetName.widthAnchor.constraint(equalToConstant: 205),
-            starterStreetName.heightAnchor.constraint(equalToConstant: 17),
-            starterStreetName.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 48),
-            starterStreetName.topAnchor.constraint(equalTo: topAnchor, constant: 417)
-        ])
+        starterStreetName.snp.makeConstraints { make in
+            make.left.equalTo(13.3)
+            make.top.equalTo(self).offset(18)
+            
+        }
     }
     
     func finishStringConstraints(){
-        NSLayoutConstraint.activate([
-            finishStreetName.widthAnchor.constraint(equalToConstant: 196),
-            finishStreetName.heightAnchor.constraint(equalToConstant: 17),
-            finishStreetName.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 48),
-            finishStreetName.topAnchor.constraint(equalTo: topAnchor, constant: 449)
-        ])
+        finishStreetName.snp.makeConstraints { make in
+            make.left.equalTo(ToPointDot).offset(13.3)
+            make.top.equalTo(starterStreetName).offset(15)
+        }
     }
     
+    // BUTTONS VIEW's
+    
     func helpButtonConstraints(){
-        NSLayoutConstraint.activate([
-            helpButton.widthAnchor.constraint(equalToConstant: 109),
-            helpButton.heightAnchor.constraint(equalToConstant: 56),
-            helpButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
-            helpButton.topAnchor.constraint(equalTo: topAnchor, constant: 0)
-        ])
-        
+        helpButton.snp.makeConstraints { make in
+            make.top.equalTo(finishStreetName).offset(21)
+            make.left.equalTo(self).offset(16)
+            
+        }
     }
     
     func reDoButtonConstraints(){
-        NSLayoutConstraint.activate([
-            ReDoButtonString.widthAnchor.constraint(equalToConstant: 109),
-            ReDoButtonString.heightAnchor.constraint(equalToConstant: 56),
-            ReDoButtonString.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
-            ReDoButtonString.topAnchor.constraint(equalTo: topAnchor, constant: 0)
-        ])
+        ReDoView.snp.makeConstraints { make in
+            make.top.equalTo(finishStreetName).offset(21)
+            make.left.equalTo(helpButton).offset(16)
+            make.bottom.equalTo(self).offset(60)
+        }
     }
     
     func callButtonConstraints(){
-        NSLayoutConstraint.activate([
-            helpButtonsString.widthAnchor.constraint(equalToConstant: 109),
-            helpButtonsString.heightAnchor.constraint(equalToConstant: 56),
-            helpButtonsString.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
-            helpButtonsString.topAnchor.constraint(equalTo: topAnchor, constant: 0)
+        CallView.snp.makeConstraints { make in
+            make.top.equalTo(finishStreetName).offset(21)
+            make.left.equalTo(helpButton).offset(16)
+            make.bottom.equalTo(self).offset(60)
+        }
+    }
+    
+    // BUTTONS VIEW's images
+    
+    func helpButtonImageConstraints(){
+        helpButtonImage.snp.makeConstraints { make in
+            make.top.equalTo(helpButton).offset(8)
+            make.left.equalTo(helpButton).offset(43)
+            make.right.equalTo(helpButton).offset(42)
+            make.bottom.equalTo(helpButton).offset(24)
             
-        ])
+        }
+    }
+    
+    func reDoButtonImageConstraints(){
+        ReDoButtonImage.snp.makeConstraints { make in
+            make.top.equalTo(ReDoView).offset(8)
+            make.left.equalTo(ReDoView).offset(42)
+            make.bottom.equalTo(ReDoView).offset(24)
+            make.right.equalTo(ReDoView).offset(43)
+        }
+    }
+    
+    func callButtonImageConstraints(){
+        CallViewImage.snp.makeConstraints { make in
+            make.top.equalTo(CallViewImage).offset(8)
+            make.left.equalTo(CallViewImage).offset(42)
+            make.bottom.equalTo(CallViewImage).offset(24)
+            make.right.equalTo(CallViewImage).offset(43)
+        }
     }
     
     
+    // BUTTONS VIEW's strings
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
+    func helpButtonStringConstraints(){
+        helpButtonsString.snp.makeConstraints { make in
+            make.top.equalTo(helpButtonImage).offset(4)
+            make.left.equalTo(self).offset(31)
+            make.right.equalTo(helpButton).offset(30)
+            make.top.equalTo(helpButton).offset(8)
+            
+        }
+    }
+    
+    func reDoButtonStringConstraints(){
+        ReDoButtonString.snp.makeConstraints { make in
+            make.top.equalTo(ReDoButtonImage).offset(6)
+            make.left.equalTo(ReDoView).offset(25)
+            make.bottom.equalTo(ReDoView).offset(8)
+            make.right.equalTo(ReDoView).offset(24)
+        }
+    }
+    
+    func callButtonStringConstraints(){
+        CallString.snp.makeConstraints { make in
+            make.top.equalTo(CallViewImage).offset(6.67)
+            make.left.equalTo(CallView).offset(25)
+            make.bottom.equalTo(CallView).offset(8)
+            make.right.equalTo(CallView).offset(24)
+        }
+    }
+    
+  override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
         // Configure the view for the selected state

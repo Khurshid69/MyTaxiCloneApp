@@ -7,9 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5FCEED6ED2F03581785B3462 /* Pods_MyTaxiClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269CF9B71217C815AC36FF33 /* Pods_MyTaxiClone.framework */; };
-		CE09811E2775D94300D44813 /* PanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09811D2775D94300D44813 /* PanController.swift */; };
-		CE4542AB277063000043F785 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4542AA277063000043F785 /* MainViewController.swift */; };
+		13A5EECE277835C10052A384 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A5EECD277835C10052A384 /* BaseViewController.swift */; };
+		13A5EED02778439E0052A384 /* TripHistoryViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A5EECF2778439E0052A384 /* TripHistoryViewController+Layout.swift */; };
+		13A5EED3277843ED0052A384 /* MapViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A5EED2277843ED0052A384 /* MapViewController+Layout.swift */; };
+		13A5EED6277845570052A384 /* TripHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A5EED5277845570052A384 /* TripHistory.swift */; };
+		13A5EED827784BC60052A384 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A5EED727784BC60052A384 /* BaseTableViewCell.swift */; };
+		13A5EEDA27784BF60052A384 /* TripHistoryCell+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A5EED927784BF60052A384 /* TripHistoryCell+Layout.swift */; };
+		13A5EEDC27784C730052A384 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A5EEDB27784C730052A384 /* BaseNavigationController.swift */; };
+		13A5EEDF277852700052A384 /* MenuViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A5EEDE277852700052A384 /* MenuViewController+Layout.swift */; };
+		CE03DEF527785E6D00335D47 /* DirectionBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03DEF427785E6D00335D47 /* DirectionBottomView.swift */; };
+		CE09811E2775D94300D44813 /* PanModalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09811D2775D94300D44813 /* PanModalController.swift */; };
 		CE4542AD27708AAA0043F785 /* TripDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4542AC27708AAA0043F785 /* TripDetailVC.swift */; };
 		CE4542AF27708CC80043F785 /* CarStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4542AE27708CC80043F785 /* CarStatusCell.swift */; };
 		CE4542D627710E830043F785 /* TripHistoryStreetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4542D527710E830043F785 /* TripHistoryStreetCell.swift */; };
@@ -18,31 +25,38 @@
 		CE46F3862771A1E900EE658A /* TotalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46F3852771A1E900EE658A /* TotalCell.swift */; };
 		CE46F3892771A58100EE658A /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46F3882771A58100EE658A /* ContainerVC.swift */; };
 		CE46F38B2771AB9C00EE658A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46F38A2771AB9C00EE658A /* Extensions.swift */; };
-		CE46F38F2771ADD900EE658A /* TripHistoryTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46F38E2771ADD900EE658A /* TripHistoryTable.swift */; };
+		CE46F38F2771ADD900EE658A /* TripHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46F38E2771ADD900EE658A /* TripHistoryViewController.swift */; };
 		CE46F3912771AE5000EE658A /* TripHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46F3902771AE5000EE658A /* TripHistoryCell.swift */; };
 		CE46F3932771CE0400EE658A /* PeymentMethodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46F3922771CE0400EE658A /* PeymentMethodCell.swift */; };
-		CE5DADE62776E48400CC0D5C /* HomeVController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE5DADE52776E48300CC0D5C /* HomeVController.xib */; };
-		CE5DADE82776E4A600CC0D5C /* HomeVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5DADE72776E4A600CC0D5C /* HomeVController.swift */; };
-		CEAEFB95276CCFB6001D21BF /* TripHistoryItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEFB94276CCFB6001D21BF /* TripHistoryItems.swift */; };
+		CE5DADE82776E4A600CC0D5C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5DADE72776E4A600CC0D5C /* MapViewController.swift */; };
 		CEF62333276F838E00C1CBEC /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF62332276F838E00C1CBEC /* UserView.swift */; };
 		CEF751EE276B3B44003276B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF751ED276B3B44003276B8 /* AppDelegate.swift */; };
 		CEF751F0276B3B44003276B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF751EF276B3B44003276B8 /* SceneDelegate.swift */; };
-		CEF751F5276B3B44003276B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF751F3276B3B44003276B8 /* Main.storyboard */; };
 		CEF751F8276B3B44003276B8 /* MyTaxiClone.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEF751F6276B3B44003276B8 /* MyTaxiClone.xcdatamodeld */; };
 		CEF751FA276B3B48003276B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEF751F9276B3B48003276B8 /* Assets.xcassets */; };
 		CEF751FD276B3B48003276B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF751FB276B3B48003276B8 /* LaunchScreen.storyboard */; };
 		CEF75209276B3C27003276B8 /* ContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF75208276B3C27003276B8 /* ContainerController.swift */; };
-		CEF7520D276B3C39003276B8 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7520C276B3C39003276B8 /* MenuController.swift */; };
+		CEF7520D276B3C39003276B8 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7520C276B3C39003276B8 /* MenuViewController.swift */; };
 		CEF75210276B47D4003276B8 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7520F276B47D4003276B8 /* Protocols.swift */; };
 		CEF75212276B4D30003276B8 /* MenuOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF75211276B4D30003276B8 /* MenuOptionCell.swift */; };
 		CEF75214276B552E003276B8 /* MenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF75213276B552E003276B8 /* MenuOption.swift */; };
+		F73A61CA7BBA6DBFCED21EA8 /* Pods_MyTaxiClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 651BA443B72F3FEAE94E01BD /* Pods_MyTaxiClone.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		269CF9B71217C815AC36FF33 /* Pods_MyTaxiClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTaxiClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C45630DDDD4C52C6BACAFB52 /* Pods-MyTaxiClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTaxiClone.release.xcconfig"; path = "Target Support Files/Pods-MyTaxiClone/Pods-MyTaxiClone.release.xcconfig"; sourceTree = "<group>"; };
-		CE09811D2775D94300D44813 /* PanController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanController.swift; sourceTree = "<group>"; };
-		CE4542AA277063000043F785 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		11886B3327EE12FEF08EEB16 /* Pods-MyTaxiClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTaxiClone.debug.xcconfig"; path = "Target Support Files/Pods-MyTaxiClone/Pods-MyTaxiClone.debug.xcconfig"; sourceTree = "<group>"; };
+		13A5EECD277835C10052A384 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		13A5EECF2778439E0052A384 /* TripHistoryViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TripHistoryViewController+Layout.swift"; sourceTree = "<group>"; };
+		13A5EED2277843ED0052A384 /* MapViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapViewController+Layout.swift"; sourceTree = "<group>"; };
+		13A5EED5277845570052A384 /* TripHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripHistory.swift; sourceTree = "<group>"; };
+		13A5EED727784BC60052A384 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		13A5EED927784BF60052A384 /* TripHistoryCell+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TripHistoryCell+Layout.swift"; sourceTree = "<group>"; };
+		13A5EEDB27784C730052A384 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		13A5EEDE277852700052A384 /* MenuViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuViewController+Layout.swift"; sourceTree = "<group>"; };
+		41FB107EA0CF83766B64F27B /* Pods-MyTaxiClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTaxiClone.release.xcconfig"; path = "Target Support Files/Pods-MyTaxiClone/Pods-MyTaxiClone.release.xcconfig"; sourceTree = "<group>"; };
+		651BA443B72F3FEAE94E01BD /* Pods_MyTaxiClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTaxiClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE03DEF427785E6D00335D47 /* DirectionBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionBottomView.swift; sourceTree = "<group>"; };
+		CE09811D2775D94300D44813 /* PanModalController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanModalController.swift; sourceTree = "<group>"; };
 		CE4542AC27708AAA0043F785 /* TripDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailVC.swift; sourceTree = "<group>"; };
 		CE4542AE27708CC80043F785 /* CarStatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarStatusCell.swift; sourceTree = "<group>"; };
 		CE4542D527710E830043F785 /* TripHistoryStreetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripHistoryStreetCell.swift; sourceTree = "<group>"; };
@@ -51,27 +65,23 @@
 		CE46F3852771A1E900EE658A /* TotalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalCell.swift; sourceTree = "<group>"; };
 		CE46F3882771A58100EE658A /* ContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
 		CE46F38A2771AB9C00EE658A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		CE46F38E2771ADD900EE658A /* TripHistoryTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripHistoryTable.swift; sourceTree = "<group>"; };
+		CE46F38E2771ADD900EE658A /* TripHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripHistoryViewController.swift; sourceTree = "<group>"; };
 		CE46F3902771AE5000EE658A /* TripHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripHistoryCell.swift; sourceTree = "<group>"; };
 		CE46F3922771CE0400EE658A /* PeymentMethodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeymentMethodCell.swift; sourceTree = "<group>"; };
-		CE5DADE52776E48300CC0D5C /* HomeVController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeVController.xib; sourceTree = "<group>"; };
-		CE5DADE72776E4A600CC0D5C /* HomeVController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVController.swift; sourceTree = "<group>"; };
-		CEAEFB94276CCFB6001D21BF /* TripHistoryItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripHistoryItems.swift; sourceTree = "<group>"; };
+		CE5DADE72776E4A600CC0D5C /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		CEF62332276F838E00C1CBEC /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		CEF751EA276B3B44003276B8 /* MyTaxiClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTaxiClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF751ED276B3B44003276B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEF751EF276B3B44003276B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CEF751F4276B3B44003276B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CEF751F7276B3B44003276B8 /* MyTaxiClone.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyTaxiClone.xcdatamodel; sourceTree = "<group>"; };
 		CEF751F9276B3B48003276B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEF751FC276B3B48003276B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEF751FE276B3B48003276B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEF75208276B3C27003276B8 /* ContainerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerController.swift; sourceTree = "<group>"; };
-		CEF7520C276B3C39003276B8 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		CEF7520C276B3C39003276B8 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		CEF7520F276B47D4003276B8 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		CEF75211276B4D30003276B8 /* MenuOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOptionCell.swift; sourceTree = "<group>"; };
 		CEF75213276B552E003276B8 /* MenuOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOption.swift; sourceTree = "<group>"; };
-		E97A382EEC5F2014D169C4B0 /* Pods-MyTaxiClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTaxiClone.debug.xcconfig"; path = "Target Support Files/Pods-MyTaxiClone/Pods-MyTaxiClone.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,37 +89,89 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FCEED6ED2F03581785B3462 /* Pods_MyTaxiClone.framework in Frameworks */,
+				F73A61CA7BBA6DBFCED21EA8 /* Pods_MyTaxiClone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13A5EECB277834A30052A384 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				CEF751ED276B3B44003276B8 /* AppDelegate.swift */,
+				CEF751EF276B3B44003276B8 /* SceneDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		13A5EECC277835B60052A384 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				13A5EEDB27784C730052A384 /* BaseNavigationController.swift */,
+				13A5EECD277835C10052A384 /* BaseViewController.swift */,
+				13A5EED727784BC60052A384 /* BaseTableViewCell.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		13A5EED1277843CA0052A384 /* TripHistory */ = {
+			isa = PBXGroup;
+			children = (
+				CE46F38E2771ADD900EE658A /* TripHistoryViewController.swift */,
+				13A5EECF2778439E0052A384 /* TripHistoryViewController+Layout.swift */,
+			);
+			path = TripHistory;
+			sourceTree = "<group>";
+		};
+		13A5EED42778442B0052A384 /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				CE5DADE72776E4A600CC0D5C /* MapViewController.swift */,
+				13A5EED2277843ED0052A384 /* MapViewController+Layout.swift */,
+			);
+			path = MapView;
+			sourceTree = "<group>";
+		};
+		13A5EEDD2778505D0052A384 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				CEF7520C276B3C39003276B8 /* MenuViewController.swift */,
+				13A5EEDE277852700052A384 /* MenuViewController+Layout.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		13A5EEE0277852840052A384 /* TripDetails */ = {
+			isa = PBXGroup;
+			children = (
+				CE4542AC27708AAA0043F785 /* TripDetailVC.swift */,
+				CE46F3882771A58100EE658A /* ContainerVC.swift */,
+			);
+			path = TripDetails;
+			sourceTree = "<group>";
+		};
 		CE46F38C2771ABF800EE658A /* Support */ = {
 			isa = PBXGroup;
 			children = (
 				CE46F38A2771AB9C00EE658A /* Extensions.swift */,
-				CE09811D2775D94300D44813 /* PanController.swift */,
+				CE09811D2775D94300D44813 /* PanModalController.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
 		};
-		CE46F38D2771AD9100EE658A /* TripHistory */ = {
+		CE46F38D2771AD9100EE658A /* TripHistoryCell */ = {
 			isa = PBXGroup;
 			children = (
-				CE46F38E2771ADD900EE658A /* TripHistoryTable.swift */,
 				CE46F3902771AE5000EE658A /* TripHistoryCell.swift */,
+				13A5EED927784BF60052A384 /* TripHistoryCell+Layout.swift */,
 			);
-			path = TripHistory;
+			path = TripHistoryCell;
 			sourceTree = "<group>";
 		};
 		CEAEFB96276CDC31001D21BF /* TripDetail */ = {
 			isa = PBXGroup;
 			children = (
-				CE46F38C2771ABF800EE658A /* Support */,
-				CE4542AC27708AAA0043F785 /* TripDetailVC.swift */,
-				CE46F3882771A58100EE658A /* ContainerVC.swift */,
 				CE4542AE27708CC80043F785 /* CarStatusCell.swift */,
 				CE4542D527710E830043F785 /* TripHistoryStreetCell.swift */,
 				CE4542D727711C5E0043F785 /* DriverCell.swift */,
@@ -126,7 +188,7 @@
 				CEF751EC276B3B44003276B8 /* MyTaxiClone */,
 				CEF751EB276B3B44003276B8 /* Products */,
 				D68D407BA6338F4FE5474EFE /* Pods */,
-				EC0C389E989BF20F5625F575 /* Frameworks */,
+				E005FCEFE4A8C2CFE4F7A5E2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -144,10 +206,10 @@
 				CEF7520E276B47C7003276B8 /* Utils */,
 				CEF75207276B3BFE003276B8 /* Model */,
 				CEF75206276B3BA6003276B8 /* View */,
-				CEF75205276B3B94003276B8 /* Controllers */,
+				13A5EECC277835B60052A384 /* Base */,
+				CEF75205276B3B94003276B8 /* Modules */,
+				CE46F38C2771ABF800EE658A /* Support */,
 				CEF75204276B3B8A003276B8 /* appUtils */,
-				CEF751ED276B3B44003276B8 /* AppDelegate.swift */,
-				CEF751EF276B3B44003276B8 /* SceneDelegate.swift */,
 				CEF751FE276B3B48003276B8 /* Info.plist */,
 			);
 			path = MyTaxiClone;
@@ -156,7 +218,6 @@
 		CEF75204276B3B8A003276B8 /* appUtils */ = {
 			isa = PBXGroup;
 			children = (
-				CEF751F3276B3B44003276B8 /* Main.storyboard */,
 				CEF751F9276B3B48003276B8 /* Assets.xcassets */,
 				CEF751FB276B3B48003276B8 /* LaunchScreen.storyboard */,
 				CEF751F6276B3B44003276B8 /* MyTaxiClone.xcdatamodeld */,
@@ -164,25 +225,27 @@
 			path = appUtils;
 			sourceTree = "<group>";
 		};
-		CEF75205276B3B94003276B8 /* Controllers */ = {
+		CEF75205276B3B94003276B8 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				13A5EECB277834A30052A384 /* Delegate */,
+				13A5EED42778442B0052A384 /* MapView */,
+				13A5EEDD2778505D0052A384 /* Menu */,
+				13A5EED1277843CA0052A384 /* TripHistory */,
+				13A5EEE0277852840052A384 /* TripDetails */,
 				CEF75208276B3C27003276B8 /* ContainerController.swift */,
-				CEF7520C276B3C39003276B8 /* MenuController.swift */,
-				CE5DADE72776E4A600CC0D5C /* HomeVController.swift */,
-				CE5DADE52776E48300CC0D5C /* HomeVController.xib */,
-				CE4542AA277063000043F785 /* MainViewController.swift */,
 			);
-			path = Controllers;
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		CEF75206276B3BA6003276B8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CE46F38D2771AD9100EE658A /* TripHistory */,
+				CE46F38D2771AD9100EE658A /* TripHistoryCell */,
 				CEAEFB96276CDC31001D21BF /* TripDetail */,
 				CEF75211276B4D30003276B8 /* MenuOptionCell.swift */,
 				CEF62332276F838E00C1CBEC /* UserView.swift */,
+				CE03DEF427785E6D00335D47 /* DirectionBottomView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -191,7 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				CEF75213276B552E003276B8 /* MenuOption.swift */,
-				CEAEFB94276CCFB6001D21BF /* TripHistoryItems.swift */,
+				13A5EED5277845570052A384 /* TripHistory.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -207,16 +270,16 @@
 		D68D407BA6338F4FE5474EFE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E97A382EEC5F2014D169C4B0 /* Pods-MyTaxiClone.debug.xcconfig */,
-				C45630DDDD4C52C6BACAFB52 /* Pods-MyTaxiClone.release.xcconfig */,
+				11886B3327EE12FEF08EEB16 /* Pods-MyTaxiClone.debug.xcconfig */,
+				41FB107EA0CF83766B64F27B /* Pods-MyTaxiClone.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		EC0C389E989BF20F5625F575 /* Frameworks */ = {
+		E005FCEFE4A8C2CFE4F7A5E2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				269CF9B71217C815AC36FF33 /* Pods_MyTaxiClone.framework */,
+				651BA443B72F3FEAE94E01BD /* Pods_MyTaxiClone.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -228,12 +291,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CEF75201276B3B48003276B8 /* Build configuration list for PBXNativeTarget "MyTaxiClone" */;
 			buildPhases = (
-				B9D23CCBA839FCA69BF162B2 /* [CP] Check Pods Manifest.lock */,
+				6F3571B9C3F978FCF610FF40 /* [CP] Check Pods Manifest.lock */,
 				CEF751E6276B3B44003276B8 /* Sources */,
 				CEF751E7276B3B44003276B8 /* Frameworks */,
 				CEF751E8276B3B44003276B8 /* Resources */,
-				C4C5CA5794A0EAF2C776C747 /* [CP] Copy Pods Resources */,
-				E91528AAE9BB8EAC45225F43 /* [CP] Embed Pods Frameworks */,
+				24A422A1DF67D79E202A6193 /* [CP] Embed Pods Frameworks */,
+				B767784CB04E7CA0F04934C1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -284,15 +347,30 @@
 			files = (
 				CEF751FD276B3B48003276B8 /* LaunchScreen.storyboard in Resources */,
 				CEF751FA276B3B48003276B8 /* Assets.xcassets in Resources */,
-				CEF751F5276B3B44003276B8 /* Main.storyboard in Resources */,
-				CE5DADE62776E48400CC0D5C /* HomeVController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		B9D23CCBA839FCA69BF162B2 /* [CP] Check Pods Manifest.lock */ = {
+		24A422A1DF67D79E202A6193 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyTaxiClone/Pods-MyTaxiClone-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyTaxiClone/Pods-MyTaxiClone-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyTaxiClone/Pods-MyTaxiClone-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6F3571B9C3F978FCF610FF40 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -314,7 +392,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C4C5CA5794A0EAF2C776C747 /* [CP] Copy Pods Resources */ = {
+		B767784CB04E7CA0F04934C1 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -331,23 +409,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyTaxiClone/Pods-MyTaxiClone-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E91528AAE9BB8EAC45225F43 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MyTaxiClone/Pods-MyTaxiClone-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MyTaxiClone/Pods-MyTaxiClone-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyTaxiClone/Pods-MyTaxiClone-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -355,44 +416,43 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEF7520D276B3C39003276B8 /* MenuController.swift in Sources */,
-				CE09811E2775D94300D44813 /* PanController.swift in Sources */,
+				CEF7520D276B3C39003276B8 /* MenuViewController.swift in Sources */,
+				CE09811E2775D94300D44813 /* PanModalController.swift in Sources */,
 				CEF75209276B3C27003276B8 /* ContainerController.swift in Sources */,
 				CE4542AF27708CC80043F785 /* CarStatusCell.swift in Sources */,
+				13A5EED02778439E0052A384 /* TripHistoryViewController+Layout.swift in Sources */,
+				13A5EED827784BC60052A384 /* BaseTableViewCell.swift in Sources */,
 				CE4542AD27708AAA0043F785 /* TripDetailVC.swift in Sources */,
 				CE46F3892771A58100EE658A /* ContainerVC.swift in Sources */,
+				13A5EEDC27784C730052A384 /* BaseNavigationController.swift in Sources */,
 				CEF75210276B47D4003276B8 /* Protocols.swift in Sources */,
+				CE03DEF527785E6D00335D47 /* DirectionBottomView.swift in Sources */,
 				CE46F3912771AE5000EE658A /* TripHistoryCell.swift in Sources */,
 				CE46F38427719CBE00EE658A /* CostCalculationCell.swift in Sources */,
-				CEAEFB95276CCFB6001D21BF /* TripHistoryItems.swift in Sources */,
 				CE46F3932771CE0400EE658A /* PeymentMethodCell.swift in Sources */,
 				CE4542D827711C5E0043F785 /* DriverCell.swift in Sources */,
 				CEF75214276B552E003276B8 /* MenuOption.swift in Sources */,
 				CE4542D627710E830043F785 /* TripHistoryStreetCell.swift in Sources */,
 				CEF751F8276B3B44003276B8 /* MyTaxiClone.xcdatamodeld in Sources */,
+				13A5EED3277843ED0052A384 /* MapViewController+Layout.swift in Sources */,
 				CEF75212276B4D30003276B8 /* MenuOptionCell.swift in Sources */,
-				CE4542AB277063000043F785 /* MainViewController.swift in Sources */,
 				CE46F38B2771AB9C00EE658A /* Extensions.swift in Sources */,
-				CE46F38F2771ADD900EE658A /* TripHistoryTable.swift in Sources */,
-				CE5DADE82776E4A600CC0D5C /* HomeVController.swift in Sources */,
+				CE46F38F2771ADD900EE658A /* TripHistoryViewController.swift in Sources */,
+				13A5EED6277845570052A384 /* TripHistory.swift in Sources */,
+				CE5DADE82776E4A600CC0D5C /* MapViewController.swift in Sources */,
+				13A5EECE277835C10052A384 /* BaseViewController.swift in Sources */,
 				CEF751EE276B3B44003276B8 /* AppDelegate.swift in Sources */,
 				CEF62333276F838E00C1CBEC /* UserView.swift in Sources */,
+				13A5EEDF277852700052A384 /* MenuViewController+Layout.swift in Sources */,
 				CE46F3862771A1E900EE658A /* TotalCell.swift in Sources */,
 				CEF751F0276B3B44003276B8 /* SceneDelegate.swift in Sources */,
+				13A5EEDA27784BF60052A384 /* TripHistoryCell+Layout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CEF751F3276B3B44003276B8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CEF751F4276B3B44003276B8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CEF751FB276B3B48003276B8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -455,7 +515,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -510,7 +570,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -522,7 +582,7 @@
 		};
 		CEF75202276B3B48003276B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E97A382EEC5F2014D169C4B0 /* Pods-MyTaxiClone.debug.xcconfig */;
+			baseConfigurationReference = 11886B3327EE12FEF08EEB16 /* Pods-MyTaxiClone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -531,9 +591,10 @@
 				DEVELOPMENT_TEAM = QV4M89666W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyTaxiClone/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "For test";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -545,13 +606,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		CEF75203276B3B48003276B8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C45630DDDD4C52C6BACAFB52 /* Pods-MyTaxiClone.release.xcconfig */;
+			baseConfigurationReference = 41FB107EA0CF83766B64F27B /* Pods-MyTaxiClone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -560,9 +621,10 @@
 				DEVELOPMENT_TEAM = QV4M89666W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyTaxiClone/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "For test";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -574,7 +636,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
