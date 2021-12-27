@@ -25,8 +25,6 @@ extension MapViewController {
         
         myLocationButton.layoutIfNeeded()
         myLocationButton.layer.cornerRadius = myLocationButton.frame.width / 2
-        
-        
     }
     
     override func embedSubviews() {
@@ -35,7 +33,6 @@ extension MapViewController {
         view.addSubview(marker)
         view.addSubview(bottomView)
         bottomView.addSubview(addressLabel)
-        
     }
     
     override func setSubviewsConstraints() {

@@ -31,6 +31,19 @@ class BaseViewController: UIViewController {
         navigationItem.leftBarButtonItem = barButtonItem
     }
     
+    func setupCustomBackButton() {
+        let size: CGFloat = 36
+        let backButton = UIButton(frame: .init(origin: .zero, size: .init(width: size, height: size)))
+        backButton.setImage(UIImage(named: "icon_arrow_back")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        backButton.layer.cornerRadius = size / 2
+        backButton.tintColor = .black
+        backButton.backgroundColor = .white
+        backButton.addTarget(self, action: #selector(backButtonClicked), for: .touchUpInside)
+        
+        let barButtonItem = UIBarButtonItem(customView: backButton)
+        navigationItem.leftBarButtonItem = barButtonItem
+    }
+    
     @objc private func backButtonClicked() {
         navigationController?.popViewController(animated: true)
     }

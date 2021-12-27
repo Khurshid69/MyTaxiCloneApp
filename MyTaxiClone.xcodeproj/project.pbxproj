@@ -15,15 +15,18 @@
 		13A5EEDA27784BF60052A384 /* TripHistoryCell+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A5EED927784BF60052A384 /* TripHistoryCell+Layout.swift */; };
 		13A5EEDC27784C730052A384 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A5EEDB27784C730052A384 /* BaseNavigationController.swift */; };
 		13A5EEDF277852700052A384 /* MenuViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A5EEDE277852700052A384 /* MenuViewController+Layout.swift */; };
+		13A5EF042779A9A30052A384 /* TripDetailsViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A5EF032779A9A30052A384 /* TripDetailsViewController+Layout.swift */; };
+		13A5EF062779AA860052A384 /* TripMapViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A5EF052779AA860052A384 /* TripMapViewController+Layout.swift */; };
+		16010C4BD962D64C9B1D907B /* Pods_MyTaxiClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E160168950C98670342B07F7 /* Pods_MyTaxiClone.framework */; };
 		CE03DEF527785E6D00335D47 /* DirectionBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03DEF427785E6D00335D47 /* DirectionBottomView.swift */; };
 		CE09811E2775D94300D44813 /* PanModalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09811D2775D94300D44813 /* PanModalController.swift */; };
-		CE4542AD27708AAA0043F785 /* TripDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4542AC27708AAA0043F785 /* TripDetailVC.swift */; };
+		CE4542AD27708AAA0043F785 /* TripMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4542AC27708AAA0043F785 /* TripMapViewController.swift */; };
 		CE4542AF27708CC80043F785 /* CarStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4542AE27708CC80043F785 /* CarStatusCell.swift */; };
 		CE4542D627710E830043F785 /* TripHistoryStreetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4542D527710E830043F785 /* TripHistoryStreetCell.swift */; };
 		CE4542D827711C5E0043F785 /* DriverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4542D727711C5E0043F785 /* DriverCell.swift */; };
 		CE46F38427719CBE00EE658A /* CostCalculationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46F38327719CBE00EE658A /* CostCalculationCell.swift */; };
 		CE46F3862771A1E900EE658A /* TotalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46F3852771A1E900EE658A /* TotalCell.swift */; };
-		CE46F3892771A58100EE658A /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46F3882771A58100EE658A /* ContainerVC.swift */; };
+		CE46F3892771A58100EE658A /* TripDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46F3882771A58100EE658A /* TripDetailsViewController.swift */; };
 		CE46F38B2771AB9C00EE658A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46F38A2771AB9C00EE658A /* Extensions.swift */; };
 		CE46F38F2771ADD900EE658A /* TripHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46F38E2771ADD900EE658A /* TripHistoryViewController.swift */; };
 		CE46F3912771AE5000EE658A /* TripHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46F3902771AE5000EE658A /* TripHistoryCell.swift */; };
@@ -40,11 +43,9 @@
 		CEF75210276B47D4003276B8 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7520F276B47D4003276B8 /* Protocols.swift */; };
 		CEF75212276B4D30003276B8 /* MenuOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF75211276B4D30003276B8 /* MenuOptionCell.swift */; };
 		CEF75214276B552E003276B8 /* MenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF75213276B552E003276B8 /* MenuOption.swift */; };
-		F73A61CA7BBA6DBFCED21EA8 /* Pods_MyTaxiClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 651BA443B72F3FEAE94E01BD /* Pods_MyTaxiClone.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		11886B3327EE12FEF08EEB16 /* Pods-MyTaxiClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTaxiClone.debug.xcconfig"; path = "Target Support Files/Pods-MyTaxiClone/Pods-MyTaxiClone.debug.xcconfig"; sourceTree = "<group>"; };
 		13A5EECD277835C10052A384 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		13A5EECF2778439E0052A384 /* TripHistoryViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TripHistoryViewController+Layout.swift"; sourceTree = "<group>"; };
 		13A5EED2277843ED0052A384 /* MapViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapViewController+Layout.swift"; sourceTree = "<group>"; };
@@ -53,17 +54,18 @@
 		13A5EED927784BF60052A384 /* TripHistoryCell+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TripHistoryCell+Layout.swift"; sourceTree = "<group>"; };
 		13A5EEDB27784C730052A384 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		13A5EEDE277852700052A384 /* MenuViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuViewController+Layout.swift"; sourceTree = "<group>"; };
-		41FB107EA0CF83766B64F27B /* Pods-MyTaxiClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTaxiClone.release.xcconfig"; path = "Target Support Files/Pods-MyTaxiClone/Pods-MyTaxiClone.release.xcconfig"; sourceTree = "<group>"; };
-		651BA443B72F3FEAE94E01BD /* Pods_MyTaxiClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTaxiClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		13A5EF032779A9A30052A384 /* TripDetailsViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TripDetailsViewController+Layout.swift"; sourceTree = "<group>"; };
+		13A5EF052779AA860052A384 /* TripMapViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TripMapViewController+Layout.swift"; sourceTree = "<group>"; };
+		C0D61930372EC651C00E4D6D /* Pods-MyTaxiClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTaxiClone.release.xcconfig"; path = "Target Support Files/Pods-MyTaxiClone/Pods-MyTaxiClone.release.xcconfig"; sourceTree = "<group>"; };
 		CE03DEF427785E6D00335D47 /* DirectionBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionBottomView.swift; sourceTree = "<group>"; };
 		CE09811D2775D94300D44813 /* PanModalController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanModalController.swift; sourceTree = "<group>"; };
-		CE4542AC27708AAA0043F785 /* TripDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailVC.swift; sourceTree = "<group>"; };
+		CE4542AC27708AAA0043F785 /* TripMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripMapViewController.swift; sourceTree = "<group>"; };
 		CE4542AE27708CC80043F785 /* CarStatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarStatusCell.swift; sourceTree = "<group>"; };
 		CE4542D527710E830043F785 /* TripHistoryStreetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripHistoryStreetCell.swift; sourceTree = "<group>"; };
 		CE4542D727711C5E0043F785 /* DriverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverCell.swift; sourceTree = "<group>"; };
 		CE46F38327719CBE00EE658A /* CostCalculationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostCalculationCell.swift; sourceTree = "<group>"; };
 		CE46F3852771A1E900EE658A /* TotalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalCell.swift; sourceTree = "<group>"; };
-		CE46F3882771A58100EE658A /* ContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
+		CE46F3882771A58100EE658A /* TripDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailsViewController.swift; sourceTree = "<group>"; };
 		CE46F38A2771AB9C00EE658A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		CE46F38E2771ADD900EE658A /* TripHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripHistoryViewController.swift; sourceTree = "<group>"; };
 		CE46F3902771AE5000EE658A /* TripHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripHistoryCell.swift; sourceTree = "<group>"; };
@@ -82,6 +84,8 @@
 		CEF7520F276B47D4003276B8 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		CEF75211276B4D30003276B8 /* MenuOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOptionCell.swift; sourceTree = "<group>"; };
 		CEF75213276B552E003276B8 /* MenuOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOption.swift; sourceTree = "<group>"; };
+		E160168950C98670342B07F7 /* Pods_MyTaxiClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTaxiClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8E54DB2DE941021D7A961FD /* Pods-MyTaxiClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTaxiClone.debug.xcconfig"; path = "Target Support Files/Pods-MyTaxiClone/Pods-MyTaxiClone.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F73A61CA7BBA6DBFCED21EA8 /* Pods_MyTaxiClone.framework in Frameworks */,
+				16010C4BD962D64C9B1D907B /* Pods_MyTaxiClone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,10 +149,36 @@
 		13A5EEE0277852840052A384 /* TripDetails */ = {
 			isa = PBXGroup;
 			children = (
-				CE4542AC27708AAA0043F785 /* TripDetailVC.swift */,
-				CE46F3882771A58100EE658A /* ContainerVC.swift */,
+				13A5EF072779AB280052A384 /* TripMap */,
+				13A5EF082779AB320052A384 /* TripDetails */,
 			);
 			path = TripDetails;
+			sourceTree = "<group>";
+		};
+		13A5EF072779AB280052A384 /* TripMap */ = {
+			isa = PBXGroup;
+			children = (
+				CE4542AC27708AAA0043F785 /* TripMapViewController.swift */,
+				13A5EF052779AA860052A384 /* TripMapViewController+Layout.swift */,
+			);
+			path = TripMap;
+			sourceTree = "<group>";
+		};
+		13A5EF082779AB320052A384 /* TripDetails */ = {
+			isa = PBXGroup;
+			children = (
+				CE46F3882771A58100EE658A /* TripDetailsViewController.swift */,
+				13A5EF032779A9A30052A384 /* TripDetailsViewController+Layout.swift */,
+			);
+			path = TripDetails;
+			sourceTree = "<group>";
+		};
+		39E3232D36A5659521C4A804 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E160168950C98670342B07F7 /* Pods_MyTaxiClone.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		CE46F38C2771ABF800EE658A /* Support */ = {
@@ -188,7 +218,7 @@
 				CEF751EC276B3B44003276B8 /* MyTaxiClone */,
 				CEF751EB276B3B44003276B8 /* Products */,
 				D68D407BA6338F4FE5474EFE /* Pods */,
-				E005FCEFE4A8C2CFE4F7A5E2 /* Frameworks */,
+				39E3232D36A5659521C4A804 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -270,18 +300,10 @@
 		D68D407BA6338F4FE5474EFE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				11886B3327EE12FEF08EEB16 /* Pods-MyTaxiClone.debug.xcconfig */,
-				41FB107EA0CF83766B64F27B /* Pods-MyTaxiClone.release.xcconfig */,
+				E8E54DB2DE941021D7A961FD /* Pods-MyTaxiClone.debug.xcconfig */,
+				C0D61930372EC651C00E4D6D /* Pods-MyTaxiClone.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		E005FCEFE4A8C2CFE4F7A5E2 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				651BA443B72F3FEAE94E01BD /* Pods_MyTaxiClone.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,12 +313,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CEF75201276B3B48003276B8 /* Build configuration list for PBXNativeTarget "MyTaxiClone" */;
 			buildPhases = (
-				6F3571B9C3F978FCF610FF40 /* [CP] Check Pods Manifest.lock */,
+				6E388E53B4E79F1A48325EA0 /* [CP] Check Pods Manifest.lock */,
 				CEF751E6276B3B44003276B8 /* Sources */,
 				CEF751E7276B3B44003276B8 /* Frameworks */,
 				CEF751E8276B3B44003276B8 /* Resources */,
-				24A422A1DF67D79E202A6193 /* [CP] Embed Pods Frameworks */,
-				B767784CB04E7CA0F04934C1 /* [CP] Copy Pods Resources */,
+				54B57A07F727160208082EF1 /* [CP] Embed Pods Frameworks */,
+				10004F341230F983665A7075 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -353,7 +375,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		24A422A1DF67D79E202A6193 /* [CP] Embed Pods Frameworks */ = {
+		10004F341230F983665A7075 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyTaxiClone/Pods-MyTaxiClone-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyTaxiClone/Pods-MyTaxiClone-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyTaxiClone/Pods-MyTaxiClone-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		54B57A07F727160208082EF1 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -370,7 +409,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyTaxiClone/Pods-MyTaxiClone-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6F3571B9C3F978FCF610FF40 /* [CP] Check Pods Manifest.lock */ = {
+		6E388E53B4E79F1A48325EA0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -392,23 +431,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B767784CB04E7CA0F04934C1 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MyTaxiClone/Pods-MyTaxiClone-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MyTaxiClone/Pods-MyTaxiClone-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyTaxiClone/Pods-MyTaxiClone-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -420,16 +442,18 @@
 				CE09811E2775D94300D44813 /* PanModalController.swift in Sources */,
 				CEF75209276B3C27003276B8 /* ContainerController.swift in Sources */,
 				CE4542AF27708CC80043F785 /* CarStatusCell.swift in Sources */,
+				13A5EF062779AA860052A384 /* TripMapViewController+Layout.swift in Sources */,
 				13A5EED02778439E0052A384 /* TripHistoryViewController+Layout.swift in Sources */,
 				13A5EED827784BC60052A384 /* BaseTableViewCell.swift in Sources */,
-				CE4542AD27708AAA0043F785 /* TripDetailVC.swift in Sources */,
-				CE46F3892771A58100EE658A /* ContainerVC.swift in Sources */,
+				CE4542AD27708AAA0043F785 /* TripMapViewController.swift in Sources */,
+				CE46F3892771A58100EE658A /* TripDetailsViewController.swift in Sources */,
 				13A5EEDC27784C730052A384 /* BaseNavigationController.swift in Sources */,
 				CEF75210276B47D4003276B8 /* Protocols.swift in Sources */,
 				CE03DEF527785E6D00335D47 /* DirectionBottomView.swift in Sources */,
 				CE46F3912771AE5000EE658A /* TripHistoryCell.swift in Sources */,
 				CE46F38427719CBE00EE658A /* CostCalculationCell.swift in Sources */,
 				CE46F3932771CE0400EE658A /* PeymentMethodCell.swift in Sources */,
+				13A5EF042779A9A30052A384 /* TripDetailsViewController+Layout.swift in Sources */,
 				CE4542D827711C5E0043F785 /* DriverCell.swift in Sources */,
 				CEF75214276B552E003276B8 /* MenuOption.swift in Sources */,
 				CE4542D627710E830043F785 /* TripHistoryStreetCell.swift in Sources */,
@@ -582,7 +606,7 @@
 		};
 		CEF75202276B3B48003276B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 11886B3327EE12FEF08EEB16 /* Pods-MyTaxiClone.debug.xcconfig */;
+			baseConfigurationReference = E8E54DB2DE941021D7A961FD /* Pods-MyTaxiClone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -612,7 +636,7 @@
 		};
 		CEF75203276B3B48003276B8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 41FB107EA0CF83766B64F27B /* Pods-MyTaxiClone.release.xcconfig */;
+			baseConfigurationReference = C0D61930372EC651C00E4D6D /* Pods-MyTaxiClone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

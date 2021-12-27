@@ -1,15 +1,14 @@
 
-////
-////  TripDetailVC.swift
-////  MyTaxiClone
-////
-////  Created by user on 20/12/21.
 //
+//  TripDetailVC.swift
+//  MyTaxiClone
 //
+//  Created by user on 20/12/21.
+
 import UIKit
 import GoogleMaps
 
-enum TripDetailSections: Int, CaseIterable {
+enum TripDetailSection: Int, CaseIterable {
     case carStatus = 0
     case tripHistory
     case driver
@@ -18,39 +17,51 @@ enum TripDetailSections: Int, CaseIterable {
     case totalCost
 }
 
-class TripDetailVC: UIViewController, GMSMapViewDelegate {
-    // MARK: - Properties
-    
-    private let locationManager = CLLocationManager()
-    weak var delegete: HomeViewControllerDelegete?
-    
-    lazy var mapScreen: GMSMapView = {
-        let mapScreen = GMSMapView()
-        mapScreen.delegate = self
-        mapScreen.translatesAutoresizingMaskIntoConstraints = false
+class TripMapViewController: BaseViewController {
+    private(set) lazy var mapView: GMSMapView = {
+        let view = GMSMapView(frame: view.frame)
+        view.delegate = self
+        view.translatesAutoresizingMaskIntoConstraints = false
         
-        return mapScreen
+        return view
     }()
     
-    private lazy var containerVC: ContainerVC = {
-        return ContainerVC()
+    private lazy var tripDetailsVC: TripDetailsViewController = {
+        let viewController = TripDetailsViewController()
+        
+        return viewController
+    }()
+    
+    private lazy var locationManager: CLLocationManager = {
+        let manager = CLLocationManager()
+        manager.delegate = self
+        
+        return manager
+    }()
+    
+    private lazy var panController: PanModalController = {
+        var settings = PanModalController.Settings()
+        settings.distanceFull = 0
+        settings.distancePartial = UIScreen.main.bounds.height * 0.4
+        
+        return PanModalController(parentView: view,
+                           childView: tripDetailsVC.view,
+                           scrollView: tripDetailsVC.tableView,
+                           settings: settings)
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupCustomBackButton()
+        setupSubviews()
+        panController.build()
         view.backgroundColor = .white
-        self.view = mapScreen
-        mapScreen.delegate = self
-        locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
-        
-        
-        let camera = GMSCameraPosition.camera(withLatitude: 38.89399, longitude: -77.03659, zoom: 16.0)
-        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-        view = mapView
-        
+    }
+    
+    private func drawPath() {
         let path = GMSMutablePath()
-        
         path.add(CLLocationCoordinate2D(latitude: 38.893596444352134, longitude: -77.0381498336792))
         path.add(CLLocationCoordinate2D(latitude: 38.89337933372204, longitude: -77.03792452812195))
         path.add(CLLocationCoordinate2D(latitude: 38.89316222242831, longitude: -77.03761339187622))
@@ -65,44 +76,34 @@ class TripDetailVC: UIViewController, GMSMapViewDelegate {
         let polyline = GMSPolyline(path: path)
         polyline.strokeWidth = 3.0
         polyline.strokeColor = .red
-        
-        polyline.map = mapScreen
-        
+        polyline.map = mapView
     }
     
     private func reverseGeocodeCoordinate(_ coordinate: CLLocationCoordinate2D) {
-        // 1
-        let geocoder = GMSGeocoder()
-        // 2
-        geocoder.reverseGeocodeCoordinate(coordinate) { response, error in
-            //                guard let address = response?.firstResult(),
-            //                      let lines = address.lines else { return }
-            
+        GMSGeocoder().reverseGeocodeCoordinate(coordinate) { response, error in
             UIView.animate(withDuration: 0.25) {
                 self.view.layoutIfNeeded()
             }
         }
     }
+}
+
+extension TripMapViewController: GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
         reverseGeocodeCoordinate(position.target)
     }
-    
 }
 
-extension TripDetailVC: CLLocationManagerDelegate {
-    // 2
+extension TripMapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        // 3
         guard status == .authorizedWhenInUse else { return }
         locationManager.startUpdatingLocation()
-//            mapScreen.isMyLocationEnabled = true
-//            mapScreen.settings.myLocationButton = true
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.first else { return }
         
-        mapScreen.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
+        mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
         locationManager.stopUpdatingLocation()
     }
 }

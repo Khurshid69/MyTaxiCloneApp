@@ -85,7 +85,7 @@ extension TripHistoryViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = TripDetailVC()
+        let vc = TripMapViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
 }
