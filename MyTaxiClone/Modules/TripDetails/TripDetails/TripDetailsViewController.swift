@@ -41,27 +41,32 @@ extension TripDetailsViewController: UITableViewDataSource, UITableViewDelegate 
         switch sections[indexPath.row] {
         case .carStatus:
             let cell = tableView.reusableCell(CarStatusCell.self, for: indexPath)
-            cell.textLabel?.text = "Hello"
+            cell.heightAnchor.constraint(equalToConstant: 79).isActive = true
             return cell
 
         case .tripHistory:
             let cell = tableView.reusableCell(TripHistoryStreetCell.self, for: indexPath)
+            cell.heightAnchor.constraint(equalToConstant: 165).isActive = true
             return cell
 
         case .driver:
             let cell = tableView.reusableCell(DriverCell.self, for: indexPath)
-            return cell
-
-        case .costCalculation:
-            let cell = tableView.reusableCell(CostCalculationCell.self, for: indexPath)
-            return cell
-
-        case .totalCost:
-            let cell = tableView.reusableCell(TotalCell.self, for: indexPath)
+            cell.heightAnchor.constraint(equalToConstant: 100).isActive = true
             return cell
             
         case .paymentMethod:
             let cell = tableView.reusableCell(PeymentMethodCell.self, for: indexPath)
+            cell.heightAnchor.constraint(equalToConstant: 186).isActive = true
+            return cell
+
+        case .costCalculation:
+            let cell = tableView.reusableCell(CostCalculationCell.self, for: indexPath)
+            cell.heightAnchor.constraint(equalToConstant: 170).isActive = true
+            return cell
+
+        case .totalCost:
+            let cell = tableView.reusableCell(TotalCell.self, for: indexPath)
+            cell.heightAnchor.constraint(equalToConstant: 130).isActive = true
             return cell
         }
     }

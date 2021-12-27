@@ -15,9 +15,9 @@ class CostCalculationCell: UITableViewCell {
         let header = UILabel()
         header.frame = CGRect(x: 0, y: 0, width: 170, height: 24)
         header.textColor = UIColor(red: 0.262, green: 0.262, blue: 0.262, alpha: 1)
-        header.font = UIFont(name: "Lato-Black", size: 20)
         header.textAlignment = .justified
         header.text = "Расчёт стоимости"
+        header.font = UIFont.boldSystemFont(ofSize: 20)
         header.translatesAutoresizingMaskIntoConstraints = false
         
         return header
@@ -31,6 +31,7 @@ class CostCalculationCell: UITableViewCell {
         min.font = UIFont(name: "Lato-SemiBold", size: 14)
         min.textAlignment = .justified
         min.text = "Минимальная сумма"
+        min.font = UIFont.boldSystemFont(ofSize: 14)
         min.translatesAutoresizingMaskIntoConstraints = false
         
         return min
@@ -44,6 +45,7 @@ class CostCalculationCell: UITableViewCell {
         sum.font = UIFont(name: "Lato-Bold", size: 14)
         sum.textAlignment = .justified
         sum.text = "10,000 UZS"
+        sum.font = UIFont.boldSystemFont(ofSize: 14)
         sum.translatesAutoresizingMaskIntoConstraints = false
         
         return sum
@@ -56,6 +58,7 @@ class CostCalculationCell: UITableViewCell {
         string.font = UIFont(name: "Lato-SemiBold", size: 14)
         string.textAlignment = .justified
         string.text = "Сумма поездки"
+        string.font = UIFont.boldSystemFont(ofSize: 14)
         string.translatesAutoresizingMaskIntoConstraints = false
         
         return string
@@ -68,6 +71,7 @@ class CostCalculationCell: UITableViewCell {
         sum.font = UIFont(name: "Lato-Bold", size: 14)
         sum.textAlignment = .justified
         sum.text = "31,645 UZS"
+        sum.font = UIFont.boldSystemFont(ofSize: 14)
         sum.translatesAutoresizingMaskIntoConstraints = false
         
         return sum
@@ -81,6 +85,7 @@ class CostCalculationCell: UITableViewCell {
         string.font = UIFont(name: "Lato-SemiBold", size: 14)
         string.textAlignment = .justified
         string.text = "Цена ожидании"
+        string.font = UIFont.boldSystemFont(ofSize: 14)
         string.translatesAutoresizingMaskIntoConstraints = false
         
         return string
@@ -94,6 +99,7 @@ class CostCalculationCell: UITableViewCell {
         sum.font = UIFont(name: "Lato-Bold", size: 14)
         sum.textAlignment = .justified
         sum.text = "0 UZS"
+        sum.font = UIFont.boldSystemFont(ofSize: 14)
         sum.translatesAutoresizingMaskIntoConstraints = false
         
         return sum
@@ -142,7 +148,7 @@ class CostCalculationCell: UITableViewCell {
     
     func headerConstraints(){
         headerCalculation.snp.makeConstraints { make in
-            make.top.equalTo(self).offset(25)
+            make.top.equalTo(self).offset(22)
             make.left.equalTo(self).offset(16)
             
         }
@@ -150,7 +156,7 @@ class CostCalculationCell: UITableViewCell {
     
     func minimumAmountConsraints(){
         minimumAmount.snp.makeConstraints { make in
-            make.top.equalTo(headerCalculation).offset(25)
+            make.top.equalTo(headerCalculation.snp_bottomMargin).offset(22)
             make.left.equalTo(self).offset(16)
             
         }
@@ -158,8 +164,8 @@ class CostCalculationCell: UITableViewCell {
     
     func minimumSum(){
         minSum.snp.makeConstraints { make in
-            make.right.equalTo(self).offset(16)
-            make.top.equalTo(headerCalculation).offset(21)
+            make.right.equalTo(self).offset(-16)
+            make.top.equalTo(headerCalculation.snp_bottomMargin).offset(22)
             
         }
     }
@@ -167,30 +173,30 @@ class CostCalculationCell: UITableViewCell {
     func tripAmountConstraints(){
         tipAmount.snp.makeConstraints { make in
             make.left.equalTo(16)
-            make.top.equalTo(minimumAmount).offset(12)
+            make.top.equalTo(minimumAmount.snp_bottomMargin).offset(16)
             
         }
     }
     
     func tripSumConstraints(){
         tripSum.snp.makeConstraints { make in
-            make.right.equalTo(self).offset(16)
-            make.top.equalTo(minSum).offset(12)
+            make.right.equalTo(self).offset(-16)
+            make.top.equalTo(minSum.snp_bottomMargin).offset(16)
         }
     }
     
     func pricePendingConstraints(){
         pricePending.snp.makeConstraints { make in
             make.left.equalTo(16)
-            make.top.equalTo(tipAmount).offset(12)
+            make.top.equalTo(tipAmount.snp_bottomMargin).offset(16)
             
         }
     }
     
     func pricePendingSumConstraints(){
         pricePendingSum.snp.makeConstraints { make in
-            make.right.equalTo(16)
-            make.top.equalTo(tripSum).offset(12)
+            make.right.equalTo(-16)
+            make.top.equalTo(tripSum.snp_bottomMargin).offset(16)
             
         }
     }

@@ -12,6 +12,9 @@ extension MapViewController {
         let sideMenuButtonSize = CGSize(width: 40, height: 40)
         let sideMenuButtonTop: CGFloat = 4
         let sideMenuButtonLeft: CGFloat = 10
+        let myLocationButotnSize = CGSize(width: 44, height: 44)
+        let myLocationButtonBottom: CGFloat = -167
+        let myLocationButtonRight: CGFloat = -13
         let markerSize = CGSize(width: 40, height: 58)
     }
 }
@@ -33,6 +36,7 @@ extension MapViewController {
         view.addSubview(marker)
         view.addSubview(bottomView)
         bottomView.addSubview(addressLabel)
+        view.addSubview(myLocationButton)
     }
     
     override func setSubviewsConstraints() {
@@ -40,6 +44,7 @@ extension MapViewController {
         setMarkerConstraints()
         setBottomConstraints()
         setAdressLabelConstraints()
+        setMyLocationButtonConstraints()
     }
 }
 
@@ -74,11 +79,21 @@ extension MapViewController {
             bottomView.heightAnchor.constraint(equalToConstant: 137),
         ])
     }
+    
     private func setAdressLabelConstraints(){
         addressLabel.snp.makeConstraints { make in
-            make.size.equalTo(CGSize(width: 270, height: 16))
+            make.size.equalTo(CGSize(width: 270, height: 14))
             make.left.equalTo(bottomView).offset(60)
             make.bottom.equalTo(bottomView.snp_topMargin).offset(40)
         }
+    }
+    
+    private func setMyLocationButtonConstraints(){
+        NSLayoutConstraint.activate([
+            myLocationButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: dwgConst.myLocationButtonRight),
+            myLocationButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: dwgConst.myLocationButtonBottom),
+            myLocationButton.widthAnchor.constraint(equalToConstant: dwgConst.myLocationButotnSize.width),
+            myLocationButton.heightAnchor.constraint(equalToConstant: dwgConst.myLocationButotnSize.height),
+        ])
     }
 }

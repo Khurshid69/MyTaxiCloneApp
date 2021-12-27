@@ -12,7 +12,7 @@ import GoogleMaps
 class MapViewController: BaseViewController, GMSMapViewDelegate {
     private(set) lazy var mapView: GMSMapView = {
         let view = GMSMapView(frame: view.frame)
-        view.padding = UIEdgeInsets(top: 0, left: 0, bottom: 120, right: 0)
+        view.padding = UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)
         
         return view
     }()
@@ -49,6 +49,8 @@ class MapViewController: BaseViewController, GMSMapViewDelegate {
     
     private(set) lazy var myLocationButton: UIButton = {
         let view = UIButton()
+        view.setImage(UIImage(named: "btn_my_location_normal-1"), for: .normal)
+        view.setImage(UIImage(named: "btn_my_location_normal-1"), for: .highlighted)
         view.backgroundColor = .white
         view.layer.masksToBounds = true
         view.layer.shadowColor = UIColor.black.cgColor

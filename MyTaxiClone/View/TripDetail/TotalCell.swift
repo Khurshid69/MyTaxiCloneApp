@@ -17,6 +17,7 @@ class TotalCell: UITableViewCell {
         string.font = UIFont(name: "Lato-Black", size: 20)
         string.textAlignment = .justified
         string.text = "Итого"
+        string.font = UIFont.boldSystemFont(ofSize: 20)
         string.translatesAutoresizingMaskIntoConstraints = false
         
         return string
@@ -30,9 +31,27 @@ class TotalCell: UITableViewCell {
         sum.font = UIFont(name: "Lato-Black", size: 20)
         sum.textAlignment = .justified
         sum.text = "39,600 UZS"
+        sum.font = UIFont.boldSystemFont(ofSize: 20)
         sum.translatesAutoresizingMaskIntoConstraints = false
         
         return sum
+    }()
+    
+    let deleteView: UIView = {
+        let view = UIView()
+        view.layer.backgroundColor = UIColor(red: 1, green: 0.917, blue: 0.913, alpha: 1).cgColor
+        view.layer.cornerRadius = 12
+        
+        
+        return view
+    }()
+    
+    let deleteImage: UIImageView = {
+        let image = UIImageView()
+        image.image = UIImage(named: "ic_delete_24px 1")
+        image.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
+        
+        return image
     }()
     
     
@@ -56,6 +75,8 @@ class TotalCell: UITableViewCell {
     func embedSubviews(){
         self.addSubview(totalHeader)
         self.addSubview(totalSum)
+        self.addSubview(deleteView)
+        deleteView.addSubview(deleteImage)
     }
     
     // MARK: -  Setup constraints.
@@ -63,6 +84,9 @@ class TotalCell: UITableViewCell {
     func setUpConstraints(){
         headerConstraints()
         sumConstraints()
+        deleteViewConstraints()
+        deleteImageConstraints()
+        
     }
     
     
@@ -70,15 +94,28 @@ class TotalCell: UITableViewCell {
         totalHeader.snp.makeConstraints { make in
             make.left.equalTo(self).offset(16)
             make.top.equalTo(self).offset(12)
-            make.bottom.equalTo(self).offset(28)
         }
     }
     
     func sumConstraints(){
         totalSum.snp.makeConstraints { make in
             make.top.equalTo(12)
-            make.right.equalTo(16)
-            make.bottom.equalTo(self).offset(28)
+            make.right.equalTo(self).offset(-16)
+        }
+    }
+    
+    func deleteViewConstraints(){
+        deleteView.snp.makeConstraints { make in
+            make.size.equalTo(CGSize(width: UIScreen.main.bounds.width - 16, height: 55))
+            make.left.equalTo(self).offset(16)
+            make.right.equalTo(self).offset(-16)
+            make.top.equalTo(totalHeader.snp_bottomMargin).offset(25)
+        }
+    }
+    
+    func deleteImageConstraints(){
+        deleteImage.snp.makeConstraints { make in
+            make.center.equalTo(deleteView)
         }
     }
 }

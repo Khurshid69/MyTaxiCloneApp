@@ -38,7 +38,7 @@ class DirectionBottomView: UIView {
     var locationViewerLabel: UILabel = {
         let string = UILabel()
         string.text = "Somethere"
-        string.frame = CGRect(x: 0, y: 0, width: 196, height: 14)
+        string.font = UIFont.boldSystemFont(ofSize: 14)
         string.textColor = UIColor(red: 0.692, green: 0.692, blue: 0.692, alpha: 1)
         string.font = UIFont(name: "Avenir ", size: 12)
         
@@ -65,7 +65,7 @@ class DirectionBottomView: UIView {
     var whereLabel: UILabel = {
         let string = UILabel()
         string.text = "Куда?"
-        string.frame = CGRect(x: 0, y: 0, width: 196, height: 13)
+        string.font = UIFont.boldSystemFont(ofSize: 14)
         string.textColor = UIColor(red: 0.692, green: 0.692, blue: 0.692, alpha: 1)
         string.font = UIFont(name: "Avenir", size: 13)
         
@@ -107,7 +107,6 @@ class DirectionBottomView: UIView {
         addSubview(contentView)
         contentView.addSubview(stackView)
         stackView.addSubview(redPinImage)
-//        stackView.addSubview(locationViewerLabel)
         stackView.addSubview(bottomStacks)
         bottomStacks.addSubview(blueImage)
         bottomStacks.addSubview(whereLabel)
@@ -121,7 +120,6 @@ class DirectionBottomView: UIView {
         setContentViewConstraints()
         setStackViewConstraints()
         setRedPinImageConstraints()
-//        setLocationViewerStringConstraints()
         setBottomStackConstraints()
         setBlueImageConstraints()
         setWhereLabelConstraints()
@@ -134,6 +132,7 @@ extension DirectionBottomView {
     private func setContentViewConstraints(){
         NSLayoutConstraint.activate([
             contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            contentView.heightAnchor.constraint(equalToConstant: 1)
         ])
     }
     
@@ -154,14 +153,6 @@ extension DirectionBottomView {
             make.size.equalTo(CGSize(width: 24, height: 24))
         }
     }
-    
-//    private func setLocationViewerStringConstraints(){
-//        locationViewerLabel.snp.makeConstraints { make in
-//            make.left.equalTo(redPinImage.snp_rightMargin).offset(13.3)
-//            make.top.equalTo(stackView).offset(18)
-//
-//        }
-//    }
     
     private func setBottomStackConstraints(){
         bottomStacks.snp.makeConstraints { make in

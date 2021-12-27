@@ -18,6 +18,7 @@ class PeymentMethodCell: UITableViewCell {
         header.font = UIFont(name: "Lato-Black", size: 20)
         header.textAlignment = .justified
         header.text = "Общие данные"
+        header.font = UIFont.boldSystemFont(ofSize: 20)
         header.translatesAutoresizingMaskIntoConstraints = false
         
         return header
@@ -28,9 +29,9 @@ class PeymentMethodCell: UITableViewCell {
         string.frame = CGRect(x: 0, y: 0, width: 40, height: 17)
         string.backgroundColor = .white
         string.textColor = UIColor(red: 0.521, green: 0.521, blue: 0.521, alpha: 1)
-        string.font = UIFont(name: "Lato-SemiBold", size: 14)
         string.textAlignment = .justified
         string.text = "Тариф"
+        string.font = UIFont.boldSystemFont(ofSize: 14)
         string.translatesAutoresizingMaskIntoConstraints = false
         
         return string
@@ -43,6 +44,7 @@ class PeymentMethodCell: UITableViewCell {
         string.font = UIFont(name: "Lato-Bold", size: 14)
         string.textAlignment = .justified
         string.text = "Бизнес"
+        string.font = UIFont.boldSystemFont(ofSize: 14)
         string.translatesAutoresizingMaskIntoConstraints = false
         
         return string
@@ -51,10 +53,11 @@ class PeymentMethodCell: UITableViewCell {
     let paymentMethod: UILabel = {
         let string = UILabel()
         string.frame = CGRect(x: 0, y: 0, width: 46, height: 17)
-        string.textColor = UIColor(red: 0.262, green: 0.262, blue: 0.262, alpha: 1)
+        string.textColor = UIColor(red: 0.521, green: 0.521, blue: 0.521, alpha: 1)
         string.font = UIFont(name: "Lato-Bold", size: 14)
         string.textAlignment = .justified
-        string.text = "Бизнес"
+        string.text = "Способ оплаты"
+        string.font = UIFont.boldSystemFont(ofSize: 14)
         string.translatesAutoresizingMaskIntoConstraints = false
         
         return string
@@ -62,8 +65,7 @@ class PeymentMethodCell: UITableViewCell {
     
     let paymentImage: UIImageView = {
         let image = UIImageView()
-        image.frame = CGRect(x: 0, y: 0, width: 21.55, height: 12.31)
-        image.image = UIImage(named: "")
+        image.image = UIImage(named: "Money")
         image.translatesAutoresizingMaskIntoConstraints = false
         
         return image
@@ -76,6 +78,7 @@ class PeymentMethodCell: UITableViewCell {
         string.font = UIFont(name: "Lato-Bold", size: 14)
         string.textAlignment = .justified
         string.text = "Наличными"
+        string.font = UIFont.boldSystemFont(ofSize: 14)
         string.translatesAutoresizingMaskIntoConstraints = false
         
         return string
@@ -89,6 +92,7 @@ class PeymentMethodCell: UITableViewCell {
         string.font = UIFont(name: "Lato-SemiBold", size: 14)
         string.textAlignment = .justified
         string.text = "Заказ №"
+        string.font = UIFont.boldSystemFont(ofSize: 14)
         string.translatesAutoresizingMaskIntoConstraints = false
         
         return string
@@ -101,6 +105,7 @@ class PeymentMethodCell: UITableViewCell {
         string.font = UIFont(name: "Lato-Bold", size: 14)
         string.textAlignment = .justified
         string.text = "3917866"
+        string.font = UIFont.boldSystemFont(ofSize: 14)
         string.translatesAutoresizingMaskIntoConstraints = false
         
         return string
@@ -114,6 +119,7 @@ class PeymentMethodCell: UITableViewCell {
         string.font = UIFont(name: "Lato-SemiBold", size: 14)
         string.textAlignment = .justified
         string.text = "Дата и время поездки"
+        string.font = UIFont.boldSystemFont(ofSize: 14)
         string.translatesAutoresizingMaskIntoConstraints = false
         
         return string
@@ -126,6 +132,7 @@ class PeymentMethodCell: UITableViewCell {
         string.font = UIFont(name: "Lato-Bold", size: 14)
         string.textAlignment = .justified
         string.text = "29 Август, 19:20"
+        string.font = UIFont.boldSystemFont(ofSize: 14)
         string.translatesAutoresizingMaskIntoConstraints = false
         
         return string
@@ -138,6 +145,7 @@ class PeymentMethodCell: UITableViewCell {
         string.font = UIFont(name: "Lato-SemiBold", size: 14)
         string.textAlignment = .justified
         string.text = "Продолжительность поездки"
+        string.font = UIFont.boldSystemFont(ofSize: 14)
         string.translatesAutoresizingMaskIntoConstraints = false
         
         return string
@@ -150,6 +158,7 @@ class PeymentMethodCell: UITableViewCell {
         string.font = UIFont(name: "Lato-Bold", size: 14)
         string.textAlignment = .justified
         string.text = "00:45"
+        string.font = UIFont.boldSystemFont(ofSize: 14)
         string.translatesAutoresizingMaskIntoConstraints = false
         
         return string
@@ -218,78 +227,80 @@ class PeymentMethodCell: UITableViewCell {
     func rateLabelConstraints(){
         rateLabel.snp.makeConstraints { make in
             make.left.equalTo(self).offset(16)
+            make.top.equalTo(header.snp_bottomMargin).offset(22)
             
         }
     }
     
     func rateTypeConstraints(){
         rateType.snp.makeConstraints { make in
-            make.right.equalTo(self).offset(16)
-            
+            make.right.equalTo(self).offset(-16)
+            make.top.equalTo(header.snp_bottomMargin).offset(19)
         }
     }
     
     func paymentMethodsConstraints(){
         paymentMethod.snp.makeConstraints { make in
-            make.right.equalTo(self).offset(16)
-            make.top.equalTo(rateLabel).offset(15)
+            make.left.equalTo(self).offset(16)
+            make.top.equalTo(rateLabel.snp_bottomMargin).offset(15)
         }
     }
     
     func paymentImageConstaints(){
         paymentImage.snp.makeConstraints { make in
-            make.left.equalTo(self).offset(8)
+            make.size.equalTo(CGSize(width: 24, height: 24))
+            make.top.equalTo(rateType.snp_bottomMargin).offset(13.5)
+            make.right.equalTo(paymentMethodType.snp_leftMargin).offset(-13)
         }
     }
     
     func paymentTypeConstraints(){
         paymentMethodType.snp.makeConstraints { make in
-            make.right.equalTo(self).offset(16)
-            make.top.equalTo(rateType).offset(15)
+            make.right.equalTo(self).offset(-16)
+            make.top.equalTo(rateType.snp_bottomMargin).offset(16)
         }
     }
     
     
     func orderLabelConstrainsts(){
         orderLabel.snp.makeConstraints { make in
-            make.right.equalTo(self).offset(16)
-            make.top.equalTo(paymentMethod).offset(16)
+            make.left.equalTo(self).offset(16)
+            make.top.equalTo(paymentMethod.snp_bottomMargin).offset(16)
         }
     }
     
     func orderCountConstaints(){
         orderCount.snp.makeConstraints { make in
-            make.left.equalTo(self).offset(16)
-            make.top.equalTo(paymentMethodType).offset(12)
+            make.right.equalTo(self).offset(-13)
+            make.top.equalTo(paymentMethodType.snp_bottomMargin).offset(16)
         }
     }
     
     func dataLabelConstraints(){
         data.snp.makeConstraints { make in
             make.left.equalTo(self).offset(16)
-            make.top.equalTo(orderLabel).offset(12)
+            make.top.equalTo(orderLabel.snp_bottomMargin).offset(16)
         }
     }
     
     func dataTimeConstraints(){
         dataTime.snp.makeConstraints { make in
-            make.right.equalTo(self).offset(16)
-            make.top.equalTo(orderCount).offset(12)
+            make.right.equalTo(self).offset(-13)
+            make.top.equalTo(orderCount.snp_bottomMargin).offset(16)
         }
     }
     
     func tripTimeConstraints(){
         tripTime.snp.makeConstraints { make in
             make.left.equalTo(self).offset(16)
-            make.top.equalTo(data).offset(16)
+            make.top.equalTo(data.snp_bottomMargin).offset(16)
         }
     }
     
     func tripHoursConstraints(){
         tripHours.snp.makeConstraints { make in
-            make.right.equalTo(self).offset(16)
-            make.top.equalTo(dataTime).offset(13)
-            // make.bottom.equalTo(self).offset(40)
+            make.right.equalTo(self).offset(-13)
+            make.top.equalTo(dataTime.snp_bottomMargin).offset(16)
         }
     }
 }

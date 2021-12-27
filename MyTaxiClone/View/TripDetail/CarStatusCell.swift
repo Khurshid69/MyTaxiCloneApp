@@ -13,8 +13,10 @@ class CarStatusCell: UITableViewCell {
     let numberView: UIView = {
         let number = UIView()
         number.layer.cornerRadius = 6
-        number.frame = CGRect(x: 0, y: 0, width: 119, height: 32)
-        number.backgroundColor = .black
+        number.backgroundColor = .white
+        number.layer.cornerRadius = 7
+        number.layer.borderWidth = 1
+        number.layer.borderColor = UIColor(red:222/255, green:225/255, blue:227/255, alpha: 1).cgColor
         number.translatesAutoresizingMaskIntoConstraints = false
         
         return number
@@ -23,7 +25,7 @@ class CarStatusCell: UITableViewCell {
     let number: UILabel = {
         let number = UILabel()
         number.textAlignment = .justified
-        number.attributedText = NSMutableAttributedString(string: "25|L 771 FA", attributes: [NSAttributedString.Key.kern: -0.2])
+        number.attributedText = NSMutableAttributedString(string: "25 | L 771 FA", attributes: [NSAttributedString.Key.kern: -0.2])
         number.textColor = .black
         number.translatesAutoresizingMaskIntoConstraints = false
         
@@ -32,8 +34,7 @@ class CarStatusCell: UITableViewCell {
     
     let carImage: UIImageView = {
         let car = UIImageView()
-        car.translatesAutoresizingMaskIntoConstraints = false
-        car.frame = CGRect(x: 0, y: 0, width: 104, height: 38)
+        car.image = UIImage(named: "Bitmap-2")
         car.translatesAutoresizingMaskIntoConstraints = false
         
         return car
@@ -41,13 +42,10 @@ class CarStatusCell: UITableViewCell {
     
     let typeOfCar: UILabel = {
         let carName = UILabel()
-        carName.frame = CGRect(x: 0, y: 0, width: 169, height: 18)
         carName.textColor = UIColor(red: 0.521, green: 0.521, blue: 0.521, alpha: 1)
-        carName.font = UIFont(name: "Lato-Medium", size: 14)
         carName.textAlignment = .justified
-        var paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineHeightMultiple = 1.07
-        carName.attributedText = NSMutableAttributedString(string: "Чёрный Chevrolet Malibu", attributes: [NSAttributedString.Key.kern: 0.4, NSAttributedString.Key.paragraphStyle: paragraphStyle])
+        carName.text = "Чёрный Chevrolet Malibu"
+        carName.font = UIFont.boldSystemFont(ofSize: 14)
         carName.translatesAutoresizingMaskIntoConstraints = false
         
         return carName
@@ -91,31 +89,31 @@ class CarStatusCell: UITableViewCell {
     
     func setNumberViewConstraints(){
         numberView.snp.makeConstraints { make in
+            make.size.equalTo(CGSize(width: 119, height: 33))
             make.left.top.equalTo(self).offset(16)
-            make.bottom.equalTo(typeOfCar).offset(8)
         }
     }
     
     func setNumberConstraints(){
         number.snp.makeConstraints { make in
-            make.top.equalTo(numberView).offset(5)
-            make.bottom.equalTo(numberView).offset(4)
-            make.left.right.equalTo(numberView).offset(6)
+            make.center.equalTo(numberView)
         }
     }
     
     func setCarImageConstraints(){
         carImage.snp.makeConstraints { make in
-            make.right.equalTo(self).offset(15)
+            make.size.equalTo(CGSize(width: 104, height: 38))
+            make.right.equalTo(self).offset(-15)
             make.top.equalTo(self).offset(26)
         }
     }
     
     func setCarNameConstraints(){
         typeOfCar.snp.makeConstraints { make in
-            make.top.equalTo(numberView).offset(12)
+            make.size.equalTo(CGSize(width: 230, height: 11))
+            make.top.equalTo(numberView.snp_bottomMargin).offset(5)
             make.left.equalTo(self).offset(17)
-            make.bottom.equalTo(self).offset(5)
+            make.bottom.equalTo(self).offset(-8)
         }
     }
     

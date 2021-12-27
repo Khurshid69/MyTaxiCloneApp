@@ -65,12 +65,6 @@ class TripMapViewController: BaseViewController {
         path.add(CLLocationCoordinate2D(latitude: 38.893596444352134, longitude: -77.0381498336792))
         path.add(CLLocationCoordinate2D(latitude: 38.89337933372204, longitude: -77.03792452812195))
         path.add(CLLocationCoordinate2D(latitude: 38.89316222242831, longitude: -77.03761339187622))
-        path.add(CLLocationCoordinate2D(latitude: 38.893028615148424, longitude: -77.03731298446655))
-        path.add(CLLocationCoordinate2D(latitude: 38.892920059048464, longitude: -77.03691601753235))
-        path.add(CLLocationCoordinate2D(latitude: 38.892903358095296, longitude: -77.03637957572937))
-        path.add(CLLocationCoordinate2D(latitude: 38.89301191422077, longitude: -77.03592896461487))
-        path.add(CLLocationCoordinate2D(latitude: 38.89316222242831, longitude: -77.03549981117249))
-        path.add(CLLocationCoordinate2D(latitude: 38.89340438498248, longitude: -77.03514575958252))
         path.add(CLLocationCoordinate2D(latitude: 38.893596444352134, longitude: -77.0349633693695))
         
         let polyline = GMSPolyline(path: path)

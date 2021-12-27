@@ -15,7 +15,7 @@ class TripHistoryStreetCell: UITableViewCell {
     /// from your location
     let fromPointDot: UIImageView = {
         let fromPointDot = UIImageView()
-        fromPointDot.image = UIImage(named: "Frame 6201")
+        fromPointDot.image = UIImage(named: "Frame 621")
         fromPointDot.frame = CGRect(x: 0, y: 0, width: 13.4, height: 13.4)
         fromPointDot.backgroundColor = .white
         fromPointDot.translatesAutoresizingMaskIntoConstraints = false
@@ -28,8 +28,8 @@ class TripHistoryStreetCell: UITableViewCell {
         streetName.frame = CGRect(x: 0, y: 0, width: 205, height: 17)
         streetName.backgroundColor = .white
         streetName.textColor = UIColor(red: 0.262, green: 0.262, blue: 0.262, alpha: 1)
-        streetName.font = UIFont(name: "Lato-Bold", size: 14)
         streetName.textAlignment = .justified
+        streetName.font = UIFont.boldSystemFont(ofSize: 14)
         streetName.text = "улица Sharof Rashidov, Ташкент"
         streetName.translatesAutoresizingMaskIntoConstraints = false
         
@@ -52,8 +52,8 @@ class TripHistoryStreetCell: UITableViewCell {
         streetName.frame = CGRect(x: 0, y: 0, width: 196, height: 17)
         streetName.backgroundColor = .white
         streetName.textColor = UIColor(red: 0.262, green: 0.262, blue: 0.262, alpha: 1)
-        streetName.font = UIFont(name: "Lato-Bold", size: 14)
         streetName.textAlignment = .justified
+        streetName.font = UIFont.boldSystemFont(ofSize: 14)
         streetName.text = "5a улица Асадуллы Ходжаева"
         streetName.translatesAutoresizingMaskIntoConstraints = false
         
@@ -76,7 +76,6 @@ class TripHistoryStreetCell: UITableViewCell {
     let helpButtonImage: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "help-circle.2 1") // TODO - set Image here
-        image.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
         image.translatesAutoresizingMaskIntoConstraints = false
         
         return image
@@ -84,7 +83,6 @@ class TripHistoryStreetCell: UITableViewCell {
     
     let helpButtonsString: UILabel = {
         let string = UILabel()
-        string.frame = CGRect(x: 0, y: 0, width: 48, height: 14)
         string.textColor = UIColor(red: 0.929, green: 0.695, blue: 0.093, alpha: 1)
         string.font = UIFont(name: "Lato-SemiBold", size: 12)
         var paragraphStyle = NSMutableParagraphStyle()
@@ -99,7 +97,6 @@ class TripHistoryStreetCell: UITableViewCell {
     /// ReDo Button
     let ReDoView: UIView = {
         let button = UIView()
-        button.frame = CGRect(x: 0, y: 0, width: 109, height: 56)
         button.layer.backgroundColor = UIColor(red: 0.925, green: 0.949, blue: 0.992, alpha: 1).cgColor
         button.layer.cornerRadius = 12
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -110,7 +107,6 @@ class TripHistoryStreetCell: UITableViewCell {
     let ReDoButtonImage: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "Group 21250") // TODO - set Image here
-        image.frame = CGRect(x: 0, y: 0, width: 16, height: 16)
         image.translatesAutoresizingMaskIntoConstraints = false
         
         return image
@@ -133,8 +129,7 @@ class TripHistoryStreetCell: UITableViewCell {
     /// Call Button
     let CallView: UIView = {
         let view = UIView()
-        view.frame = CGRect(x: 0, y: 0, width: 109, height: 56)
-        view.layer.backgroundColor = UIColor(red: 0.925, green: 0.949, blue: 0.992, alpha: 1).cgColor
+        view.layer.backgroundColor = UIColor(red: 0.933, green: 0.976, blue: 0.949, alpha: 1).cgColor
         view.layer.cornerRadius = 12
         view.translatesAutoresizingMaskIntoConstraints = false
         
@@ -144,7 +139,6 @@ class TripHistoryStreetCell: UITableViewCell {
     let CallViewImage: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "Group 21251") // TODO - set Image here
-        image.frame = CGRect(x: 0, y: 0, width: 16, height: 16)
         image.translatesAutoresizingMaskIntoConstraints = false
         
         return image
@@ -153,7 +147,7 @@ class TripHistoryStreetCell: UITableViewCell {
     let CallString: UILabel = {
         let string = UILabel()
         string.frame = CGRect(x: 0, y: 0, width: 48, height: 14)
-        string.textColor = UIColor(red: 0.246, green: 0.484, blue: 0.921, alpha: 1)
+        string.textColor = UIColor(red: 0.278, green: 0.624, blue: 0.416, alpha: 1)
         string.font = UIFont(name: "Lato-SemiBold", size: 12)
         var paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineHeightMultiple = 0.97
@@ -219,21 +213,24 @@ class TripHistoryStreetCell: UITableViewCell {
     
     func redPoint(){
         fromPointDot.snp.makeConstraints { make in
-            make.left.top.equalTo(self).offset(16)
-            make.bottom.equalTo(ToPointDot).offset(13)
+            make.top.equalTo(self).offset(16)
+            make.size.equalTo(CGSize(width: 24, height: 24))
+            make.left.equalTo(self).offset(16)
         }
     }
     
     func bluePoint(){
         ToPointDot.snp.makeConstraints { make in
-            make.left.top.equalTo(self).offset(16)
+            make.size.equalTo(CGSize(width: 24, height: 24))
+            make.left.equalTo(self).offset(16)
+            make.top.equalTo(fromPointDot.snp_bottomMargin).offset(13)
             
         }
     }
     
     func startedStringConstraints(){
         starterStreetName.snp.makeConstraints { make in
-            make.left.equalTo(13.3)
+            make.left.equalTo(fromPointDot.snp_rightMargin).offset(13.3)
             make.top.equalTo(self).offset(18)
             
         }
@@ -241,8 +238,8 @@ class TripHistoryStreetCell: UITableViewCell {
     
     func finishStringConstraints(){
         finishStreetName.snp.makeConstraints { make in
-            make.left.equalTo(ToPointDot).offset(13.3)
-            make.top.equalTo(starterStreetName).offset(15)
+            make.left.equalTo(ToPointDot.snp_rightMargin).offset(13.3)
+            make.top.equalTo(starterStreetName.snp_bottomMargin).offset(20)
         }
     }
     
@@ -250,25 +247,27 @@ class TripHistoryStreetCell: UITableViewCell {
     
     func helpButtonConstraints(){
         helpButton.snp.makeConstraints { make in
-            make.top.equalTo(finishStreetName).offset(21)
-            make.left.equalTo(self).offset(16)
+            make.size.equalTo(CGSize(width: 109, height: 56))
+            make.top.equalTo(finishStreetName.snp_bottomMargin).offset(24)
+            make.left.equalTo(self).offset(21)
             
         }
     }
     
     func reDoButtonConstraints(){
         ReDoView.snp.makeConstraints { make in
-            make.top.equalTo(finishStreetName).offset(21)
-            make.left.equalTo(helpButton).offset(16)
-            make.bottom.equalTo(self).offset(60)
+            make.size.equalTo(CGSize(width: 109, height: 56))
+            make.top.equalTo(finishStreetName.snp_bottomMargin).offset(23)
+            make.left.equalTo(helpButton.snp_rightMargin).offset(16)
         }
     }
     
     func callButtonConstraints(){
         CallView.snp.makeConstraints { make in
-            make.top.equalTo(finishStreetName).offset(21)
-            make.left.equalTo(helpButton).offset(16)
-            make.bottom.equalTo(self).offset(60)
+            make.size.equalTo(CGSize(width: 109, height: 56))
+            make.top.equalTo(finishStreetName.snp.bottomMargin).offset(23)
+            make.left.equalTo(ReDoView.snp_rightMargin).offset(16)
+            
         }
     }
     
@@ -276,29 +275,28 @@ class TripHistoryStreetCell: UITableViewCell {
     
     func helpButtonImageConstraints(){
         helpButtonImage.snp.makeConstraints { make in
-            make.top.equalTo(helpButton).offset(8)
-            make.left.equalTo(helpButton).offset(43)
-            make.right.equalTo(helpButton).offset(42)
-            make.bottom.equalTo(helpButton).offset(24)
-            
+            make.size.equalTo(CGSize(width: 20, height: 20))
+            make.top.equalTo(helpButton).offset(10)
+            make.left.equalTo(helpButton).offset(45)
+            make.right.equalTo(helpButton).offset(-44)
         }
     }
     
     func reDoButtonImageConstraints(){
         ReDoButtonImage.snp.makeConstraints { make in
-            make.top.equalTo(ReDoView).offset(8)
-            make.left.equalTo(ReDoView).offset(42)
-            make.bottom.equalTo(ReDoView).offset(24)
-            make.right.equalTo(ReDoView).offset(43)
+            make.size.equalTo(CGSize(width: 20, height: 20))
+            make.top.equalTo(ReDoView).offset(10)
+            make.left.equalTo(ReDoView).offset(45)
+            make.right.equalTo(ReDoView).offset(-44)
         }
     }
     
     func callButtonImageConstraints(){
         CallViewImage.snp.makeConstraints { make in
-            make.top.equalTo(CallViewImage).offset(8)
-            make.left.equalTo(CallViewImage).offset(42)
-            make.bottom.equalTo(CallViewImage).offset(24)
-            make.right.equalTo(CallViewImage).offset(43)
+            make.size.equalTo(CGSize(width: 20, height: 20))
+            make.top.equalTo(CallView).offset(10)
+            make.left.equalTo(CallView).offset(45)
+            make.right.equalTo(CallView).offset(-44)
         }
     }
     
@@ -307,29 +305,28 @@ class TripHistoryStreetCell: UITableViewCell {
     
     func helpButtonStringConstraints(){
         helpButtonsString.snp.makeConstraints { make in
-            make.top.equalTo(helpButtonImage).offset(4)
-            make.left.equalTo(self).offset(31)
-            make.right.equalTo(helpButton).offset(30)
-            make.top.equalTo(helpButton).offset(8)
-            
+            make.size.equalTo(CGSize(width: 48, height: 14))
+            make.top.equalTo(helpButtonImage.snp_bottomMargin).offset(10)
+            make.left.equalTo(helpButton).offset(20)
+            make.right.equalTo(helpButton).offset(-10)
         }
     }
     
     func reDoButtonStringConstraints(){
         ReDoButtonString.snp.makeConstraints { make in
-            make.top.equalTo(ReDoButtonImage).offset(6)
-            make.left.equalTo(ReDoView).offset(25)
-            make.bottom.equalTo(ReDoView).offset(8)
-            make.right.equalTo(ReDoView).offset(24)
+            make.size.equalTo(CGSize(width: 48, height: 14))
+            make.top.equalTo(ReDoButtonImage.snp_bottomMargin).offset(10)
+            make.left.equalTo(ReDoView).offset(10)
+            make.right.equalTo(ReDoView).offset(-10)
         }
     }
     
     func callButtonStringConstraints(){
         CallString.snp.makeConstraints { make in
-            make.top.equalTo(CallViewImage).offset(6.67)
-            make.left.equalTo(CallView).offset(25)
-            make.bottom.equalTo(CallView).offset(8)
-            make.right.equalTo(CallView).offset(24)
+            make.size.equalTo(CGSize(width: 48, height: 14))
+            make.top.equalTo(CallViewImage.snp_bottomMargin).offset(10)
+            make.left.equalTo(CallView).offset(10)
+            make.right.equalTo(CallView).offset(-10)
         }
     }
     

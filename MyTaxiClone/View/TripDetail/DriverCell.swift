@@ -13,11 +13,11 @@ class DriverCell: UITableViewCell {
     
     let drivarHeader: UILabel = {
         let header = UILabel()
-        header.frame = CGRect(x: 0, y: 0, width: 92, height: 24)
         header.textColor = UIColor(red: 0.262, green: 0.262, blue: 0.262, alpha: 1)
-        header.font = UIFont(name: "Lato-Black", size: 20)
+        header.font = UIFont(name: "Avenir", size: 24)
         header.textAlignment = .justified
         header.text = "Водитель"
+        header.font = UIFont.boldSystemFont(ofSize: 20)
         header.translatesAutoresizingMaskIntoConstraints = false
         
         return header
@@ -26,7 +26,7 @@ class DriverCell: UITableViewCell {
     
     let profileImage: UIImageView = {
         let image = UIImageView()
-        image.frame = CGRect(x: 0, y: 0, width: 56, height: 56)
+        image.image = UIImage(named: "account 1")
         image.translatesAutoresizingMaskIntoConstraints = false
         
         return image
@@ -39,6 +39,7 @@ class DriverCell: UITableViewCell {
         name.font = UIFont(name: "Lato-Bold", size: 18)
         name.textAlignment = .justified
         name.text = "Umid Abdurakhimov"
+        name.font = UIFont.boldSystemFont(ofSize: 18)
         name.translatesAutoresizingMaskIntoConstraints = false
         
         return name
@@ -52,6 +53,7 @@ class DriverCell: UITableViewCell {
         rating.font = UIFont(name: "Lato-SemiBold", size: 14)
         rating.textAlignment = .justified
         rating.text = "Рейтинг: 5"
+        rating.font = UIFont.boldSystemFont(ofSize: 14)
         rating.translatesAutoresizingMaskIntoConstraints = false
         
         return rating
@@ -59,8 +61,7 @@ class DriverCell: UITableViewCell {
     
     let starImage: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "") // TODO set image here
-        image.frame = CGRect(x: 0, y: 0, width: 10, height: 9.51)
+        image.image = UIImage(named: "star 1") // TODO set image here
         image.translatesAutoresizingMaskIntoConstraints = false
         
         return image
@@ -74,6 +75,7 @@ class DriverCell: UITableViewCell {
         trips.font = UIFont(name: "Lato-SemiBold", size: 14)
         trips.textAlignment = .justified
         trips.text = "Поездки: 1 885"
+        trips.font = UIFont.boldSystemFont(ofSize: 14)
         trips.translatesAutoresizingMaskIntoConstraints = false
         
         return trips
@@ -92,7 +94,7 @@ class DriverCell: UITableViewCell {
     
     func setUp(){
         embedSubviews()
-        
+        setUpConstraints()
     }
     
     // MARK: - Embed subviews.
@@ -102,6 +104,7 @@ class DriverCell: UITableViewCell {
         self.addSubview(profileImage)
         self.addSubview(name)
         self.addSubview(rating)
+        self.addSubview(starImage)
         self.addSubview(trips)
     }
     
@@ -119,49 +122,47 @@ class DriverCell: UITableViewCell {
     
     func headerConstraints(){
         drivarHeader.snp.makeConstraints { make in
+            make.size.equalTo(CGSize(width: 92, height: 24))
+            make.top.equalTo(self).offset(5)
             make.left.equalTo(self).offset(16)
+            
         }
     }
     
     func profileImageConstraints(){
         profileImage.snp.makeConstraints { make in
-            make.top.equalTo(drivarHeader).offset(21)
+            make.size.equalTo(CGSize(width: 56, height: 56))
+            make.top.equalTo(drivarHeader.snp_bottomMargin).offset(21)
             make.left.equalTo(self).offset(16)
-            make.bottom.equalTo(self).offset(24)
         }
     }
     
     func nameConstraint(){
         name.snp.makeConstraints { make in
-            make.left.equalTo(profileImage).offset(16)
-            make.top.equalTo(drivarHeader).offset(26)
+            make.left.equalTo(profileImage.snp_rightMargin).offset(16)
+            make.top.equalTo(drivarHeader.snp_bottomMargin).offset(26)
         }
     }
     
     func ratingConstraints(){
         rating.snp.makeConstraints { make in
-            make.top.equalTo(name).offset(5)
-            make.left.equalTo(profileImage).offset(16)
-            make.bottom.equalTo(self).offset(31)
+            make.left.equalTo(profileImage.snp_rightMargin).offset(16)
+            make.top.equalTo(name.snp_bottomMargin).offset(12)
         }
     }
     
     func starConstraints(){
         starImage.snp.makeConstraints { make in
-            make.left.equalTo(rating).offset(3)
+            make.size.equalTo(CGSize(width: 12, height: 12))
+            make.left.equalTo(rating.snp_rightMargin).offset(15)
+            make.top.equalTo(name.snp_bottomMargin).offset(15)
         }
     }
     
     func tripsContstarints(){
         trips.snp.makeConstraints { make in
-            make.left.equalTo(starImage).offset(13)
+            make.left.equalTo(starImage.snp_rightMargin).offset(30)
+            make.top.equalTo(name.snp_bottomMargin).offset(12)
         }
     }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
-    }
-    
 }
