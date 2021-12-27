@@ -11,6 +11,7 @@ class DirectionBottomView: UIView {
     var contentView: UIView = {
         let contentView = UIView()
         contentView.backgroundColor = .white
+        contentView.layer.cornerRadius = 12
         contentView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 137)
         
     
@@ -39,7 +40,7 @@ class DirectionBottomView: UIView {
         string.text = "Somethere"
         string.frame = CGRect(x: 0, y: 0, width: 196, height: 14)
         string.textColor = UIColor(red: 0.692, green: 0.692, blue: 0.692, alpha: 1)
-        string.font = UIFont(name: "Avenir ", size: 13)
+        string.font = UIFont(name: "Avenir ", size: 12)
         
         return string
     }()
@@ -64,9 +65,9 @@ class DirectionBottomView: UIView {
     var whereLabel: UILabel = {
         let string = UILabel()
         string.text = "Куда?"
-        string.frame = CGRect(x: 0, y: 0, width: 196, height: 14)
+        string.frame = CGRect(x: 0, y: 0, width: 196, height: 13)
         string.textColor = UIColor(red: 0.692, green: 0.692, blue: 0.692, alpha: 1)
-        string.font = UIFont(name: "Avenir ", size: 13)
+        string.font = UIFont(name: "Avenir", size: 13)
         
         return string
     }()
@@ -106,7 +107,7 @@ class DirectionBottomView: UIView {
         addSubview(contentView)
         contentView.addSubview(stackView)
         stackView.addSubview(redPinImage)
-        stackView.addSubview(locationViewerLabel)
+//        stackView.addSubview(locationViewerLabel)
         stackView.addSubview(bottomStacks)
         bottomStacks.addSubview(blueImage)
         bottomStacks.addSubview(whereLabel)
@@ -120,7 +121,7 @@ class DirectionBottomView: UIView {
         setContentViewConstraints()
         setStackViewConstraints()
         setRedPinImageConstraints()
-        setLocationViewerStringConstraints()
+//        setLocationViewerStringConstraints()
         setBottomStackConstraints()
         setBlueImageConstraints()
         setWhereLabelConstraints()
@@ -132,9 +133,7 @@ class DirectionBottomView: UIView {
 extension DirectionBottomView {
     private func setContentViewConstraints(){
         NSLayoutConstraint.activate([
-            
             contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-//            contentView.heightAnchor.constraint(equalToConstant: 148),
         ])
     }
     
@@ -156,13 +155,13 @@ extension DirectionBottomView {
         }
     }
     
-    private func setLocationViewerStringConstraints(){
-        locationViewerLabel.snp.makeConstraints { make in
-            make.left.equalTo(redPinImage.snp_rightMargin).offset(13.3)
-            make.top.equalTo(stackView).offset(18)
-            
-        }
-    }
+//    private func setLocationViewerStringConstraints(){
+//        locationViewerLabel.snp.makeConstraints { make in
+//            make.left.equalTo(redPinImage.snp_rightMargin).offset(13.3)
+//            make.top.equalTo(stackView).offset(18)
+//
+//        }
+//    }
     
     private func setBottomStackConstraints(){
         bottomStacks.snp.makeConstraints { make in

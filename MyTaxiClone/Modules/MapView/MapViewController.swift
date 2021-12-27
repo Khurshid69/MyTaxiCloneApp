@@ -63,9 +63,10 @@ class MapViewController: BaseViewController, GMSMapViewDelegate {
     }()
     
     private(set) lazy var addressLabel: UILabel = {
-        let view = UILabel()
+        let view = DirectionBottomView()
+        var address = view.locationViewerLabel
         
-        return view
+        return address
     }()
     
     weak var delegete: HomeViewControllerDelegete?
