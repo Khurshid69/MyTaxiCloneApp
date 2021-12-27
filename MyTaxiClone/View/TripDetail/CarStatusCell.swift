@@ -51,8 +51,6 @@ class CarStatusCell: UITableViewCell {
         return carName
     }()
     
-    
-
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setUp()
@@ -69,13 +67,11 @@ class CarStatusCell: UITableViewCell {
     }
     
     // MARK: - Embed subviews.
-    
     func embedSubViews(){
         self.addSubview(numberView)
         numberView.addSubview(number)
         self.addSubview(carImage)
         self.addSubview(typeOfCar)
-        
     }
     
     func setUpConstraints(){
@@ -86,7 +82,6 @@ class CarStatusCell: UITableViewCell {
     }
     
     // MARK: -  Setup constraints.
-    
     func setNumberViewConstraints(){
         numberView.snp.makeConstraints { make in
             make.size.equalTo(CGSize(width: 119, height: 33))
@@ -116,8 +111,4 @@ class CarStatusCell: UITableViewCell {
             make.bottom.equalTo(self).offset(-8)
         }
     }
-    
-    
-    
-    
 }

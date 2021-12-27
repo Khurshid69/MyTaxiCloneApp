@@ -73,7 +73,7 @@ class MapViewController: BaseViewController, GMSMapViewDelegate {
     
     weak var delegete: HomeViewControllerDelegete?
     private let locationManager = CLLocationManager()
-    private(set) var dwgConst = DrawingConstants()    
+    private(set) var dwgConst = DrawingConstants()
     
     override func viewDidLoad() {
         super.viewDidLoad()

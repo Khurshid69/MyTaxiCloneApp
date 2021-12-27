@@ -48,7 +48,6 @@ extension MapViewController {
     }
 }
 
-
 // MARK: - Setup Constraints
 extension MapViewController {
     private func setSideMenuButtonConstraints() {

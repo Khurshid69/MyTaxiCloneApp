@@ -232,7 +232,6 @@ class TripHistoryStreetCell: UITableViewCell {
         starterStreetName.snp.makeConstraints { make in
             make.left.equalTo(fromPointDot.snp_rightMargin).offset(13.3)
             make.top.equalTo(self).offset(18)
-            
         }
     }
     
@@ -250,7 +249,6 @@ class TripHistoryStreetCell: UITableViewCell {
             make.size.equalTo(CGSize(width: 109, height: 56))
             make.top.equalTo(finishStreetName.snp_bottomMargin).offset(24)
             make.left.equalTo(self).offset(21)
-            
         }
     }
     
@@ -267,7 +265,6 @@ class TripHistoryStreetCell: UITableViewCell {
             make.size.equalTo(CGSize(width: 109, height: 56))
             make.top.equalTo(finishStreetName.snp.bottomMargin).offset(23)
             make.left.equalTo(ReDoView.snp_rightMargin).offset(16)
-            
         }
     }
     
@@ -328,11 +325,5 @@ class TripHistoryStreetCell: UITableViewCell {
             make.left.equalTo(CallView).offset(10)
             make.right.equalTo(CallView).offset(-10)
         }
-    }
-    
-  override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
     }
 }

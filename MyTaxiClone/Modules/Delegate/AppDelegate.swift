@@ -19,7 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSPlacesClient.provideAPIKey("AIzaSyCR5FqIPa0B0_-nL5GSaAaTLho50YRH_jU")
         
         return true
-        
     }
 
     // MARK: UISceneSession Lifecycle

@@ -10,7 +10,6 @@ import UIKit
 class PeymentMethodCell: UITableViewCell {
     
     // MARK: - Properties
-    
     let header: UILabel = {
         let header = UILabel()
         header.frame = CGRect(x: 0, y: 0, width: 145, height: 24)
@@ -164,11 +163,9 @@ class PeymentMethodCell: UITableViewCell {
         return string
     }()
     
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setUp()
-        
     }
     
     required init?(coder: NSCoder) {
@@ -195,7 +192,6 @@ class PeymentMethodCell: UITableViewCell {
         self.addSubview(dataTime)
         self.addSubview(tripTime)
         self.addSubview(tripHours)
-        
     }
     
     func setUpConstraints(){
@@ -228,7 +224,6 @@ class PeymentMethodCell: UITableViewCell {
         rateLabel.snp.makeConstraints { make in
             make.left.equalTo(self).offset(16)
             make.top.equalTo(header.snp_bottomMargin).offset(22)
-            
         }
     }
     

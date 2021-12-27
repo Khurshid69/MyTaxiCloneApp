@@ -105,8 +105,6 @@ class CostCalculationCell: UITableViewCell {
         return sum
     }()
     
-    
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setUp()

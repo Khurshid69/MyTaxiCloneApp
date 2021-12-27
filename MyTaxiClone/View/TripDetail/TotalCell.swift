@@ -86,9 +86,7 @@ class TotalCell: UITableViewCell {
         sumConstraints()
         deleteViewConstraints()
         deleteImageConstraints()
-        
     }
-    
     
     func headerConstraints(){
         totalHeader.snp.makeConstraints { make in

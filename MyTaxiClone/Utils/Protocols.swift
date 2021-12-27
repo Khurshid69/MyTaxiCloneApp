@@ -10,5 +10,3 @@ import Foundation
 protocol HomeViewControllerDelegete: AnyObject {
     func handleMenuToggle(forMenuOption: MenuOption?)
 }
-
-

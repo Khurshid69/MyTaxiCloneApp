@@ -14,7 +14,6 @@ class DirectionBottomView: UIView {
         contentView.layer.cornerRadius = 12
         contentView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 137)
         
-    
         return contentView
     }()
     
@@ -61,7 +60,6 @@ class DirectionBottomView: UIView {
         return image
     }()
     
-    
     var whereLabel: UILabel = {
         let string = UILabel()
         string.text = "Куда?"
@@ -86,7 +84,6 @@ class DirectionBottomView: UIView {
         
         return image
     }()
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -176,7 +173,6 @@ extension DirectionBottomView {
             make.left.equalTo(blueImage.snp_rightMargin).offset(13.3)
             make.top.equalTo(bottomStacks).offset(-18)
             make.bottom.equalTo(bottomStacks).offset(17)
-            
         }
     }
     

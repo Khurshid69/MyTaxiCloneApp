@@ -10,7 +10,6 @@ import UIKit
 class DriverCell: UITableViewCell {
     
     // MARK: - Properties
-    
     let drivarHeader: UILabel = {
         let header = UILabel()
         header.textColor = UIColor(red: 0.262, green: 0.262, blue: 0.262, alpha: 1)
@@ -85,7 +84,6 @@ class DriverCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setUp()
-    
     }
     
     required init?(coder: NSCoder) {
@@ -117,15 +115,12 @@ class DriverCell: UITableViewCell {
         tripsContstarints()
     }
     
-    
     // MARK: -  Setup constraints.
-    
     func headerConstraints(){
         drivarHeader.snp.makeConstraints { make in
             make.size.equalTo(CGSize(width: 92, height: 24))
             make.top.equalTo(self).offset(5)
             make.left.equalTo(self).offset(16)
-            
         }
     }
     
