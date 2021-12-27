@@ -89,6 +89,7 @@ class TripHistoryStreetCell: UITableViewCell {
         paragraphStyle.lineHeightMultiple = 0.97
         string.textAlignment = .justified
         string.attributedText = NSMutableAttributedString(string: "Помощь", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
+        string.font = UIFont.boldSystemFont(ofSize: 14)
         string.translatesAutoresizingMaskIntoConstraints = false
         
         return string
@@ -121,6 +122,7 @@ class TripHistoryStreetCell: UITableViewCell {
         paragraphStyle.lineHeightMultiple = 0.97
         string.textAlignment = .justified
         string.attributedText = NSMutableAttributedString(string: "Повторить", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
+        string.font = UIFont.boldSystemFont(ofSize: 14)
         string.translatesAutoresizingMaskIntoConstraints = false
         
         return string
@@ -153,6 +155,7 @@ class TripHistoryStreetCell: UITableViewCell {
         paragraphStyle.lineHeightMultiple = 0.97
         string.textAlignment = .justified
         string.attributedText = NSMutableAttributedString(string: "Позвонить", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
+        string.font = UIFont.boldSystemFont(ofSize: 14)
         string.translatesAutoresizingMaskIntoConstraints = false
         
         return string
@@ -248,7 +251,7 @@ class TripHistoryStreetCell: UITableViewCell {
         helpButton.snp.makeConstraints { make in
             make.size.equalTo(CGSize(width: 109, height: 56))
             make.top.equalTo(finishStreetName.snp_bottomMargin).offset(24)
-            make.left.equalTo(self).offset(21)
+            make.left.equalTo(self).offset(18)
         }
     }
     
@@ -304,8 +307,8 @@ class TripHistoryStreetCell: UITableViewCell {
         helpButtonsString.snp.makeConstraints { make in
             make.size.equalTo(CGSize(width: 48, height: 14))
             make.top.equalTo(helpButtonImage.snp_bottomMargin).offset(10)
-            make.left.equalTo(helpButton).offset(20)
-            make.right.equalTo(helpButton).offset(-10)
+            make.left.equalTo(helpButton.snp_leftMargin).offset(20)
+            make.right.equalTo(helpButton).offset(-5)
         }
     }
     
@@ -313,8 +316,8 @@ class TripHistoryStreetCell: UITableViewCell {
         ReDoButtonString.snp.makeConstraints { make in
             make.size.equalTo(CGSize(width: 48, height: 14))
             make.top.equalTo(ReDoButtonImage.snp_bottomMargin).offset(10)
-            make.left.equalTo(ReDoView).offset(10)
-            make.right.equalTo(ReDoView).offset(-10)
+            make.left.equalTo(ReDoView.snp_leftMargin).offset(10)
+            make.right.equalTo(ReDoView).offset(-15)
         }
     }
     
@@ -322,8 +325,8 @@ class TripHistoryStreetCell: UITableViewCell {
         CallString.snp.makeConstraints { make in
             make.size.equalTo(CGSize(width: 48, height: 14))
             make.top.equalTo(CallViewImage.snp_bottomMargin).offset(10)
-            make.left.equalTo(CallView).offset(10)
-            make.right.equalTo(CallView).offset(-10)
+            make.left.equalTo(CallView.snp_leftMargin).offset(10)
+            make.right.equalTo(CallView).offset(-5)
         }
     }
 }

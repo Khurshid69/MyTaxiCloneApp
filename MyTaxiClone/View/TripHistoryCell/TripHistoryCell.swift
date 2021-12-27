@@ -29,9 +29,8 @@ class TripHistoryCell: BaseTableViewCell {
     
     private(set) lazy var departurePlace: UILabel = {
         let view = UILabel()
-        view.font = UIFont.boldSystemFont(ofSize: 20)
+        view.font = UIFont.boldSystemFont(ofSize: 13)
         view.textColor = UIColor(red: 0.262, green: 0.262, blue: 0.262, alpha: 1)
-        view.font = UIFont.systemFont(ofSize: 14)
         view.translatesAutoresizingMaskIntoConstraints = false
         
         return view
@@ -47,9 +46,8 @@ class TripHistoryCell: BaseTableViewCell {
     
     private(set) lazy var arrivalPlace: UILabel = {
         let view = UILabel()
-        view.font = UIFont.boldSystemFont(ofSize: 20)
+        view.font = UIFont.boldSystemFont(ofSize: 13)
         view.textColor = UIColor(red: 0.262, green: 0.262, blue: 0.262, alpha: 1)
-        view.font = UIFont.systemFont(ofSize: 14)
         view.translatesAutoresizingMaskIntoConstraints = false
         
         return view
@@ -65,9 +63,8 @@ class TripHistoryCell: BaseTableViewCell {
     
     private(set) lazy var timeLabel: UILabel = {
         let view = UILabel()
-        view.font = UIFont.boldSystemFont(ofSize: 20)
+        view.font = UIFont.boldSystemFont(ofSize: 13)
         view.textColor = UIColor(red: 0.262, green: 0.262, blue: 0.262, alpha: 1)
-        view.font = UIFont(name: "Avenir Nexr", size: 13)
         view.translatesAutoresizingMaskIntoConstraints = false
         
         return view

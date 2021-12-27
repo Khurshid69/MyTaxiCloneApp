@@ -21,6 +21,7 @@ class TripDetailsViewController: BaseViewController {
         view.register(PeymentMethodCell.self)
         view.register(CostCalculationCell.self)
         view.register(TotalCell.self)
+        view.showsVerticalScrollIndicator = false
         view.translatesAutoresizingMaskIntoConstraints = false
 
         return view
