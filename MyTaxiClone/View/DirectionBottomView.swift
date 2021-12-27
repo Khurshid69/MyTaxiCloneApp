@@ -54,7 +54,7 @@ class DirectionBottomView: UIView {
     
     var blueImage: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "Frame 62023")
+        image.image = UIImage(named: "Frame 620")
         image.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
         
         return image
@@ -164,7 +164,7 @@ extension DirectionBottomView {
             make.left.equalTo(bottomStacks).offset(12)
             make.top.equalTo(bottomStacks).offset(14)
             make.bottom.equalTo(bottomStacks).offset(-14)
-            
+            make.size.equalTo(CGSize(width: 24, height: 24))
         }
     }
     
