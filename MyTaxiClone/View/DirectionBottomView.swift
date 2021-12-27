@@ -65,7 +65,6 @@ class DirectionBottomView: UIView {
         string.text = "Куда?"
         string.font = UIFont.boldSystemFont(ofSize: 14)
         string.textColor = UIColor(red: 0.692, green: 0.692, blue: 0.692, alpha: 1)
-        string.font = UIFont(name: "Avenir", size: 13)
         
         return string
     }()

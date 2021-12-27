@@ -90,8 +90,8 @@ class MapViewController: BaseViewController, GMSMapViewDelegate {
         navigationController?.navigationBar.isHidden = true
     }
     
-    @objc private func myLocationButtonClicked( ) {
-        // MARK: - FOR myLocation
+    @objc private func myLocationButtonClicked() {
+        locationManager.startUpdatingLocation()
     }
     
     // MARK: - Handlers
@@ -120,6 +120,7 @@ extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         guard status == .authorizedWhenInUse else { return }
         locationManager.startUpdatingLocation()
+        mapView.isMyLocationEnabled = true
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -127,5 +128,9 @@ extension MapViewController: CLLocationManagerDelegate {
         
         mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
         locationManager.stopUpdatingLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error){
+        print("error:: \(error.localizedDescription)")
     }
 }

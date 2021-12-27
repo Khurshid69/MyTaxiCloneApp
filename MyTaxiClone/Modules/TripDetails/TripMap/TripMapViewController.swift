@@ -58,14 +58,6 @@ class TripMapViewController: BaseViewController {
         panController.build()
         view.backgroundColor = .white
         locationManager.requestWhenInUseAuthorization()
-        
-        let path = GMSMutablePath()
-        path.addLatitude(-37.81319, longitude: 144.96298)
-        path.addLatitude(-31.95285, longitude: 115.85734)
-        let polyline = GMSPolyline(path: path)
-        polyline.strokeWidth = 10.0
-        polyline.geodesic = true
-        polyline.map = mapView
     }
     
     private func reverseGeocodeCoordinate(_ coordinate: CLLocationCoordinate2D) {
