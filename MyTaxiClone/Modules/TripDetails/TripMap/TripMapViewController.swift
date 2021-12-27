@@ -58,18 +58,13 @@ class TripMapViewController: BaseViewController {
         panController.build()
         view.backgroundColor = .white
         locationManager.requestWhenInUseAuthorization()
-    }
-    
-    private func drawPath() {
-        let path = GMSMutablePath()
-        path.add(CLLocationCoordinate2D(latitude: 38.893596444352134, longitude: -77.0381498336792))
-        path.add(CLLocationCoordinate2D(latitude: 38.89337933372204, longitude: -77.03792452812195))
-        path.add(CLLocationCoordinate2D(latitude: 38.89316222242831, longitude: -77.03761339187622))
-        path.add(CLLocationCoordinate2D(latitude: 38.893596444352134, longitude: -77.0349633693695))
         
+        let path = GMSMutablePath()
+        path.addLatitude(-37.81319, longitude: 144.96298)
+        path.addLatitude(-31.95285, longitude: 115.85734)
         let polyline = GMSPolyline(path: path)
-        polyline.strokeWidth = 3.0
-        polyline.strokeColor = .red
+        polyline.strokeWidth = 10.0
+        polyline.geodesic = true
         polyline.map = mapView
     }
     

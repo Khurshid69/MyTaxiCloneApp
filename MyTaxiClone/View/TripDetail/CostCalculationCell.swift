@@ -108,7 +108,7 @@ class CostCalculationCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setUp()
-        
+        selectionStyle = .none
     }
     
     required init?(coder: NSCoder) {

@@ -42,7 +42,6 @@ class TotalCell: UITableViewCell {
         view.layer.backgroundColor = UIColor(red: 1, green: 0.917, blue: 0.913, alpha: 1).cgColor
         view.layer.cornerRadius = 12
         
-        
         return view
     }()
     
@@ -54,11 +53,10 @@ class TotalCell: UITableViewCell {
         return image
     }()
     
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setUp()
-        
+        selectionStyle = .none
     }
     
     required init?(coder: NSCoder) {

@@ -26,6 +26,7 @@ class CarStatusCell: UITableViewCell {
         let number = UILabel()
         number.textAlignment = .justified
         number.attributedText = NSMutableAttributedString(string: "25 | L 771 FA", attributes: [NSAttributedString.Key.kern: -0.2])
+        number.font = UIFont.boldSystemFont(ofSize: 17)
         number.textColor = .black
         number.translatesAutoresizingMaskIntoConstraints = false
         
@@ -54,6 +55,7 @@ class CarStatusCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setUp()
+        selectionStyle = .none
     
     }
     
